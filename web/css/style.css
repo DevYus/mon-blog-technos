@@ -674,11 +674,11 @@ figcaption {background: #FFFFFF; height: 164px;}
 .asideContainer aside + aside {height: 230px;}
 .asideContainer h2 {font-size: 15px;}
 
-.asidebarSocialNetwork {width: 100%;height: 30px !important;}
+.asidebarSocialNetwork {width: 100%;height: 30px;}
 
 .asidebarSocialNetwork div {
     width: 32.4%;
-    height: 100%;
+    height: 30px;
     float: left;
     overflow: hidden;
     position: relative;
@@ -904,6 +904,8 @@ figcaption {background: #FFFFFF; height: 164px;}
 .asideContainer aside + aside {height: 230px;}
 .asideContainer h2 {font-size: 15px;}
 
+/*
+
 .asidebarSocialNetwork {width: 100%;height: 30px;}
 
 .asidebarSocialNetwork div {
@@ -931,6 +933,7 @@ figcaption {background: #FFFFFF; height: 164px;}
     transform: translateX(-50%);
 }
 
+*/
 
 @media screen and (max-width: 1280px) {
     main {
