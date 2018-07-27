@@ -1,0 +1,1291 @@
+
+/*** Layout style ***/
+
+body{
+    margin:0;
+    padding:0 0 0px 0;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x:hidden;
+    width: 100%;
+}
+
+header{
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    padding: 0;
+    margin:0;
+    position: relative;
+    background: #212121;
+}
+
+header > div {background: #212121;}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+.containerHeader{
+    background: #212121;
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.logoBlock{
+    width: 122px;
+    position: relative;
+    margin: 0;
+    float: left;
+
+}
+
+.logoBlock img {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+.navHeader{
+    background: #212121;
+    width: 80%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.navHeader ul {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    float: right;
+}
+
+.navHeader ul>li{
+    display: inline-block;
+    text-align: center;
+    width: 172px;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    font-size: 13px;
+    height:59px;
+    float: right;
+}
+
+.navHeader ul>li:hover{
+    background: #757575;
+    color: #212121;
+}
+
+main{
+    width: 1200px;
+    height: auto;
+    margin:0 auto;
+    overflow: hidden;
+}
+
+footer{
+    width: 100%;
+    height: 350px;
+    background: #212121;
+    position: relative;
+    padding-top: 58px;
+    box-sizing: border-box;
+}
+
+.footerWrapper {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden
+}
+
+.footerWrapper aside {
+    float: left;
+    width: 500px;
+    padding: 0 0px 0 0px;
+    box-sizing: border-box;
+    color: #F5F5F5;
+    font-size: 14px;
+    text-align: justify;
+    margin-right: 100px;
+}
+.footerWrapper aside > span {display:block;padding-bottom:15px;text-transform: uppercase;font-size: 20px;}
+.footerWrapper ul {width: 250px; float: left;}
+.footerWrapper ul li{
+    width: 100%;
+    list-style: none;
+    padding: 2px 4px 4px 0px;
+    color: #F5F5F5;
+    font-size: 14px;
+}
+.footerWrapper ul li:first-child{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+details {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+summary {
+    color: #fff;
+    display: block;
+    font-size: 13px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+#btn-menu { display: none;}
+
+/**** Responsive Home ****/
+
+@media screen and (max-width: 1280px)
+{
+    .containerHeader {
+        width: 100%;
+        padding: 0px 0px;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .navHeader {display: none;}
+    .logoBlock {
+        width: 21%;
+        float: none;
+        margin: auto;
+    }
+
+    .logoBlock img {margin: 10px 0 0 0px;}
+
+    #btn-menu {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 50px;
+        display: block;
+    }
+
+    footer {height: 576px;}
+
+    .footerWrapper {
+        width: 100%;
+        padding: 0 50px;
+        box-sizing: border-box;
+    }
+    .footerWrapper aside {
+        float: none;
+        width: 100%;
+        padding: 0 0 0 0;
+        font-size: 14px;
+        text-align: justify;
+        margin-bottom: 100px;
+    }
+
+}
+
+@media screen and (max-width: 420px)
+{
+    .logoBlock {
+        width: 29%;
+        float: none;
+        margin: auto;
+    }
+
+    #btn-menu {left: 19px;width: 6%;}
+
+    footer {height: 735px;}
+
+    .footerWrapper aside {margin-bottom: 46px;}
+}
+
+
+/***************************/
+/********* Home style ******/
+
+.sectionHomeOne{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 60px 0 0 0;
+}
+
+.leftBloc{float: left;width: 600px;height: 100%;}
+
+.leftBloc h1{
+    margin : 10px 0 20px 0;
+    text-align: left;
+    font-size: 30px;
+    width: 100%;
+}
+
+.lastestArticle {width: 100%;height: 100%;}
+.lastestArticle > figure > figcaption {padding: 15px 0px;}
+.lastestArticle .catFigCaption {display: block;margin: 5px 0px;}
+.dateFicaption {font-size: 13px;font-style: italic;}
+.lastestArticle > figure > img {display: block;width: 100%;}
+
+.rightBloc{float: left; width: 584px; height: 100%;margin-left: 15px;}
+.rightBloc > .asideArticle + .asideArticle + .asideArticle {margin-top: 25px;}
+
+.asideArticle{
+    width: 278px;
+    height: 290px;
+    float: left;
+    margin: 0px 0px 5px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+.asideArticle:nth-child(even){margin-left: 28px;}
+.asideArticle figure img {display: block;width: 100%;height: 68%;}
+.asideArticle figure figcaption {height: 126px;}
+.asideArticleTitle {font-size: 18px;margin: 0;}
+
+.sectionHomeTwo{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-top: 25px;
+
+}
+
+.sectionHomeTwo h1{
+    margin: 0;
+    padding: 82px 0;
+    text-align: center;
+    font-size: 33px;
+    box-sizing: border-box;
+}
+
+.sectionHomeTwo h2{
+    margin : 30px 0 20px 0;
+    text-align: left;
+    font-size: 21px;
+    border-bottom: 1px solid #ccc;
+    width: 250px;
+    text-transform: uppercase;
+}
+
+.divFlexWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sectionHomeTwo > article{
+    width: 70%;
+    background: grey;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+.asidePopularArticle{
+    height: 400px;
+    width: 344px;
+    display: inline-block;
+    margin-bottom: 10px;
+    /*box-shadow: 0 0 2px #DDD;*/
+}
+
+.asidePopularArticle > figure > figcaption  {
+    height: 174px;
+    padding: 20px 0px 0px 0px;
+    box-sizing: border-box;}
+.asidePopularArticle > figure > figcaption > h2 { width:100%; margin: 0; font-weight: 600; border: none; }
+.asidePopularArticle > figure > figcaption > p { width:100%; margin: 10px 0;  }
+
+figure {margin: 0;padding: 0;height: 100%;/* Enelever le height et le mettre pour chaque figcaption spécifiquement */}
+figure img {
+    display: block;
+    width: 100%;
+}
+
+figcaption {background: #FFFFFF; height: 164px;}
+
+
+
+.sectionHomeThree{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #FFF;
+    margin: 0px 0 30px;
+}
+
+/*
+.sectionHomeThree:before{
+  width: 150vw;
+  left: -50vw;
+  height: 380px;
+  background: #FFF;
+  position: absolute;
+  content: '';
+  z-index: -1;
+
+}
+*/
+.sectionHomeThree h2{
+    margin: 30px 0 20px 0;
+    text-align: left;
+    font-size: 21px;
+    border-bottom: 1px solid #ccc;
+    width: 89px;
+    text-transform: uppercase;
+}
+.videoBlock {
+    background: #FFFFFF;
+    width: 532px;
+    height: 480px;
+    float: left;
+    margin: 0px 0 0 0px;
+
+}
+.videoBlock figure {width: 100%; position: relative;}
+.figcaptionVideo {width: 100%; height:178px;padding-top: 18px;}
+.figcaptionVideo h3 {margin: 10px 0px;}
+.figcaptionVideo p {}
+.videoBlockImg {width: 100%;display: block;}
+
+
+.offer img{
+    display: block;
+    width: 100%;
+    height: 97px;
+}
+
+.sectionHomeFour{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+.sectionHomeFour h2{
+    margin: 0px 0 20px 0;
+    text-align: left;
+    font-size: 21px;
+    border-bottom: 1px solid #ccc;
+    width: 121px;
+    text-transform: uppercase;
+}
+
+
+#hWrapperLeft h2 {width: 120px;}
+#hWrapperRight h2{width: 176px;}
+
+.wrapperTutorialBlocks{width: 729px;float: left}
+
+.wrapperSurveyBlocks{
+    width: 340px;
+    float: right;
+}
+
+.tutorialBlock{
+    width: 725px;
+    height: 200px;
+    margin-bottom: 35px;
+    border-top: 1px solid #EEEEEE;
+}
+
+.tutorialBlockImg{
+    width: 330px;
+    height: 100%;
+    float: left;
+}
+
+.tutorialBlockImg img {display: block;width: 100%;}
+
+.tutorialBlockContent{
+    width: 395px;
+    height: 100%;
+    float: left;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.tutorialBlockContent h3 {font-size: 25px;text-transform: uppercase;}
+
+.surveyBlock{
+    height: 400px;
+    width: 344px;
+    display: inline-block;
+    margin-bottom: 10px;
+    /*box-shadow: 0 0 2px #DDD;*/
+}
+
+
+.surveyBlock > figure > figcaption  {
+    height: 174px;
+    padding: 20px 0px 0px 0px;
+    box-sizing: border-box;
+}
+.surveyBlock > figure > figcaption > h2 { width:100%; margin: 0; font-weight: 600; border: none; }
+.surveyBlock > figure > figcaption > p { width:100%; margin: 10px 0;  }
+
+/**** Clear ****/
+
+.clear {clear: both;}
+
+/**** Responsive Home ****/
+
+@media screen and (max-width: 1280px)
+{
+    main {width: 100%;}
+    .sectionHomeOne, .sectionHomeTwo, .sectionHomeThree, .sectionHomeFour{
+        margin: 0;
+        padding: 20px 20px 0 20px;
+        box-sizing: border-box;
+    }
+    .leftBloc {width: 100%;}
+    .leftBloc h1 {font-size: 35px;}
+    .rightBloc {width: 100%;margin:90px 0 0 0;}
+    .asideArticle {
+        width: 100%;
+        height: 100%;
+        border-bottom: none;
+    }
+    .asideArticle:nth-child(2n) {
+        margin-left: 0px;
+    }
+
+    .asideArticle figure figcaption {
+        height: 126px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .asideArticleTitle {
+        font-size: 32px;
+        margin: 0;
+    }
+
+    .sectionHomeTwo h2, .sectionHomeThree h2, .sectionHomeFour h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        border: none;
+    }
+
+    .divFlexWrapper {
+        width: 100%;
+        display: block;
+        overflow: hidden;
+    }
+    .asidePopularArticle {
+        height: 100%;
+        width: 70%;
+        display: block;
+        margin: 10px auto;
+    }
+
+    .videoBlock {
+        width: 70%;
+        height: 100%;
+        margin: 0 auto;
+        float: none;
+    }
+
+    .sectionHomeFour {margin-bottom: 110px;}
+
+    .wrapperTutorialBlocks {width: 100%;float: none;}
+    #hWrapperLeft h2 {width: 100%;}
+
+    .tutorialBlock {
+        width: 70%;
+        height: 200px;
+        border-top: 1px solid #EEEEEE;
+        margin: 0 auto;
+    }
+
+    .tutorialBlockContent {width: 52%;}
+
+    .tutorialBlockContent h3 {
+        font-size: 22px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    .wrapperSurveyBlocks {width: 100%;float: none;margin-top: 66px;}
+    #hWrapperRight h2 {width: 100%;}
+    .surveyBlock {
+        width: 48%;
+        height: 472px;
+        display: block;
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+
+    .lastestArticle .catFigCaption {
+        font-size: 14px;
+    }
+
+    .lastestArticle figure figcaption p {font-size: 14px;}
+
+    .leftBloc h1 {
+        font-size: 28px;
+    }
+    .asideArticleTitle {
+        font-size: 25px;
+    }
+
+    .sectionHomeTwo h2, .sectionHomeThree h2, .sectionHomeFour h2 {
+        font-size: 23px;
+    }
+
+    .asidePopularArticle {
+        width: 100%;
+    }
+
+    .asidePopularArticle > figure > figcaption > p {
+        font-size: 14px;
+    }
+
+
+    .videoBlock {
+        width: 100%;
+    }
+
+    .figcaptionVideo p {
+        font-size: 14px;
+    }
+
+    .tutorialBlock {
+        width: 100%;
+        height: 310px;
+        border: none;
+    }
+
+    .tutorialBlockImg {
+        width: 100%;
+        height: 163px;
+        float: none;
+    }
+
+    .tutorialBlockContent {
+        width: 100%;
+        height: 126px;
+        padding: 15px 0;
+    }
+
+    .tutorialBlockContent p { font-size: 14px;}
+
+    .surveyBlock {width: 100%;}
+    .surveyBlock > figure > figcaption > p {
+        font-size: 14px;
+    }
+
+
+
+}
+
+/********** Category style ***********/
+
+.categorySectionOne {width: 1200px;margin: 0;padding: 0;}
+.categorySectionOne h1 {
+    text-transform: uppercase;
+    font-size: 28px;
+    margin: 5px 0 20px;
+}
+.categorySectionOne span {
+    color: #868686;
+    margin: 26px 0 8px;
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.categorySectionTwo {
+    width: 1200px;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+.containerCatArticle {
+    width: 800px;
+    float: left;
+    overflow: hidden;
+}
+
+.containerCatArticle article {
+    width: 800px;
+    height: 240px;
+    margin-bottom: 60px;
+//border-top: 1px solid #E0E0E0;
+    box-sizing: border-box;
+
+}
+
+.imgContainer {width: 380px;height: 100%;float: left;}
+.imgContainer img {display: block;width: 100%;}
+
+.contentContainer{
+    width: 420px;
+    height: 100%;
+//padding: 17px;
+    padding: 0 17px;
+    box-sizing: border-box;
+    float: left;
+    font-size: 15px;
+
+}
+.categoryArticle {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+}
+.contentContainer h2 {font-size: 22px;}
+.contentContainer a {color: #757575;text-decoration: none;}
+
+.asideContainer {
+    width: 300px;
+    height:100%;
+    float: right;
+}
+
+.asideContainer aside {height: 300px;}
+.asideContainer aside h3 {
+    text-align: center;
+    margin: 0;
+    color: #444;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.asideContainer aside ul {
+    background: #f6f6f6;
+    padding: 21px;
+    box-sizing: border-box;
+    margin-top: 14px;
+}
+.asideContainer aside ul li {list-style: none;font-size: 14px;font-weight: bold;color: #444;}
+.asideContainer aside ul li:nth-child(1) {}
+
+.asideContainer aside + aside {height: 230px;}
+.asideContainer h2 {font-size: 15px;}
+
+.asidebarSocialNetwork {width: 100%;height: 30px !important;}
+
+.asidebarSocialNetwork div {
+    width: 32.4%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.asidebarSocialNetwork div:nth-child(2) {background: #3b5998;}
+.asidebarSocialNetwork div:nth-child(3) {background: #55ACEE;}
+.asidebarSocialNetwork div:nth-child(4) {background: #DD4B39;}
+
+.asidebarSocialNetwork div a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.asidebarSocialNetwork div > a > img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/**** Clear ****/
+
+.clear {clear: both;}
+
+/**** Responsive Home ****/
+
+@media screen and (max-width: 1280px)
+{
+    main {width: 100%;}
+
+    .categorySectionOne, .categorySectionTwo {
+        width: 100%;
+        padding: 10px 20px 0 20px;
+        box-sizing: border-box;
+    }
+
+    .categorySectionOne span {
+        font-size: 35px;
+        text-align: center;
+    }
+    .categorySectionOne h1 {
+        font-size: 49px;
+        text-align: center;
+        margin: 5px 0 46px;
+    }
+    .containerCatArticle {
+        width: 100%;
+        float: none;
+    }
+
+    .containerCatArticle article {
+        width: 100%;
+        height: 360px;
+        margin: 0 auto 90px;
+    }
+
+    .imgContainer {
+        width: 50%;
+    }
+    .contentContainer {
+        width: 50%;
+        font-size: 19px;
+    }
+
+    .categoryArticle {
+        font-size: 17px;
+    }
+
+    .contentContainer h2 {
+        font-size: 29px;
+    }
+
+    .asideContainer {
+        width: 100%;
+        height: 100%;
+        float: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .asideContainer aside {
+        width: 48%;
+        height: 300px;
+
+    }
+
+    .asideContainer aside h3 {
+        padding-top: 14px;
+        font-size: 23px;
+    }
+
+    .asideContainer aside ul li {
+        font-size: 18px;
+    }
+
+    .asidebarSocialNetwork {display: none;}
+
+
+}
+
+@media screen and (max-width: 1024px)
+{
+    .contentContainer h2 {
+        font-size: 26px;
+        margin: 13px 0px;
+    }
+
+    .contentContainer {
+        font-size: 17px;
+    }
+
+    .containerCatArticle article {
+        margin: 0px auto 0px;
+    }
+
+}
+
+@media screen and (max-width: 420px)
+{
+    .categorySectionOne span {
+        font-size: 31px;
+    }
+
+    .categorySectionOne h1 {
+        font-size: 36px;
+    }
+
+    .containerCatArticle article {
+        height: 100%;
+
+    }
+
+    .imgContainer {
+        width: 100%;
+    }
+
+    .contentContainer {
+        width: 100%;
+        font-size: 19px;
+        padding: 0;
+    }
+
+    .categoryArticle {
+        font-size: 15px;
+    }
+
+    .contentContainer h2 {
+        font-size: 23px;
+        margin: 9px 0px;
+    }
+
+    .contentContainer {
+        font-size: 15px;
+    }
+
+    .asideContainer {display: block;}
+    .asideContainer aside {
+        width: 100%;
+        height: 100%;
+    }
+    .asideContainer aside + aside {
+        width: 100%;
+        height: 100%;
+    }
+
+
+}
+
+
+/******* Article style *******/
+
+
+.containerArticle {width: 100%;overflow: hidden;}
+.containerArticle h1 {margin: 20px;font-size: 32px;}
+.containerArticle article {width: 71%;display: block;float: left;}
+.containerArticle article img {width: 100%;}
+.containerArticle article div {margin-top: 46px;text-align: justify;padding-bottom: 100px;border-bottom: 1px solid #dfdfdf;}
+
+.othersArticlesContainer {
+    width: 71%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+.othersArticle{
+    width: 258px;
+    height: 216px;
+    float: left;
+}
+
+
+.othersArticle figure {width: 100%;height:100%;margin: 0 auto;}
+.othersArticle figure img {display: block;width: 100%;}
+.othersArticle figure figcaption h3 {margin: 5px 0;}
+
+.asideContainer {
+    width: 300px;
+    height:100%;
+    float: right;
+}
+
+.asideContainer aside {height: 300px;}
+.asideContainer aside h3 {
+    text-align: center;
+    margin: 0;
+    color: #444;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.asideContainer aside ul {
+    background: #f6f6f6;
+    padding: 21px;
+    box-sizing: border-box;
+    margin-top: 14px;
+}
+.asideContainer aside ul li {list-style: none;font-size: 14px;font-weight: bold;color: #444;}
+.asideContainer aside ul li:nth-child(1) {}
+
+.asideContainer aside + aside {height: 230px;}
+.asideContainer h2 {font-size: 15px;}
+
+.asidebarSocialNetwork {width: 100%;height: 30px !important;}
+
+.asidebarSocialNetwork div {
+    width: 32.4%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.asidebarSocialNetwork div:nth-child(2) {background: #3b5998;}
+.asidebarSocialNetwork div:nth-child(3) {background: #55ACEE;}
+.asidebarSocialNetwork div:nth-child(4) {background: #DD4B39;}
+
+.asidebarSocialNetwork div a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.asidebarSocialNetwork div > a > img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+@media screen and (max-width: 1280px) {
+    main {
+        width: 100%;
+        padding: 10px 40px;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 44px;
+        text-align: center;
+    }
+
+    .containerArticle article {
+        width: 100%;
+        float: none;
+    }
+
+    .othersArticlesContainer {
+        width: 100%;
+    }
+
+    .asideContainer {
+        width: 100%;
+        height: 100%;
+        float: none;
+    }
+
+}
+
+@media screen and (max-width: 420px)
+{
+    .containerArticle article div {font-size: 15px;}
+    h1 {
+        font-size: 27px;
+
+    }
+
+    .othersArticlesContainer {
+        display: block;
+    }
+
+    .othersArticle {
+        width: 100%;
+        height: 300px;
+        float: none;
+    }
+
+
+}
+
+/****** Contact style *****/
+
+.containerForm {
+    width: 750px;
+    height: 100%;
+    padding: 0 0 100px 0;
+    float: left;
+    overflow: hidden;
+}
+
+.containerForm span {
+    display: block;
+    width: 699px;
+}
+
+.containerForm form {
+    margin-top: 30px;
+    float: left;
+}
+
+.containerForm label {
+    margin-bottom: -15px;
+    display: block;
+}
+
+.containerForm form input[type='text'] {
+    width: 550px;
+    height: 39px;
+    padding-left: 8px;
+    border: none;
+    border-bottom: 2px solid #000;
+    font-size: 16px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.containerForm form input[type='submit']{
+    width: 279px;
+    padding: 13px;
+    border: none;
+    background: #9FC537;
+    color: #FFF;
+    font-size: 15px;
+    margin-top: 40px;
+}
+
+.containerForm form textarea {
+    width: 550px;
+    height: 300px;
+    border: none;
+    border-bottom: 2px solid #000;
+    font-size: 16px;
+    resize: none;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.clear { clear: left;}
+
+@media screen and (max-width: 1280px)
+{
+    main {
+        width: 100%;
+        padding: 10px 40px;
+        box-sizing: border-box;
+    }
+
+    .containerForm h1 {
+        font-size: 44px;
+        text-align: center;
+    }
+
+    .containerForm form {
+        float: none;
+        margin: 45px auto 0;
+        width: 94%;
+    }
+
+    .containerForm form input[type="text"] {width:100%;height: 54px;}
+    .containerForm form input[type="submit"] {
+        width: 100%;
+        padding: 18px;
+        border: none;
+        background: #9FC537;
+        color: #FFF;
+        font-size: 17px;
+        margin-top: 25px;
+    }
+
+    .containerForm form textarea {width: 100%;height: 340px;}
+
+    .containerForm { width: 100%;}
+    .containerForm span { width: 100%; text-align: center;}
+
+
+}
+
+@media screen and (max-width: 420px)
+{
+    main {
+        width: 100%;
+        padding: 10px 12px;
+        box-sizing: border-box;
+    }
+
+    .containerForm h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .containerForm form {
+        margin-top: 30px;
+    }
+
+
+    .containerForm label {
+        font-size: 15px;
+    }
+    .containerForm span {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .containerForm form input[type="submit"] {
+
+        padding: 13px;
+        font-size: 15px;
+
+    }
+
+
+}
+
+
+/******** Login style ******/
+
+.containerLoginForm {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 96px;
+}
+
+.containerLoginForm h1 {margin: 60px 0 45px 0;}
+
+.containerLoginForm form { border-bottom: 1px solid #bdbdbd;}
+
+.containerLoginForm form input[type="text"] {
+    width: 100%;
+    height: 45px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #333;
+    font-size: 18px;
+}
+
+.containerLoginForm form input[type="submit"] {
+    width: 20%;
+    height: 45px;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    background: #9FC537;
+    color: #FFF;
+    border: none;
+    font-size: 15px;
+}
+
+
+
+.lostPassword {display: block;font-size: 13px; color: #999999;}
+
+
+.star {
+    color: #cc0000
+;}
+
+
+
+@media screen and (max-width: 1280px)
+{
+    main {
+        width: 100%;
+        padding: 10px 40px;
+        box-sizing: border-box;
+    }
+
+    .containerLoginForm h1 {
+        font-size: 44px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 420px)
+{
+    main {
+        width: 100%;
+        padding: 10px 12px;
+        box-sizing: border-box;
+    }
+
+
+}
+
+/******* Style registration *****/
+
+.containerRegistrationForm {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 131px;
+}
+
+.containerRegistrationForm h1 {margin: 60px 0 45px 0;}
+
+.containerRegistrationForm input[type="text"] {
+    width: 100%;
+    height: 45px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #333;
+    font-size: 18px;
+}
+
+.containerRegistrationForm input[type="submit"] {
+    width: 20%;
+    height: 45px;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    background: #9FC537;
+    color: #FFF;
+    border: none;
+    font-size: 15px;
+}
+
+.containerRegistrationForm form { border-bottom: 1px solid #bdbdbd;}
+
+.lostPassword {display: block;font-size: 13px; color: #999999;}
+
+.star {
+    color: #cc0000
+;}
+
+
+
+@media screen and (max-width: 1280px)
+{
+    main {
+        width: 100%;
+        padding: 10px 40px;
+        box-sizing: border-box;
+    }
+
+    .containerRegistrationForm h1 {
+        font-size: 44px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 420px)
+{
+    main {
+        width: 100%;
+        padding: 10px 12px;
+        box-sizing: border-box;
+    }
+
+    .containerRegistrationForm input[type="submit"] {
+        width: 100%;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
