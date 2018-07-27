@@ -2,6 +2,4 @@ my_technos_blog:
     resource: "@MyTechnosBlogBundle/Resources/config/routing.yml"
     prefix:   /
 
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+
