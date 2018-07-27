@@ -68,7 +68,7 @@ ul{
 .navHeader ul>li{
     display: inline-block;
     text-align: center;
-    width: 172px;
+    width: 192px;
     color: #FFF;
     text-transform: uppercase;
     font-weight: 600;
@@ -76,7 +76,7 @@ ul{
     cursor: pointer;
     font-size: 13px;
     height:59px;
-    float: right;
+    float: left;
 }
 
 .navHeader ul>li:hover{
