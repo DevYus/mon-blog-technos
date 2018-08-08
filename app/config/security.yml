@@ -1,11 +1,14 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
-
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
-        in_memory:
-            memory: ~
+        users_db:
+            entity: { class: My\TechnosBlogBundle\Entity\Users, property: username }
+
+    encoders:
+        My\TechnosBlogBundle\Entity\Users: bcrypt
+
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -14,7 +17,20 @@ security:
             security: false
 
         main:
-            anonymous: ~
+            pattern: ^/
+            anonymous: true
+            form_login:
+                login_path: login
+                check_path: login_check
+                csrf_token_generator: security.csrf.token_manager
+                default_target_path: login_redirection
+                always_use_default_target_path: true
+
+            logout:
+                path: logout
+                target: login
+
+
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
@@ -22,3 +38,6 @@ security:
 
             # https://symfony.com/doc/current/security/form_login_setup.html
             #form_login: ~
+
+    access_control:
+        - { path '^/admin', roles: ROLE_ADMIN }

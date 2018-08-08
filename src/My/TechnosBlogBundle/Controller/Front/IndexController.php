@@ -8,6 +8,9 @@
 namespace My\TechnosBlogBundle\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 
 /**
  *  Controller that handle Home Blog
@@ -16,13 +19,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class IndexController extends Controller
 {
 
-  /**
-   * Methode action principal du blog
-   * @ return index.html template
-   */
+    /**
+     * @return Response
+     */
 
     public function indexAction()
     {
         return $this->render('@MyTechnosBlog/Front/Index\index.html.twig');
     }
+
 }

@@ -2,3 +2,4 @@ services:
 #    my_technos_blog.example:
 #        class: My\TechnosBlogBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+

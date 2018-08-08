@@ -11,32 +11,18 @@
 
     <section class="containerRegistrationForm">
 
+
       <h1>Inscription</h1>
 
-      <form method="post" action="">
-        <label>
-          Nom <span class="star">*</span>
-        </label>
-        <p class="clear"></p>
-        <input type="text" name="fullname">
-        <br>
-        <label>
-          Email <span class="star">*</span>
-        </label>
-        <p class="clear"></p>
-        <input type="text" name="email">
-        <br>
-        <label>
-          Password <span class="star">*</span>
-        </label>
-        <p class="clear"></p>
-        <input type="text" name="password">
-        <p class="clear"></p>
 
-
-        <input type="submit" value="INSCRIPTION">
-
-      </form>
+        {{ form_start(form) }}
+          {{ form_row(form.fullname) }}
+          {{ form_row(form.username) }}
+          {{ form_row(form.email) }}
+          {{ form_row(form.password.first) }}
+          {{ form_row(form.password.second) }}
+          <input type="submit" value="Je m'inscrit">
+        {{ form_end(form) }}
 
       <p>Vous êtes déja inscrit ? <a href="">Cliquez ici</a> pour vous connecter !</p>
 

@@ -1,27 +1,41 @@
-my_technos_blog_homepage:
+homepage:
     path:     /
     defaults: { _controller: MyTechnosBlogBundle:Front\Index:index }
 
-my_technos_blog_contact:
+contact:
     path:    /contact
-    defaults: {_controller: MyTechnosBlogBundle:Front\Contact:contact }
+    defaults: { _controller: MyTechnosBlogBundle:Front\Contact:contact }
 
-my_technos_blog_login:
+login:
     path:    /login
-    defaults: {_controller: MyTechnosBlogBundle:Front\Security:login }
+    defaults: { _controller: MyTechnosBlogBundle:Front\Security:login }
 
-my_technos_blog_registration:
+login_check:
+    path:    /login_check
+
+login_redirection:
+    path:    /login/redirection
+    defaults: { _controller: MyTechnosBlogBundle:Front\RedirectAfterLogin:redirection }
+
+logout:
+    path:    /logout
+
+registration:
     path:    /registration
     defaults: {_controller: MyTechnosBlogBundle:Front\Registration:registration }
 
-my_technos_blog_category:
+forgot:
+    path:    /forgot
+    defaults: {_controller: MyTechnosBlogBundle:Front\Forgot:forgot }
+
+category:
     path:    /{category}
     defaults: {_controller: MyTechnosBlogBundle:Front\Category:category }
     methods: [GET]
     requirements:
         category: "[a-zA-Z]+"
 
-my_technos_blog_article:
+article:
     path:    /{category}/{slug}/{id}
     defaults: {_controller: MyTechnosBlogBundle:Front\Article:article }
     methods: [GET]
