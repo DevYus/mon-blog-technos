@@ -27,4 +27,9 @@ class ForgotController extends Controller
         return $this->render('@MyTechnosBlog/Front/Forgot\forgot.html.twig');
     }
 
+    public function handleLogin($user)
+    {
+        $requestEmail = $user->getEmail();
+    }
+
 }

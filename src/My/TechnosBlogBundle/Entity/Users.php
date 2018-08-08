@@ -55,6 +55,17 @@ class Users implements UserInterface
     private $password;
 
     /**
+     * @ORM\Column(name="reset_token", type="string", length=32)
+     */
+    private $resetToken;
+
+
+    /**
+     * @ORM\Column(name="reset_expires", type="integer")
+     */
+    private $resetExpires;
+
+    /**
      * @var array
      *
      * @ORM\Column(name="roles", type="json_array")
@@ -198,6 +209,49 @@ class Users implements UserInterface
         }
 
         return array_unique($roles);
+    }
+
+    /**
+     * Set resetToken
+     *
+     * @param string $resetToken
+     *
+     * @return User
+     */
+    public function setResetToken($resetToken)
+    {
+        $this->resetToken = $resetToken;
+        return $this;
+    }
+    /**
+     * Get resetToken
+     *
+     * @return string
+     */
+    public function getResetToken()
+    {
+        return $this->resetToken;
+    }
+    /**
+     * Set resetExpires
+     *
+     * @param integer $resetExpires
+     *
+     * @return User
+     */
+    public function setResetExpires($resetExpires)
+    {
+        $this->resetExpires = $resetExpires;
+        return $this;
+    }
+    /**
+     * Get resetExpires
+     *
+     * @return integer
+     */
+    public function getResetExpires()
+    {
+        return $this->resetExpires;
     }
 
     /**
