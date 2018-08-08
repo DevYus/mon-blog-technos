@@ -36,8 +36,8 @@ class MyTechnosBlogFixtures implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         $datas = [
-            ['Ouldamri Youssef','ouldamri_youssef', 'ouldamri.youssef@gmail.com', 'lamesolaire', ['ROLE_ADMIN']],
-            ['Ouldamri Youssef User','ouldamri_youssef_user', 'ouldamri.youssef@ymail.com', 'lamesolaire123', ['ROLE_USER']],
+            ['Ouldamri Youssef','ouldamri_youssef', 'ouldamri.youssef@gmail.com', '********', ['ROLE_ADMIN']],
+            ['Ouldamri Youssef User','ouldamri_youssef_user', 'ouldamri.youssef@ymail.com', '********', ['ROLE_USER']],
         ];
 
         foreach($datas as [$fullname,$username,$email,$password,$roles])
