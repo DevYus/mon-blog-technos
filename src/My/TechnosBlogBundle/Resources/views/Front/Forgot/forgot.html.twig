@@ -4,9 +4,19 @@
 {% block main %}
 
     <!-- Extension du layout au templates fils -->
-    <main>
+    <main class="forgotMainBlock">
 
+        <h1>Demande de réinisialisation de mot de passe</h1>
 
+        <section class="sectionForgotOne">
+
+            <div>{{ info }}</div>
+
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+            {{ form_end(form) }}
+
+        </section>
 
 
     </main>
