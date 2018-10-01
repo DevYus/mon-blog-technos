@@ -36,14 +36,14 @@ class ForgotController extends Controller
 
         $error = $form->getErrors();
 
+        $emailUser = $request->request->get('email');
+
 
         if($form->isSubmitted() && $form->isValid())
         {
-            $this->handleLogin($user);
-
-            $info = "Un Émail vous a été envoyé avec les instructions correspondantes";
+            $this->handleLogin($emailUser);
+            $info = "Email envoyé";
             $success = true;
-
         }
         else
         {
@@ -62,6 +62,11 @@ class ForgotController extends Controller
             $success = false;
         }
 
+
+
+
+
+
         return $this->render(
             '@MyTechnosBlog/Front/Forgot\forgot.html.twig',
             [
@@ -69,22 +74,19 @@ class ForgotController extends Controller
                 'success' => $success,
                 'info' => $info,
                 'error' => $error,
-
+                'mailuser' => $emailUser
             ]
 
         );
     }
 
     /**
-     * @param $user
-     * @return mixed
+     * @param $emailUser
      */
 
-
-
-    public function handleLogin($user)
+    public function handleLogin($emailUser)
     {
-        $requestEmail = $user->getEmail();
+        $requestEmail = $emailUser;
         $dataBaseUser = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Users')->findOneByEmail($requestEmail);
 
         if($dataBaseUser)
@@ -135,11 +137,8 @@ class ForgotController extends Controller
             # Send the message
             $this->get('mailer')->send($message);
 
-            return true;
 
         }
-
-        return false;
 
     }
 

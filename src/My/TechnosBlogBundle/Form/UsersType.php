@@ -33,7 +33,8 @@ class UsersType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'My\TechnosBlogBundle\Entity\Users'
+            'data_class' => 'My\TechnosBlogBundle\Entity\Users',
+            'validation_groups' => array('registration'),
         ));
     }
 

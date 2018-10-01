@@ -14,6 +14,14 @@ services:
         # if you need to do this, you can override this setting on individual services
         public: false
 
+    # validator service
+
+    my_technos_blog.validator.notamember:
+            class: My\TechnosBlogBundle\Validator\Constraints\NotAMemberValidator
+            arguments: ["@request_stack","@doctrine.orm.entity_manager"]
+            tags:
+                - { name: validator.constraint_validator, alias: my_technos_blog_notamember }
+
     # makes classes in src/AppBundle available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     #AppBundle\:
@@ -44,3 +52,4 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+

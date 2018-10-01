@@ -23,6 +23,7 @@ class IndexController extends Controller
      * @return Response
      */
 
+
     public function indexAction()
     {
         return $this->render('@MyTechnosBlog/Front/Index\index.html.twig');

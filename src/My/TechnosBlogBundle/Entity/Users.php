@@ -5,16 +5,18 @@ namespace My\TechnosBlogBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
+use My\TechnosBlogBundle\Validator\Constraints as BlogAssert;
 
 
 /**
- * User
- *
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="My\TechnosBlogBundle\Repository\UsersRepository")
- * @UniqueEntity(fields="email", message="Cet email est déjà utilisé")
- * @UniqueEntity(fields="username", message="Cet utilisateur existe déjà")
+ * @UniqueEntity(fields="email", message="Cet email est déjà utilisé", groups={"registration"})
+ * @UniqueEntity(fields="username", message="Cet utilisateur existe déjà", groups={"registration"})
  */
+
 class Users implements UserInterface
 {
     /**
@@ -30,20 +32,23 @@ class Users implements UserInterface
      * @var string
      *
      * @ORM\Column(name="fullname", type="string", length=255)
+     * @BlogAssert\NotAMember(groups={"registration"})
      */
     private $fullname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=255, unique=true)
+     * @ORM\Column(name="username", type="string", length=255)
      */
     private $username;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\NotBlank(groups={"registration","profile","forgot"})
+     * @BlogAssert\NotAMember(groups={"forgot"})
      */
     private $email;
 
@@ -55,12 +60,15 @@ class Users implements UserInterface
     private $password;
 
     /**
+     * @var string
+     *
      * @ORM\Column(name="reset_token", type="string", length=32)
      */
     private $resetToken;
 
-
     /**
+     * @var integer
+     *
      * @ORM\Column(name="reset_expires", type="integer")
      */
     private $resetExpires;
@@ -88,7 +96,7 @@ class Users implements UserInterface
      *
      * @param string $fullname
      *
-     * @return User
+     * @return Users
      */
     public function setFullname($fullname)
     {
@@ -113,7 +121,7 @@ class Users implements UserInterface
      *
      * @param string $username
      *
-     * @return User
+     * @return Users
      */
     public function setUsername($username)
     {
@@ -137,7 +145,7 @@ class Users implements UserInterface
      *
      * @param string $email
      *
-     * @return User
+     * @return Users
      */
     public function setEmail($email)
     {
@@ -161,7 +169,7 @@ class Users implements UserInterface
      *
      * @param string $password
      *
-     * @return User
+     * @return Users
      */
     public function setPassword($password)
     {
@@ -181,11 +189,56 @@ class Users implements UserInterface
     }
 
     /**
+     * Set resetToken
+     *
+     * @param string $resetToken
+     *
+     * @return Users
+     */
+    public function setResetToken($resetToken)
+    {
+        $this->resetToken = $resetToken;
+        return $this;
+    }
+    /**
+     * Get resetToken
+     *
+     * @return string
+     */
+    public function getResetToken()
+    {
+        return $this->resetToken;
+    }
+
+    /**
+     * Set resetExpires
+     *
+     * @param integer $resetExpires
+     *
+     * @return Users
+     */
+    public function setResetExpires($resetExpires)
+    {
+        $this->resetExpires = $resetExpires;
+        return $this;
+    }
+    /**
+     * Get resetExpires
+     *
+     * @return integer
+     */
+    public function getResetExpires()
+    {
+        return $this->resetExpires;
+    }
+
+
+    /**
      * Set roles
      *
      * @param array $roles
      *
-     * @return User
+     * @return Users
      */
     public function setRoles(array $roles)
     {
@@ -211,48 +264,6 @@ class Users implements UserInterface
         return array_unique($roles);
     }
 
-    /**
-     * Set resetToken
-     *
-     * @param string $resetToken
-     *
-     * @return User
-     */
-    public function setResetToken($resetToken)
-    {
-        $this->resetToken = $resetToken;
-        return $this;
-    }
-    /**
-     * Get resetToken
-     *
-     * @return string
-     */
-    public function getResetToken()
-    {
-        return $this->resetToken;
-    }
-    /**
-     * Set resetExpires
-     *
-     * @param integer $resetExpires
-     *
-     * @return User
-     */
-    public function setResetExpires($resetExpires)
-    {
-        $this->resetExpires = $resetExpires;
-        return $this;
-    }
-    /**
-     * Get resetExpires
-     *
-     * @return integer
-     */
-    public function getResetExpires()
-    {
-        return $this->resetExpires;
-    }
 
     /**
      * Get salt of password

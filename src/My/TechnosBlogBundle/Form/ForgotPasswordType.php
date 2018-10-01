@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: yoi
- * Date: 08/08/2018
- * Time: 12:24
- */
 
 namespace My\TechnosBlogBundle\Form;
 
@@ -36,7 +30,8 @@ class ForgotPasswordType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'My\TechnosBlogBundle\Entity\Users'
+            'data_class' => 'My\TechnosBlogBundle\Entity\Users',
+            'validation_groups' => array('forgot'),
         ));
     }
 

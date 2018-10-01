@@ -20,13 +20,13 @@ login_redirection:
 logout:
     path:    /logout
 
+forgot:
+    path:    /forgot
+    defaults: { _controller: MyTechnosBlogBundle:Front\Forgot:forgot}
+
 registration:
     path:    /registration
     defaults: {_controller: MyTechnosBlogBundle:Front\Registration:registration }
-
-forgot:
-    path:    /forgot
-    defaults: {_controller: MyTechnosBlogBundle:Front\Forgot:forgot }
 
 category:
     path:    /{category}

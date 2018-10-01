@@ -36,9 +36,17 @@ class RegistrationController extends Controller
 
         if($form->isSubmitted() && $form->isValid())
         {
+            // Encode password of the user
             $password = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
 
+            // Set default token
+
+            $token = bin2hex(openssl_random_pseudo_bytes(16));
+            $user->setResetToken($token);
+            $user->setResetExpires(0);
+
+            // Set default role user
             $user->setRoles(['ROLE_USER']);
 
             $em = $this->getDoctrine()->getManager();
