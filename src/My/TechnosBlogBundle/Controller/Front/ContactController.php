@@ -1,10 +1,5 @@
 <?php
 
-/*
- * @author Ouldamri Youssef
- * @subject for 3W academy
- */
-
 namespace My\TechnosBlogBundle\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

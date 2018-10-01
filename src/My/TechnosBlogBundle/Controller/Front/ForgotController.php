@@ -1,10 +1,5 @@
 <?php
 
-/*
- * @author Ouldamri Youssef
- * @subject for 3W academy
- */
-
 namespace My\TechnosBlogBundle\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -15,7 +10,8 @@ use Symfony\Component\HttpFoundation\Reponse;
 
 
 /**
- *  Controller that handle Home Blog
+ * Class ForgotController
+ * @package My\TechnosBlogBundle\Controller\Front
  */
 
 class ForgotController extends Controller
@@ -75,13 +71,11 @@ class ForgotController extends Controller
         );
     }
 
+
     /**
      * @param $user
-     * @return mixed
+     * @return bool
      */
-
-
-
     public function handleLogin($user)
     {
         $requestEmail = $user->getEmail();

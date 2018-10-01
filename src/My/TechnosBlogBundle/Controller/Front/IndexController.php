@@ -1,19 +1,14 @@
 <?php
 
-/*
- * @author Ouldamri Youssef
- * @subject for 3W academy
- */
-
 namespace My\TechnosBlogBundle\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
 /**
- *  Controller that handle Home Blog
+ * Class IndexController
+ * @package My\TechnosBlogBundle\Controller\Front
  */
 
 class IndexController extends Controller

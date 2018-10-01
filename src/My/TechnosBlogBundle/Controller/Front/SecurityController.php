@@ -1,10 +1,5 @@
 <?php
 
-/*
- * @author Ouldamri Youssef
- * @subject for 3W academy
- */
-
 namespace My\TechnosBlogBundle\Controller\Front;
 
 
@@ -14,7 +9,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 
 /**
- *  Controller that handle Security Blog
+ * Class SecurityController
+ * @package My\TechnosBlogBundle\Controller\Front
  */
 
 class SecurityController extends Controller

@@ -1,25 +1,22 @@
 <?php
 
-/*
- * @author Ouldamri Youssef
- * @subject for 3W academy
- */
-
 namespace My\TechnosBlogBundle\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class RedirectAfterLoginController
+ * @package My\TechnosBlogBundle\Controller\Front
+ */
 
 class RedirectAfterLoginController extends Controller
 {
-
     /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-
     public function redirectionAction(Request $request)
     {
         if(!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY'))

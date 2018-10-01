@@ -1,10 +1,5 @@
 <?php
 
-/*
- * @author Ouldamri Youssef
- * @subject for 3W academy
- */
-
 namespace My\TechnosBlogBundle\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -15,7 +10,8 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
 /**
- *  Controller that handle Category Blog
+ * Class RegistrationController
+ * @package My\TechnosBlogBundle\Controller\Front
  */
 
 class RegistrationController extends Controller
