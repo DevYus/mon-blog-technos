@@ -24,6 +24,10 @@ forgot:
     path:    /forgot
     defaults: { _controller: MyTechnosBlogBundle:Front\Forgot:forgot}
 
+reset:
+    path:    /reset
+    defaults: { _controller: MyTechnosBlogBundle:Front\Reset:reset}
+
 registration:
     path:    /registration
     defaults: {_controller: MyTechnosBlogBundle:Front\Registration:registration }

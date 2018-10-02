@@ -37,8 +37,12 @@ services:
         tags: ['controller.service_arguments']
 
     My\TechnosBlogBundle\Controller\Front\RegistrationController:
-            autowire: true
-            tags: ['controller.service_arguments']
+        autowire: true
+        tags: ['controller.service_arguments']
+
+    My\TechnosBlogBundle\Controller\Front\ResetController:
+        autowire: true
+        tags: ['controller.service_arguments']
 
 
     # controllers are imported separately to make sure they're public

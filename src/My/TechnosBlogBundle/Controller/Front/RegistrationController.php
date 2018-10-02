@@ -37,7 +37,6 @@ class RegistrationController extends Controller
             $user->setPassword($password);
 
             // Set default token
-
             $token = bin2hex(openssl_random_pseudo_bytes(16));
             $user->setResetToken($token);
             $user->setResetExpires(0);
@@ -45,6 +44,7 @@ class RegistrationController extends Controller
             // Set default role user
             $user->setRoles(['ROLE_USER']);
 
+            // Flush to database
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
