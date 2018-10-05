@@ -2,6 +2,10 @@ homepage:
     path:     /
     defaults: { _controller: MyTechnosBlogBundle:Front\Index:index }
 
+admin:
+    path:    /admin
+    defaults: {_controller: MyTechnosBlogBundle:Back\Admin:admin }
+
 contact:
     path:    /contact
     defaults: { _controller: MyTechnosBlogBundle:Front\Contact:contact }
@@ -46,6 +50,5 @@ article:
     requirements:
         category: "[a-zA-Z]+"
         id: "[0-9]+"
-
 
 

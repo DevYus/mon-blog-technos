@@ -27,7 +27,7 @@ class RedirectAfterLoginController extends Controller
 
         if($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
         {
-            return $this->redirectToRoute('contact');
+            return $this->redirectToRoute('admin');
         }
         else if($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
         {

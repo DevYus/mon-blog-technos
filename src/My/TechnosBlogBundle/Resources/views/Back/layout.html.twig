@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <title>Mon blog Technos</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Retrouvez les différentes infos sur les langages des programmations">
+    <meta name="viewport" content="width=device-width">
+
+
+    <!-- ne pas oublier de mettre les links entre stylesheet -->
+    {% block stylesheets %}
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    {% endblock %}
+
+
+</head>
+<body>
+
+  <header id="headerJs">
+      <div>
+        <div class="containerHeader">
+
+        <img src="{{ asset('./img/menu-button-of-three-horizontal-lines.png') }}" id="btn-menu" alt="responsive-logo-mon-techno-blog">
+
+        <div class="logoBlock">
+            <img src="{{ asset('./img/Mon-blog-technos-grey.png') }}" alt="MonBlogTechnos">
+        </div>
+
+
+          <nav class="navHeader">
+            <ul>
+                <li>Home (logo)</li>
+              <li>Home (logo)</li>
+              <li>Tout sur le PHP</li>
+              <li>News Javascript</li>
+              <li>HTML5 - CSS3</li>
+              <li>Autres langages</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+
+  {% block main %}
+
+
+  {% endblock %}
+
+
+
+<footer>
+    <div class="footerWrapper">
+        <aside>
+            <span>About me</span>
+            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
+            Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.
+        </aside>
+        <ul>
+            <li>Browse</li>
+            <li>Home</li>
+            <li>Tout sur le php</li>
+            <li>News javascript</li>
+            <li>Html5-CSS3</li>
+            <li>Autres langages</li>
+        </ul>
+        <ul>
+            <li>Connect</li>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Linkedin</li>
+            <li>Instagram</li>
+        </ul>
+    </div>
+
+  <details>
+    <summary>Copyright O.Y</summary>
+  </details>
+
+</footer>
+
+</body>
+
+  {% block javascripts %}
+
+    <!-- jQuery library (served from Google) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- bxSlider Javascript file -->
+    <script type="text/javascript">
+
+      $(function(){
+
+
+
+      });
+
+
+    </script>
+
+
+  {% endblock %}
+
+
+</html>
+
+
