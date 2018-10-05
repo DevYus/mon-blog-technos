@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="420ff00b-ccea-48c6-8193-f06ad492f80c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RedirectAfterLoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RedirectAfterLoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Contact/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Contact/contact.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/Admin/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/Admin/admin.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,8 +74,8 @@
       <file leaf-file-name="admin.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/Admin/admin.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="45" column="36" lean-forward="true" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+            <state relative-caret-position="220">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -105,8 +101,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-440">
-              <caret line="1421" column="42" selection-start-line="1421" selection-start-column="42" selection-end-line="1421" selection-end-column="42" />
+            <state relative-caret-position="320">
+              <caret line="1513" column="5" lean-forward="true" selection-start-line="1513" selection-start-column="5" selection-end-line="1513" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -205,10 +201,10 @@
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/ForgotPasswordType.php" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/ResetPasswordType.php" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Reset/reset.html.twig" />
-        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RegistrationController.php" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ResetController.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/Admin/admin.html.twig" />
       </list>
     </option>
@@ -450,12 +446,12 @@
       <workItem from="1538123647836" duration="11321000" />
       <workItem from="1538383215762" duration="13984000" />
       <workItem from="1538475107603" duration="10347000" />
-      <workItem from="1538728831735" duration="8285000" />
+      <workItem from="1538728831735" duration="9000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="349082000" />
+    <option name="totallyTimeSpent" value="349797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -818,15 +814,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-440">
-          <caret line="1421" column="42" selection-start-line="1421" selection-start-column="42" selection-end-line="1421" selection-end-column="42" />
+        <state relative-caret-position="320">
+          <caret line="1513" column="5" lean-forward="true" selection-start-line="1513" selection-start-column="5" selection-end-line="1513" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/Admin/admin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="45" column="36" lean-forward="true" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+        <state relative-caret-position="220">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
     </entry>

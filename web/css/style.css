@@ -1518,6 +1518,59 @@ figcaption {background: #FFFFFF; height: 164px;}
 /******* ADMIN CSS STYLE ******/
 
 
+.sectionAdminFirst {
+    width: 1000px;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 28px 0 66px;
+}
+
+.sectionAdminFirst h1{
+    margin: 10px 0;
+    font-size: 32px;
+}
+
+.optionsHomeContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 22px;
+}
+
+.optionsHomeContainer a {text-decoration: none;color:#212121;}
+
+.optionsHome{
+    width: 260px;
+    height: 168px;
+    margin-bottom: 56px;
+    border-bottom: 2px solid #9FC537;
+}
+
+.optionsHome:hover{border-bottom: none;transition:0.8s; }
+
+.optionsHome figure {overflow: hidden;}
+
+.optionsHome figure:hover {
+    -moz-box-shadow: 6px 6px 10px 0px #c0c0c0;
+    -webkit-box-shadow: 6px 6px 10px 0px #c0c0c0;
+    -o-box-shadow: 6px 6px 10px 0px #c0c0c0;
+    box-shadow: 6px 6px 10px 0px #c0c0c0;
+    transition: 0.8s;
+
+}
+.optionsHome figure:hover figcaption {background: transparent;}
+
+.optionsHome figure figcaption {height: auto;}
+.optionsHome figure figcaption span {text-align: center;display: block;}
+.optionsHome figure img {
+    display: block;
+    width: 28%;
+    margin: 25px auto;
+}
+
 
 
 
