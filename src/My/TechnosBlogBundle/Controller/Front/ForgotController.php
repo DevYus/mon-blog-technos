@@ -97,7 +97,7 @@ class ForgotController extends Controller
             /* Send email */
 
             $webSiteName = 'MBT - Mon blog technos';
-            $from = 'ouldamri.youssef@gmail.com';
+            $from = 'toto@gmail.com';
 
             $to = $dataBaseUser->getEmail();
             $toName = $dataBaseUser->getFullname();
