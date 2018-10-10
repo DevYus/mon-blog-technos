@@ -1572,6 +1572,61 @@ figcaption {background: #FFFFFF; height: 164px;}
 }
 
 
+/********* ADMIN ADD STYLE *********/
+
+.sectionAddArticle {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sectionAddArticle h1 {font-size: 24px;}
+
+.sectionAddArticle form {
+    float: left;
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.sectionAddArticle label {
+    margin-bottom: 6px;
+    display: block;
+    margin-top: 12px;
+}
+
+.sectionAddArticle form input[type='text'] {
+    width: 100%;
+    height: 39px;
+    padding-left: 8px;
+    border: none;
+    border: 1px solid #BDBDBD;
+    font-size: 16px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.sectionAddArticle form textarea{
+    height: 500px;
+    width: 80%;
+    border: 1px solid #bdbdbd;
+}
+
+#my_technosblogbundle_articles_date > select {width: 95px;}
+#my_technosblogbundle_articles_date > select {border: 1px solid #BDBDBD;}
+
+.sectionAddArticle form button{
+    width: 279px;
+    padding: 13px;
+    border: none;
+    background: #9FC537;
+    color: #FFF;
+    font-size: 15px;
+    margin-top: 40px;
+}
+
+
+.clear { clear: left;}
 
 
 

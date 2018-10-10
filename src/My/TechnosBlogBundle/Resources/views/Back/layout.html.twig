@@ -28,8 +28,6 @@
         <div class="logoBlock">
             <img src="{{ asset('./img/Mon-blog-technos-grey.png') }}" alt="MonBlogTechnos">
         </div>
-
-
           <nav class="navHeader">
             <ul>
                 <li>Home (logo)</li>
@@ -87,19 +85,42 @@
   {% block javascripts %}
 
     <!-- jQuery library (served from Google) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <!-- bxSlider Javascript file -->
-    <script type="text/javascript">
 
-      $(function(){
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script src="//cdn.ckeditor.com/4.10.1/full/ckeditor.js"></script>
+      <script type="text/javascript">
+
+          $(function(){
+
+              CKEDITOR.replace('content', {
+                  height:500
+
+              });
 
 
+            /*
+              $('#toto').on('click',function(){
 
-      });
+                  var content = CKEDITOR.instances['content'].getData();
+
+                  if(content == '')
+                  {
+                      console.log('Yahhhhh marche');
+                  }
+                  else if (content) {
+                      console.log('Dont work');
+                  }
 
 
-    </script>
+              });
 
+            */
+
+
+          });
+
+
+      </script>
 
   {% endblock %}
 

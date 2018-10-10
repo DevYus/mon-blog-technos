@@ -6,6 +6,10 @@ admin:
     path:    /admin
     defaults: {_controller: MyTechnosBlogBundle:Back\Admin:admin }
 
+admin_add_article:
+    path:    /admin/add
+    defaults: {_controller: MyTechnosBlogBundle:Back\AddArticle:addArticle }
+
 contact:
     path:    /contact
     defaults: { _controller: MyTechnosBlogBundle:Front\Contact:contact }
