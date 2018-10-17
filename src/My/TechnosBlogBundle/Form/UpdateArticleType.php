@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 
-class AddArticleType extends AbstractType
+class UpdateArticleType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -19,6 +19,7 @@ class AddArticleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
             ->add('title',  TextType::class, ['label' => 'Titre de l\'article', 'required' => false])
             ->add('author',  TextType::class, ['label' => 'Auteur', 'required' => false])
@@ -26,7 +27,6 @@ class AddArticleType extends AbstractType
             ->add('date',  DateType::class, [
                 'label' => 'Date',
                 'required' => false,
-                'format' => 'dd MM yyyy'
             ])
             ->add('content',  TextareaType::class, array(
                 'attr' => array('class' => 'editor'),

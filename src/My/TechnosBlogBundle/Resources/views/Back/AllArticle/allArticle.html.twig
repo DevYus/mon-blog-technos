@@ -1,0 +1,70 @@
+
+{% extends "@MyTechnosBlog/Back/layout.html.twig" %}
+
+
+{% block main %}
+
+  <main>
+
+    <section class="sectionAllArticle">
+      <h1 id="toto">Vos articles</h1>
+
+        {% for flash_message in app.session.flashBag.get('notice') %}
+            <div class="flash-notice">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+
+        <a href="{{ path('admin_add_article') }}" class="addBtn">Ajouter un article</a>
+
+
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th class="colunmTitle">Titre</th>
+                    <th class="colunmAuthor">Auteur</th>
+                    <th class="colunmCategory">Catégories</th>
+                    <th class="colunmDate">Date</th>
+                    <th class="colunmActions">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in articles %}
+                    <tr>
+                        <td class="colunmTitle">{{ article.title }}</td>
+                        <td class="colunmAuthor">{{ article.author }}</td>
+                        <td class="colunmCategory">{{ article.category }}</td>
+                        <td class="colunmDate" >{{ article.date|date('d/m/Y') }}</td>
+                        <td class="colunmActions">
+                            <ul>
+                                <li>
+                                    <a href="{{ path('admin_update_article', { 'id' : article.id }) }}">
+                                        <img src="{{ asset('img/update.png') }}" alt="update">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('admin_delete_article', { 'id' : article.id }) }}">
+                                        <img src="{{ asset('img/delete.png') }}" alt="delete">
+                                    </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% include '@MyTechnosBlog/Back/Includes/pagination.html.twig' %}
+
+
+    </section>
+
+  </main>
+
+
+
+{% endblock %}
+
+
+

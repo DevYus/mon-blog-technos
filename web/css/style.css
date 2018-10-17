@@ -1572,29 +1572,29 @@ figcaption {background: #FFFFFF; height: 164px;}
 }
 
 
-/********* ADMIN ADD STYLE *********/
+/********* ADMIN ADD + UPDATE + DELETE STYLE *********/
 
-.sectionAddArticle {
+.sectionArticle {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-.sectionAddArticle h1 {font-size: 24px;}
+.sectionArticle h1 {font-size: 27px;}
 
-.sectionAddArticle form {
+.sectionArticle form {
     float: left;
     width: 100%;
     margin-bottom: 70px;
 }
 
-.sectionAddArticle label {
+.sectionArticle label {
     margin-bottom: 6px;
     display: block;
     margin-top: 12px;
 }
 
-.sectionAddArticle form input[type='text'] {
+.sectionArticle form input[type='text'] {
     width: 100%;
     height: 39px;
     padding-left: 8px;
@@ -1606,7 +1606,7 @@ figcaption {background: #FFFFFF; height: 164px;}
     cursor: pointer;
 }
 
-.sectionAddArticle form textarea{
+.sectionArticle form textarea{
     height: 500px;
     width: 80%;
     border: 1px solid #bdbdbd;
@@ -1615,18 +1615,148 @@ figcaption {background: #FFFFFF; height: 164px;}
 #my_technosblogbundle_articles_date > select {width: 95px;}
 #my_technosblogbundle_articles_date > select {border: 1px solid #BDBDBD;}
 
-.sectionAddArticle form button{
+
+.sectionArticle form button {
     width: 279px;
     padding: 13px;
     border: none;
     background: #9FC537;
     color: #FFF;
     font-size: 15px;
-    margin-top: 40px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    cursor: pointer;
+
+}
+
+.deleteArticleContainer {
+    width: 55%;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 105px 0 130px;
+}
+
+.deleteText {
+    margin-top: 36px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #D50000;
+    display: block;
+}
+
+.deleteArticleContainer form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.returnBtn {
+    width: 279px;
+    padding: 13px;
+    border: none;
+    background: #9FC537;
+    color: #FFF;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    display: block;
+
+}
+
+/****** ADMIN ALL ARTICLES *******/
+
+.sectionAllArticle {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 56px;
+}
+
+.addBtn {
+    float: right;
+    width: 144px;
+    display: block;
+    margin-top: -12px;
+    margin-bottom: 16px;
+    text-decoration: none;
+    color: #9FC537;
+    text-align: center;
+    padding: 7px;
+    border: 1px solid #9FC537;
+    font-weight: 600;
+    font-size: 15px;
+
+}
+
+table{
+    border: 1px solid #DEDEDE;
+    -moz-box-shadow: 0px 3px 10px 0px #BDBDBD;
+    -webkit-box-shadow: 0px 3px 10px 0px #BDBDBD;
+    -o-box-shadow: 0px 3px 10px 0px #BDBDBD;
+    box-shadow: 0px 3px 10px 0px #BDBDBD;
+}
+
+table,th, td {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    padding: 0;
+    font-size: 14px;
+}
+
+th{
+    padding: 10px;
+    box-sizing: border-box;
+    background: #9FC537;
+    color:#FFF;
+    text-align: left;
+}
+
+td {
+    padding: 0px 10px;
+    line-height: 1.5em;
+    height: 65px;
+    vertical-align: middle;
 }
 
 
-.clear { clear: left;}
+tr:nth-child(odd){background: #F1F8E9;}
+
+
+.colunmTitle{width:35%;}
+.colunmAuthor{width: 17%;}
+.colunmCategory{width: 17%;}
+.colunmActions ul {height: 32px;margin-top: 6px;}
+.colunmActions ul li {
+    width: 50%;
+    height: 100%;
+    float: left;
+    list-style: none;
+}
+.colunmActions ul li a img {display: block;width: 28px;}
+
+.pagination {
+    width: 600px;
+    height: 30px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.pagination li {list-style: none;width: 7%;height: 100%;}
+.pagination li a {
+    text-decoration: none;
+    color: #FFF;
+    background: #9FC537;
+    display: block;
+    text-align: center;
+    margin-right: 1px;
+    padding: 3px;
+}
+
+
+
 
 
 

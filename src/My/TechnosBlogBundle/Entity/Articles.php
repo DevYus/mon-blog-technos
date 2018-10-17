@@ -61,7 +61,14 @@ class Articles
      * @BlogAssert\NotBlank(message="Ce champs est obligatoire")
      */
     private $content;
-    
+
+    /**
+     * Articles constructor.
+     */
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
 
     /**
      * Get id

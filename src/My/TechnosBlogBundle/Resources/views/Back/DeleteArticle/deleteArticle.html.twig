@@ -1,0 +1,44 @@
+
+{% extends "@MyTechnosBlog/Back/layout.html.twig" %}
+
+
+{% block main %}
+
+    <style>
+
+
+
+    </style>
+
+  <main>
+
+    <section class="sectionArticle">
+      <h1>Supprimer un article</h1>
+
+        <span class="deleteText">
+            Attention, êtes vous certains de vouloir supprimer cet article ? <br>
+            Si vous confirmez, l'article sera définitivement perdu.<br><br>
+            Titre de l'article {{ article.title }} par {{ article.author }}, le {{ article.date|date('d M Y') }}.
+        </span>
+
+        <div class="deleteArticleContainer">
+
+            {{ form_errors(form) }}
+              {{ form_start(form) }}
+              {{ form_widget(form) }}
+            <a href="{{ path('admin_all_article', { 'page' : 1 }) }}" class="returnBtn">Retourner à l'administration</a>
+            {{ form_end(form) }}
+
+        </div>
+
+
+    </section>
+
+  </main>
+
+
+
+{% endblock %}
+
+
+

@@ -7,8 +7,27 @@ admin:
     defaults: {_controller: MyTechnosBlogBundle:Back\Admin:admin }
 
 admin_add_article:
-    path:    /admin/add
+    path:    /admin/add-article
     defaults: {_controller: MyTechnosBlogBundle:Back\AddArticle:addArticle }
+
+admin_update_article:
+    path:    /admin/update-article/{id}
+    defaults: {_controller: MyTechnosBlogBundle:Back\UpdateArticle:updateArticle }
+    requirements:
+        id: "[0-9]+"
+
+admin_delete_article:
+    path:    /admin/delete-article/{id}
+    defaults: {_controller: MyTechnosBlogBundle:Back\DeleteArticle:deleteArticle }
+    requirements:
+        id: "[0-9]+"
+
+admin_all_article:
+    path:    /admin/all-articles/{page}
+    defaults: {_controller: MyTechnosBlogBundle:Back\AllArticle:allArticle }
+    methods: [GET]
+    requirements:
+        page: "[0-9]+"
 
 contact:
     path:    /contact

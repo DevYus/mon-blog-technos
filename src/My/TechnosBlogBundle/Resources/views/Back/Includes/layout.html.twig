@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Media Tech Umanis : Tous les evenements, infographies, ebooks, videos et supports de l’innovation</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="description" content="Bienvenue sur la Media’Tech d’Umanis. Retrouvez tous les supports de l’innovation : infographie, ebook, livres blancs, video, actualités, évènements 5à7… Big Data, Data Science, Data Viz, Machine Learning, Intelligence artificielle, Digital Listening,  Master Data Management… ces sujets innovants vous intéressent ? Devenez Media’Tech addict.">
+        <meta name="keywords" content="Umanis, Media, Tech, supports, innovation, innovant, infographie, ebook, livre, blanc, video, actualité, news, évènement, 5à7, big data, machine learning, intelligence artificielle, data science, data visualisation, data vizualisation, digital, social, listening, MDM, master, data, management, RH, ressources humaines">
+
+        {% block stylesheets %}
+
+            <link rel="stylesheet" href="{{ asset('bundles/umanishome/css/style_home.css')}}">
+            <link rel="stylesheet" href="{{ asset('bundles/umanishome/css/normalize.css')}}">
+            <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('/bundles/umanishome/js/bxslider/jquery.bxslider.css')}}">
+
+            <!--- 5 à 7 -->
+
+            <link href="{{ asset('bundles/umanishome/css/Hover-master/css/hover.css')}}" rel="stylesheet" media="all">
+            <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+            <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+            <!-- Home + Médiatech -->
+
+            <style type="text/css">
+
+                /**** Home *****/
+
+                .span-description {
+                    display: block !important;
+                    font-size: 14px !important;
+                    font-weight: 300 !important;
+                    line-height: 20px !important;
+                    margin-top: 12px !important;
+                }
+
+                /***** Media *****/
+
+                .contentBlock {
+                    cursor: default;
+                    float: left;
+                    height: 340px;
+                    margin-bottom: 38px;
+                    margin-left: 72px;
+                    position: relative;
+                    transition: all 0.4s ease 0s;
+                    width: 300px;
+                    background: #f5f5f5;
+                }
+
+                .input-mediatech {
+                    background: #f7a833 none repeat scroll 0 0;
+                    border: 1px solid;
+                    color: #fff;
+                    cursor: pointer;
+                    font-weight: 300;
+                    height: 40px;
+                    left: 50%;
+                    line-height: 40px;
+                    margin-top: 5px;
+                    position: absolute;
+                    text-align: center;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    top: 295px;
+                    transform: translateX(-50%);
+                    width: 100%;
+                }
+
+                .title-scroll {
+                    box-sizing: border-box;
+                    height: auto;
+                    overflow: hidden;
+                    padding: 8px;
+                    text-align: center;
+                    width: 100%;
+                }
+
+            </style>
+
+        {% endblock %}
+
+
+    </head>
+    <body>
+        <!--<div class="coverFailure"></div>-->
+
+        <header>
+
+        <!-- Nav include -->
+        {{ include("UmanisHomeBundle:Front:Includes/header.html.twig") }}
+
+            <div class="div-logo-responsive">
+                <div id="btn-animation-open" class="btn-open-menu"></div>
+                <div id="btn-animation-close" class="btn-close-menu"></div>
+                <a href="http://www.umanis.com/">
+                    <img src="{{ asset('bundles/umanishome/images/logo.png') }}" alt="umanis" class="responsive-logo">
+                </a>
+                <ul class="socialNetwork responsiveMobile">
+                    <li style="padding: 0 16px;">
+
+                        {% if is_granted('ROLE_USER') %}
+
+                            <img style="float:left;"src="{{ asset('bundles/umanishome/images/user-shape.png') }}" alt="umanis" class="logo">
+                            <span class="noBorder" style="float:left;margin-left:12px;font-size:13px;margin-top: 2px;font-weight:600;">
+                                <a href="{{ path('fos_user_profile_edit') }}" class="responsiveProfil">
+                                     Mon profil
+                                </a>
+                            </span>
+
+                        {% endif %}
+
+                        {% if app.user.id is not defined %}
+                                <img style="float:left;"src="{{ asset('bundles/umanishome/images/user-shape.png') }}" alt="umanis" class="logo no-active-connexion">
+                                <span style="float:left;margin-left:12px;font-size:13px;margin-top: 2px;font-weight:600;" class="connexion responsiveConnexion">CONNEXION</span>
+                        {% endif %}
+
+
+                    </li>
+                    <li>
+
+                        {% if is_granted('ROLE_USER') %}
+
+                            <span class="registerBtn">
+                                <a href="{{ path('fos_user_security_logout') }}" style="color:#FFF;">
+                                    Deconnexion
+                                </a>
+                            </span>
+
+
+                        {% endif %}
+
+                        {% if app.user.id is not defined %}
+
+                            <span class="registerBtn">
+                                <a href="{{ path('fos_user_registration_register') }}">
+                                    S'inscrire
+                                </a>
+                            </span>
+
+                        {% endif %}
+
+
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- Dynamic Container -->
+
+        {% block MainContainer %}
+        {% endblock %}
+
+        <!-- End Dynamic Container -->
+
+
+        <!-- Footer include -->
+        {{ include("UmanisHomeBundle:Front:Includes/footer.html.twig") }}
+
+        {% block javascripts %}
+
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58984995b8d92b1b"></script>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+            <script src="{{ asset('bundles/umanishome/js/bxslider/jquery.bxslider.min.js') }}"></script>
+            <script src="{{ asset('bundles/umanishome/js/modernizr-2.6.2.min.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/umanishome/js/main.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/umanishome/js/video-js-5.5.3/video.js') }}"></script>
+            <script src="{{ asset('bundles/umanishome/js/navigationInterior.js') }}" type="text/javascript"></script>
+
+        {% endblock %}
+    </body>
+</html>
