@@ -2,6 +2,11 @@
 
 namespace My\TechnosBlogBundle\Repository;
 
+use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
+use InvalidArgumentException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 /**
  * UsersRepository
  *
@@ -10,4 +15,43 @@ namespace My\TechnosBlogBundle\Repository;
  */
 class UsersRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function paginate($page, $maxInPage)
+    {
+        if(!is_numeric($page))
+        {
+            throw new InvalidArgumentException(
+                'La valeur de l\'argument '.$page.' est incorrecte.'
+            );
+        }
+
+        if($page < 1)
+        {
+            throw new NotFoundHttpException('La page demandée n\'existe pas');
+        }
+
+        if (!is_numeric($maxInPage)) {
+            throw new InvalidArgumentException(
+                'La valeur de l\'argument '.$page.' est incorrecte.'
+            );
+        }
+
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC');
+
+        $query = $queryBuilder->getQuery();
+
+        $firstResult = ($page - 1) * $maxInPage;
+        $query->setFirstResult($firstResult)->setMaxResults($maxInPage);
+        $paginator = new Paginator($query);
+
+        if ( ($paginator->count() <= $firstResult) && $page != 1)
+        {
+            throw new NotFoundHttpException('La page demandée n\'existe pas.');
+        }
+
+        return $paginator;
+
+    }
+
+
 }

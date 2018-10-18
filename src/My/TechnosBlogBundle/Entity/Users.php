@@ -14,7 +14,7 @@ use My\TechnosBlogBundle\Validator\Constraints as BlogAssert;
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="My\TechnosBlogBundle\Repository\UsersRepository")
  * @UniqueEntity(fields="email", message="Cet email est déjà utilisé", groups={"registration"})
- * @UniqueEntity(fields="username", message="Cet utilisateur existe déjà", groups={"registration"})
+ * @UniqueEntity(fields="pseudo", message="Cet utilisateur existe déjà", groups={"registration"})
  */
 
 class Users implements UserInterface
@@ -31,10 +31,10 @@ class Users implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="fullname", type="string", length=255)
-     * @BlogAssert\NotAMember(groups={"registration"})
+     * @ORM\Column(name="pseudo", type="string", length=255)
+     * @Assert\NotBlank(groups={"registration"})
      */
-    private $fullname;
+    private $pseudo;
 
     /**
      * @var string
@@ -51,6 +51,13 @@ class Users implements UserInterface
      * @BlogAssert\NotAMember(groups={"forgot"})
      */
     private $email;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
 
     /**
      * @var string
@@ -82,6 +89,14 @@ class Users implements UserInterface
 
 
     /**
+     * Users constructor.
+     */
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
+
+    /**
      * Get id
      *
      * @return int
@@ -92,27 +107,27 @@ class Users implements UserInterface
     }
 
     /**
-     * Set fullname
+     * Set pseudo
      *
-     * @param string $fullname
+     * @param string $pseudo
      *
      * @return Users
      */
-    public function setFullname($fullname)
+    public function setPseudo($pseudo)
     {
-        $this->fullname = $fullname;
+        $this->pseudo = $pseudo;
 
         return $this;
     }
 
     /**
-     * Get fullname
+     * Get pseudo
      *
      * @return string
      */
-    public function getFullname()
+    public function getPseudo()
     {
-        return $this->fullname;
+        return $this->pseudo;
     }
 
 
@@ -162,6 +177,31 @@ class Users implements UserInterface
     public function getEmail()
     {
         return $this->email;
+    }
+
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Users
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 
     /**

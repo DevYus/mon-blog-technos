@@ -1,0 +1,65 @@
+
+{% extends "@MyTechnosBlog/Back/layout.html.twig" %}
+
+
+{% block main %}
+
+  <main>
+
+    <section class="sectionAllArticle">
+      <h1>Utilisateurs inscrits</h1>
+
+        {% for flash_message in app.session.flashBag.get('notice') %}
+            <div class="flash-notice">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+
+
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th class="colunmchild1">Email</th>
+                    <th class="colunmchild2">Pseudo</th>
+                    <th class="colunmchild3">Nom d'utlisateur</th>
+                    <th class="colunmchild4">Date d'inscription</th>
+                    <th class="colunmchild5">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for user in users %}
+                    <tr>
+                        <td class="colunmchild1">{{ user.email }}</td>
+                        <td class="colunmchild2">{{ user.username }}</td>
+                        <td class="colunmchild3">{{ user.username }}</td>
+                        <td class="colunmchild4" >{{ user.date|date('d/M/Y') }}</td>
+                        <td class="colunmchild5">
+                            <ul>
+                                <li class="liChildUsers">
+                                    <a href="">
+                                        <img src="{{ asset('img/delete.png') }}" alt="delete">
+                                    </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+        {% include '@MyTechnosBlog/Back/Includes/pagination.html.twig' %}
+
+
+    </section>
+
+  </main>
+
+
+
+{% endblock %}
+
+
+

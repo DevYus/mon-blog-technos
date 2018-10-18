@@ -1686,7 +1686,12 @@ figcaption {background: #FFFFFF; height: 164px;}
     border: 1px solid #9FC537;
     font-weight: 600;
     font-size: 15px;
+}
 
+.addBtn:hover {
+    background: #9FC537;
+    color: #FFF;
+    transition-duration: 0.4s;
 }
 
 table{
@@ -1723,17 +1728,19 @@ td {
 tr:nth-child(odd){background: #F1F8E9;}
 
 
-.colunmTitle{width:35%;}
-.colunmAuthor{width: 17%;}
-.colunmCategory{width: 17%;}
-.colunmActions ul {height: 32px;margin-top: 6px;}
-.colunmActions ul li {
+.colunmchild1{width:35%;}
+.colunmchild2{width: 17%;}
+.colunmchild3{width: 17%;}
+.colunmchild4 ul {height: 32px;margin-top: 6px;}
+.colunmchild5 ul li {
     width: 50%;
     height: 100%;
     float: left;
     list-style: none;
 }
-.colunmActions ul li a img {display: block;width: 28px;}
+.colunmchild5 ul li a img {display: block;width: 28px;}
+
+.liChildUsers {float: none; margin-left: 13px;}
 
 .pagination {
     width: 600px;

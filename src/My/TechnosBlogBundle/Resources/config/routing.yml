@@ -29,6 +29,13 @@ admin_all_article:
     requirements:
         page: "[0-9]+"
 
+admin_all_users:
+    path:    /admin/all-users/{page}
+    defaults: {_controller: MyTechnosBlogBundle:Back\AllUsers:allUsers }
+    methods: [GET]
+    requirements:
+        page: "[0-9]+"
+
 contact:
     path:    /contact
     defaults: { _controller: MyTechnosBlogBundle:Front\Contact:contact }
