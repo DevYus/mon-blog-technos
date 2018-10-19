@@ -1,12 +1,11 @@
 <?php
 
 namespace My\TechnosBlogBundle\Controller\Back;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use My\TechnosBlogBundle\Entity\Comments;
 use My\TechnosBlogBundle\Entity\Articles;
+
 
 
 
@@ -39,10 +38,13 @@ class AllArticleController extends Controller
                 'paramsRoute' => []
             ];
 
+        /**********/
+
 
         return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
                 'articles' => $articles,
-                'pagination' =>$pagination,
+                'pagination' => $pagination,
+
         ]);
 
     }

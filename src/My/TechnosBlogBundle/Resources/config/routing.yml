@@ -36,6 +36,12 @@ admin_all_users:
     requirements:
         page: "[0-9]+"
 
+admin_delete_user:
+    path:    /admin/delete-user/{id}
+    defaults: {_controller: MyTechnosBlogBundle:Back\DeleteUser:deleteUser }
+    requirements:
+        id: "[0-9]+"
+
 contact:
     path:    /contact
     defaults: { _controller: MyTechnosBlogBundle:Front\Contact:contact }

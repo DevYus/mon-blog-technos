@@ -9,7 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
 
-class DeleteArticleType extends AbstractType
+class DeleteUserType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -28,7 +28,7 @@ class DeleteArticleType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'My\TechnosBlogBundle\Entity\Articles',
+            'data_class' => 'My\TechnosBlogBundle\Entity\Users',
         ));
     }
 

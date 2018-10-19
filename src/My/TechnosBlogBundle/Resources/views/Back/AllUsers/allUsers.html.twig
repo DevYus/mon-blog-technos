@@ -15,8 +15,6 @@
             </div>
         {% endfor %}
 
-
-
         <table style="width:100%">
             <thead>
                 <tr>
@@ -38,7 +36,7 @@
                         <td class="colunmchild5">
                             <ul>
                                 <li class="liChildUsers">
-                                    <a href="">
+                                    <a href="{{ path('admin_delete_user', { 'id' : user.id }) }}">
                                         <img src="{{ asset('img/delete.png') }}" alt="delete">
                                     </a>
                                 </li>

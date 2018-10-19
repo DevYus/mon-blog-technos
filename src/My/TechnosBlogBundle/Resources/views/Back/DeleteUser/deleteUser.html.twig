@@ -1,0 +1,44 @@
+
+{% extends "@MyTechnosBlog/Back/layout.html.twig" %}
+
+
+{% block main %}
+
+    <style>
+
+
+
+    </style>
+
+  <main>
+
+    <section class="sectionArticle">
+      <h1>Supprimer un utilisateur</h1>
+
+        <span class="deleteText">
+            Attention, êtes vous certains de vouloir supprimer cet utilisateur ? <br>
+            Si vous confirmez, l'utilisateur sera définitivement supprimé de votre base de données.<br><br>
+            Utilisateur : {{ user.username }} inscrit le {{ user.date|date('d M Y') }} utilisant le pseudo {{ user.pseudo }}, .
+        </span>
+
+        <div class="deleteArticleContainer">
+
+            {{ form_errors(form) }}
+              {{ form_start(form) }}
+              {{ form_widget(form) }}
+            <a href="{{ path('admin_all_users', { 'page' : 1 }) }}" class="returnBtn">Retourner à l'administration</a>
+            {{ form_end(form) }}
+
+        </div>
+
+
+    </section>
+
+  </main>
+
+
+
+{% endblock %}
+
+
+
