@@ -8,23 +8,23 @@ admin:
 
 admin_add_article:
     path:    /admin/add-article
-    defaults: {_controller: MyTechnosBlogBundle:Back\AddArticle:addArticle }
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:addArticle }
 
 admin_update_article:
     path:    /admin/update-article/{id}
-    defaults: {_controller: MyTechnosBlogBundle:Back\UpdateArticle:updateArticle }
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:updateArticle }
     requirements:
         id: "[0-9]+"
 
 admin_delete_article:
     path:    /admin/delete-article/{id}
-    defaults: {_controller: MyTechnosBlogBundle:Back\DeleteArticle:deleteArticle }
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:deleteArticle }
     requirements:
         id: "[0-9]+"
 
 admin_all_article:
     path:    /admin/all-articles/{page}
-    defaults: {_controller: MyTechnosBlogBundle:Back\AllArticle:allArticle }
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:allArticle }
     methods: [GET]
     requirements:
         page: "[0-9]+"
@@ -39,6 +39,18 @@ admin_all_users:
 admin_delete_user:
     path:    /admin/delete-user/{id}
     defaults: {_controller: MyTechnosBlogBundle:Back\DeleteUser:deleteUser }
+    requirements:
+        id: "[0-9]+"
+
+admin_all_comments:
+    path:    /admin/all-comments/{page}
+    defaults: {_controller: MyTechnosBlogBundle:Back\AllComments:allComments }
+    requirements:
+        id: "[0-9]+"
+
+admin_delete_comment:
+    path:    /admin/delete-comment/{id}
+    defaults: {_controller: MyTechnosBlogBundle:Back\AllComments:deleteComment }
     requirements:
         id: "[0-9]+"
 

@@ -7,7 +7,7 @@
   <main>
 
     <section class="sectionAll">
-      <h1 id="toto">Vos articles</h1>
+      <h1 id="toto">Commentaires membres</h1>
 
         {% for flash_message in app.session.flashBag.get('notice') %}
             <div class="flash-notice">
@@ -15,35 +15,30 @@
             </div>
         {% endfor %}
 
-        <a href="{{ path('admin_add_article') }}" class="addBtn">Ajouter un article</a>
-
 
         <table style="width:100%">
             <thead>
                 <tr>
-                    <th class="colunmchild1">Titre</th>
-                    <th class="colunmchild2">Auteur</th>
-                    <th class="colunmchild3">Catégories</th>
+                    <th class="colunmchild1">Commentaires</th>
+                    <th class="colunmchild2">Pseudo</th>
+                    <th class="colunmchild3">Titre de l'article</th>
                     <th class="colunmchild4">Date</th>
                     <th class="colunmchild5">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                {% for article in articles %}
+
+                {% for comment in comments %}
+
                     <tr>
-                        <td class="colunmchild1">{{ article.title }}</td>
-                        <td class="colunmchild2">{{ article.author }}</td>
-                        <td class="colunmchild3">{{ article.category }}</td>
-                        <td class="colunmchild4" >{{ article.date|date('d/m/Y') }}</td>
+                        <td class="colunmchild1">{{ comment.content }}</td>
+                        <td class="colunmchild2">{{ comment.pseudo }}</td>
+                        <td class="colunmchild3">{{ comment.article.title }}</td>
+                        <td class="colunmchild4">{{ comment.date|date('d/m/Y') }}</td>
                         <td class="colunmchild5">
                             <ul>
                                 <li>
-                                    <a href="{{ path('admin_update_article', { 'id' : article.id }) }}">
-                                        <img src="{{ asset('img/update.png') }}" alt="update">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('admin_delete_article', { 'id' : article.id }) }}">
+                                    <a href="{{ path('admin_delete_comment', { 'id' : comment.id }) }}">
                                         <img src="{{ asset('img/delete.png') }}" alt="delete">
                                     </a>
                                 </li>
@@ -51,6 +46,7 @@
                         </td>
                     </tr>
                 {% endfor %}
+
             </tbody>
         </table>
 

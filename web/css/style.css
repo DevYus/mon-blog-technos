@@ -1629,7 +1629,7 @@ figcaption {background: #FFFFFF; height: 164px;}
 
 }
 
-.deleteArticleContainer {
+.deleteContainer {
     width: 55%;
     box-sizing: border-box;
     overflow: hidden;
@@ -1644,7 +1644,7 @@ figcaption {background: #FFFFFF; height: 164px;}
     display: block;
 }
 
-.deleteArticleContainer form {
+.deleteContainer form {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1666,7 +1666,7 @@ figcaption {background: #FFFFFF; height: 164px;}
 
 /****** ADMIN ALL ARTICLES *******/
 
-.sectionAllArticle {
+.sectionAll {
     width: 100%;
     height: 100%;
     overflow: hidden;

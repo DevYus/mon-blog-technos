@@ -13,8 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Comments
 {
     /**
-     * @ORM\ManyToOne(targetEntity="My\TechnosBlogBundle\Entity\Articles")
-     * @ORM\JoinColumn(name="article_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="My\TechnosBlogBundle\Entity\Articles", cascade={"remove"})
+     * @ORM\JoinColumn(name="article_id", referencedColumnName="id", nullable=false, onDelete="cascade")
      */
     private $article;
 
