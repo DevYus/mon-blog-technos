@@ -6,7 +6,7 @@
 
   <main>
 
-    <section class="sectionAllArticle">
+    <section class="sectionAll">
       <h1>Utilisateurs inscrits</h1>
 
         {% for flash_message in app.session.flashBag.get('notice') %}
@@ -20,7 +20,7 @@
                 <tr>
                     <th class="colunmchild1">Email</th>
                     <th class="colunmchild2">Pseudo</th>
-                    <th class="colunmchild3">Nom d'utlisateur</th>
+                    <th class="colunmchild3">Role</th>
                     <th class="colunmchild4">Date d'inscription</th>
                     <th class="colunmchild5">Actions</th>
                 </tr>
@@ -31,7 +31,17 @@
                     <tr>
                         <td class="colunmchild1">{{ user.email }}</td>
                         <td class="colunmchild2">{{ user.username }}</td>
-                        <td class="colunmchild3">{{ user.username }}</td>
+
+                        {% for role in user.roles %}
+
+                            {% if role == 'ROLE_ADMIN' %}
+                                <td class="colunmchild3">Administrateur</td>
+                            {% else %}
+                                <td class="colunmchild3">Membre</td>
+                            {% endif %}
+
+                        {% endfor %}
+
                         <td class="colunmchild4" >{{ user.date|date('d/M/Y') }}</td>
                         <td class="colunmchild5">
                             <ul>

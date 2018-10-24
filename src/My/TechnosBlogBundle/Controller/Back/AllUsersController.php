@@ -30,6 +30,8 @@ class AllUsersController extends Controller
 
         $users = $em->getRepository('MyTechnosBlogBundle:Users')->paginate($page, $nbUsersByPage);
 
+        $user = $em->getRepository('MyTechnosBlogBundle:Users')->find(2);
+
         $pagination = [
             'page' => $page,
             'nbPages' => ceil(count($users) / $nbUsersByPage),
@@ -41,6 +43,7 @@ class AllUsersController extends Controller
         return $this->render('@MyTechnosBlog/Back/AllUsers\allUsers.html.twig', [
             'users' => $users,
             'pagination' => $pagination,
+            'user' => $user
         ]);
 
 

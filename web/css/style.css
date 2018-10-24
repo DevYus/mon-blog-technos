@@ -1763,6 +1763,87 @@ tr:nth-child(odd){background: #F1F8E9;}
 }
 
 
+/******* Style add admin *****/
+
+.containerAddAdministratorForm {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 131px;
+}
+
+.containerAddAdministratorForm h1 {margin: 60px 0 45px 0;}
+
+.containerAddAdministratorForm label {
+    margin-bottom: 10px;
+    display: block;
+    margin-top: 12px;
+}
+
+.containerAddAdministratorForm input[type="text"], .containerAddAdministratorForm input[type="password"], .containerAddAdministratorForm input[type="email"] {
+    width: 100%;
+    height: 39px;
+    padding-left: 8px;
+    border: none;
+    border: 1px solid #BDBDBD;
+    font-size: 16px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.containerAddAdministratorForm input[type="submit"] {
+    width: 20%;
+    height: 45px;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    background: #9FC537;
+    color: #FFF;
+    border: none;
+    font-size: 15px;
+}
+
+.containerAddAdministratorForm form { border-bottom: 1px solid #bdbdbd;}
+
+.lostPassword {display: block;font-size: 13px; color: #999999;}
+
+.star {
+    color: #cc0000
+;}
+
+
+
+@media screen and (max-width: 1280px)
+{
+    main {
+        width: 100%;
+        padding: 10px 40px;
+        box-sizing: border-box;
+    }
+
+    .containerAddAdministratorForm h1 {
+        font-size: 44px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 420px)
+{
+    main {
+        width: 100%;
+        padding: 10px 12px;
+        box-sizing: border-box;
+    }
+
+    .containerAddAdministratorForm input[type="submit"] {
+        width: 100%;
+
+    }
+
+}
+
+
 
 
 

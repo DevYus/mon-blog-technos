@@ -42,6 +42,10 @@ admin_delete_user:
     requirements:
         id: "[0-9]+"
 
+admin_add_administrator:
+    path:    /admin/add-administrator
+    defaults: {_controller: MyTechnosBlogBundle:Back\AddAdministrator:addAdministrator }
+
 admin_all_comments:
     path:    /admin/all-comments/{page}
     defaults: {_controller: MyTechnosBlogBundle:Back\AllComments:allComments }
