@@ -7,6 +7,8 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 use InvalidArgumentException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+
+
 /**
  * ArticlesRepository
  *
@@ -15,7 +17,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class ArticlesRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function paginate($page, $maxInPage)
+    public function paginate($page, $maxInPage) // Ici ajouter un argument qui sera la variable SQL envoyé en post par AJAX
     {
         if(!is_numeric($page))
         {
@@ -51,6 +53,16 @@ class ArticlesRepository extends \Doctrine\ORM\EntityRepository
 
         return $paginator;
 
+    }
+
+
+    public function getResultsForJsonReponse($category)
+    {
+        $sql = "SELECT * FROM Articles WHERE category = ?";
+        $em = $this->getEntityManager();
+        $sm = $em->getConnection()->prepare($sql);
+        $sm->execute([$category]);
+        return $sm->fetchAll();
     }
 
 }

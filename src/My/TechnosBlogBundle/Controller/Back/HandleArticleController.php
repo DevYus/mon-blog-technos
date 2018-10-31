@@ -9,6 +9,8 @@ use My\TechnosBlogBundle\Entity\Articles;
 use My\TechnosBlogBundle\Form\AddArticleType;
 use My\TechnosBlogBundle\Form\UpdateArticleType;
 use My\TechnosBlogBundle\Form\DeleteType;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 
 /**
@@ -20,19 +22,20 @@ class HandleArticleController extends Controller
 {
 
     /**
+     * @param Request $request
      * @param $page
-     * @return Response
+     * @return mixed
      */
-    public function allArticleAction($page)
+    public function allArticleAction(Request $request, $page)
     {
         /******* Pagination and display all articles ******/
 
-        $nbArticlesByPage = 8;
-
         $em = $this->getDoctrine()->getManager();
 
-        $articles = $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage);
+        $nbArticlesByPage = 8;
 
+        $articles = $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage);
+        // ici ajouter le 3e argument à la methode paginate
         $pagination = [
             'page' => $page,
             'nbPages' => ceil(count($articles) / $nbArticlesByPage),
@@ -45,8 +48,19 @@ class HandleArticleController extends Controller
         return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
             'articles' => $articles,
             'pagination' => $pagination,
-
         ]);
+
+    }
+
+
+    public function ajaxRequestAction(Request $request)
+    {
+        // Ajax Request
+
+         $em = $this->getDoctrine()->getManager();
+         $rows = $em->getRepository('MyTechnosBlogBundle:Articles')->getResultsForJsonReponse("bibi");
+
+         return new JsonResponse($rows);
 
     }
 
@@ -151,5 +165,7 @@ class HandleArticleController extends Controller
 
             ]);
     }
+
+
 
 }

@@ -9,13 +9,29 @@
     <section class="sectionAll">
       <h1 id="toto">Vos articles</h1>
 
+        {{ dump() }}
+
         {% for flash_message in app.session.flashBag.get('notice') %}
             <div class="flash-notice">
                 {{ flash_message }}
             </div>
         {% endfor %}
 
+        <form action="{{ path('admin_ajax_request') }}" method="post">
+            <select name="filtreCategory" id="filtreCategory">
+                <option value="bibi">Bibi</option>
+            </select>
+            <input type="submit" id="filterCategoryBtn">
+        </form>
+
+        <div class="ajax-result">
+
+
+        </div>
+
         <a href="{{ path('admin_add_article') }}" class="addBtn">Ajouter un article</a>
+
+
 
 
         <table style="width:100%">
@@ -60,6 +76,48 @@
     </section>
 
   </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+
+        $(function() {
+
+
+            $('#filterCategoryBtn').click(function(e){
+
+                e.preventDefault();
+
+                let category = $('#filtreCategory option:selected').val();
+
+                $.ajax({
+                    url:  '{{ path("admin_ajax_request") }}',
+                    type: 'POST',
+                    dataType: 'json',
+                    data:'category='+ category,
+                    success: function (data) {
+
+                      let container =  $(".ajax-result");
+
+                      $.each(data, function(index,value) {
+                            console.log(value)
+                          let row = document.createElement('p');
+                          let text = document.createTextNode(value.title + " " + value.category);
+
+                          row.appendChild(text);
+                          container.appendChild(row);
+
+                      });
+
+                    }
+                });
+
+            });
+
+
+        });
+
+    </script>
+
 
 
 

@@ -25,9 +25,12 @@ admin_delete_article:
 admin_all_article:
     path:    /admin/all-articles/{page}
     defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:allArticle }
-    methods: [GET]
     requirements:
         page: "[0-9]+"
+
+admin_ajax_request:
+    path:    /admin/ajax-request
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:ajaxRequest }
 
 admin_all_users:
     path:    /admin/all-users/{page}
