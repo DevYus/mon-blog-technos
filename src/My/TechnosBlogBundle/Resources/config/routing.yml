@@ -23,8 +23,8 @@ admin_delete_article:
         id: "[0-9]+"
 
 admin_all_article:
-    path:    /admin/all-articles/{page}
-    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:allArticle }
+    path:    /admin/all-articles/{page}/{cat}
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:allArticle, cat: null  }
     requirements:
         page: "[0-9]+"
 

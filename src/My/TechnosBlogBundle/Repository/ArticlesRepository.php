@@ -17,7 +17,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class ArticlesRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function paginate($page, $maxInPage) // Ici ajouter un argument qui sera la variable SQL envoyé en post par AJAX
+    public function paginate($page, $maxInPage, $category = null) // Ici ajouter un argument qui sera la variable SQL envoyé en post par AJAX
     {
         if(!is_numeric($page))
         {
@@ -37,21 +37,46 @@ class ArticlesRepository extends \Doctrine\ORM\EntityRepository
             );
         }
 
-        $queryBuilder = $this->createQueryBuilder('p')
-            ->orderBy('p.date', 'DESC');
-
-        $query = $queryBuilder->getQuery();
-
-        $firstResult = ($page - 1) * $maxInPage;
-        $query->setFirstResult($firstResult)->setMaxResults($maxInPage);
-        $paginator = new Paginator($query);
-
-        if ( ($paginator->count() <= $firstResult) && $page != 1)
+        if($category)
         {
-            throw new NotFoundHttpException('La page demandée n\'existe pas.');
+
+            $queryBuilder = $this->createQueryBuilder('p')
+                ->where('p.category = :category')
+                ->setParameter('category',$category)
+                ->orderBy('p.date', 'DESC');
+
+            $query = $queryBuilder->getQuery();
+
+            $firstResult = ($page - 1) * $maxInPage;
+            $query->setFirstResult($firstResult)->setMaxResults($maxInPage);
+            $paginator = new Paginator($query);
+
+            if (($paginator->count() <= $firstResult) && $page != 1) {
+                throw new NotFoundHttpException('La page demandée n\'existe pas.');
+            }
+
+            return $paginator;
+
         }
 
-        return $paginator;
+        else
+        {
+            $queryBuilder = $this->createQueryBuilder('p')
+                ->orderBy('p.date', 'DESC');
+
+            $query = $queryBuilder->getQuery();
+
+            $firstResult = ($page - 1) * $maxInPage;
+            $query->setFirstResult($firstResult)->setMaxResults($maxInPage);
+            $paginator = new Paginator($query);
+
+            if (($paginator->count() <= $firstResult) && $page != 1) {
+                throw new NotFoundHttpException('La page demandée n\'existe pas.');
+            }
+
+            return $paginator;
+
+        }
 
     }
 

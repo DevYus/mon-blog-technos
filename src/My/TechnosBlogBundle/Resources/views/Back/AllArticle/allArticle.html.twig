@@ -9,7 +9,7 @@
     <section class="sectionAll">
       <h1 id="toto">Vos articles</h1>
 
-        {{ dump() }}
+
 
         {% for flash_message in app.session.flashBag.get('notice') %}
             <div class="flash-notice">
@@ -17,14 +17,18 @@
             </div>
         {% endfor %}
 
-        <form action="{{ path('admin_ajax_request') }}" method="post">
-            <select name="filtreCategory" id="filtreCategory">
+
+        <form action="{{ path('admin_all_article', { page : 1 }) }}" method="post">
+            <select name="category">
                 <option value="bibi">Bibi</option>
+                <option value="jklmjklmjl">jklmjklmjl</option>
             </select>
             <input type="submit" id="filterCategoryBtn">
         </form>
 
         <div class="ajax-result">
+
+
 
 
         </div>
@@ -79,7 +83,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-
+        /*
         $(function() {
 
 
@@ -89,32 +93,40 @@
 
                 let category = $('#filtreCategory option:selected').val();
 
+
                 $.ajax({
-                    url:  '{{ path("admin_ajax_request") }}',
+                    url:  'http://localhost/mon-blog-technos/web/app_dev.php/admin/ajax-request',
                     type: 'POST',
                     dataType: 'json',
                     data:'category='+ category,
-                    success: function (data) {
+                    success: function(data){
 
-                      let container =  $(".ajax-result");
+                        var container = document.querySelector('.ajax-result');
+                        container.innerHTML = "";
 
-                      $.each(data, function(index,value) {
-                            console.log(value)
-                          let row = document.createElement('p');
-                          let text = document.createTextNode(value.title + " " + value.category);
+                        var data = JSON.parse(JSON.stringify(data));
 
-                          row.appendChild(text);
-                          container.appendChild(row);
+                        $.each(data,function(index, value){
 
-                      });
+                            let p = document.createElement('p');
+                            let content = document.createTextNode(value.category);
+                            p.appendChild(content);
+                            container.appendChild(p);
 
+                        });
+
+
+                    },
+                    error : function(){
+                        alert('pas ok');
                     }
+
                 });
 
             });
 
-
         });
+        */
 
     </script>
 

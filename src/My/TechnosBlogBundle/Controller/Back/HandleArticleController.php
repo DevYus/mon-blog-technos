@@ -26,13 +26,61 @@ class HandleArticleController extends Controller
      * @param $page
      * @return mixed
      */
-    public function allArticleAction(Request $request, $page)
+    public function allArticleAction(Request $request, $page,$cat)
     {
         /******* Pagination and display all articles ******/
 
+
         $em = $this->getDoctrine()->getManager();
 
-        $nbArticlesByPage = 8;
+        $nbArticlesByPage = 3;
+
+
+
+        if ($request->isMethod('POST'))
+        {
+            $cat = $request->request->get('category');
+
+            $articles = $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
+
+            // ici ajouter le 3e argument à la methode paginate
+            $pagination = [
+                'page' => $page,
+                'nbPages' => ceil(count($articles) / $nbArticlesByPage),
+                'routeName' => 'admin_all_article',
+                'paramsRoute' => [
+                    'cat' => $cat,
+                ]
+            ];
+
+            return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
+                'articles' => $articles,
+                'pagination' => $pagination,
+            ]);
+        }
+
+        else if($cat)
+        {
+
+            $articles = $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
+
+            // ici ajouter le 3e argument à la methode paginate
+            $pagination = [
+                'page' => $page,
+                'nbPages' => ceil(count($articles) / $nbArticlesByPage),
+                'routeName' => 'admin_all_article',
+                'paramsRoute' => [
+                    'cat' => $cat,
+                ]
+            ];
+
+            return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
+                'articles' => $articles,
+                'pagination' => $pagination,
+            ]);
+        }
+
+
 
         $articles = $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage);
         // ici ajouter le 3e argument à la methode paginate
@@ -57,8 +105,10 @@ class HandleArticleController extends Controller
     {
         // Ajax Request
 
+         $cat = $request->request->get('category');
+
          $em = $this->getDoctrine()->getManager();
-         $rows = $em->getRepository('MyTechnosBlogBundle:Articles')->getResultsForJsonReponse("bibi");
+         $rows = $em->getRepository('MyTechnosBlogBundle:Articles')->getResultsForJsonReponse($cat);
 
          return new JsonResponse($rows);
 
