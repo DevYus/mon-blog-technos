@@ -37,13 +37,19 @@ class ArticlesRepository extends \Doctrine\ORM\EntityRepository
             );
         }
 
-        if($category)
-        {
-
-            $queryBuilder = $this->createQueryBuilder('p')
+            if($category)
+            {
+                $queryBuilder = $this->createQueryBuilder('p')
                 ->where('p.category = :category')
-                ->setParameter('category',$category)
+                ->setParameter('category', $category)
                 ->orderBy('p.date', 'DESC');
+            }
+            else
+            {
+                $queryBuilder = $this->createQueryBuilder('p')
+                    ->orderBy('p.date', 'DESC');
+            }
+
 
             $query = $queryBuilder->getQuery();
 
@@ -56,29 +62,13 @@ class ArticlesRepository extends \Doctrine\ORM\EntityRepository
             }
 
             return $paginator;
-
-        }
-
-        else
-        {
-            $queryBuilder = $this->createQueryBuilder('p')
-                ->orderBy('p.date', 'DESC');
-
-            $query = $queryBuilder->getQuery();
-
-            $firstResult = ($page - 1) * $maxInPage;
-            $query->setFirstResult($firstResult)->setMaxResults($maxInPage);
-            $paginator = new Paginator($query);
-
-            if (($paginator->count() <= $firstResult) && $page != 1) {
-                throw new NotFoundHttpException('La page demandée n\'existe pas.');
-            }
-
-            return $paginator;
-
-        }
 
     }
+
+
+
+
+
 
 
     public function getResultsForJsonReponse($category)

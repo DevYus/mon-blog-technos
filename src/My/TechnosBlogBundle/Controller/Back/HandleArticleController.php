@@ -20,38 +20,26 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class HandleArticleController extends Controller
 {
-
     /**
      * @param Request $request
      * @param $page
-     * @return mixed
+     * @param $cat
+     * @return Response
      */
-    public function allArticleAction(Request $request, $page,$cat)
+    public function allArticleAction(Request $request, $page, $cat)
     {
         /******* Pagination and display all articles ******/
 
-
-        $em = $this->getDoctrine()->getManager();
-
         $nbArticlesByPage = 3;
 
-
-
-        if ($request->isMethod('POST'))
+        if($request->isMethod('POST'))
         {
             $cat = $request->request->get('category');
 
-            $articles = $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
+            $articles = $this->findArticlesForPagination($page,$nbArticlesByPage,$cat);
 
             // ici ajouter le 3e argument à la methode paginate
-            $pagination = [
-                'page' => $page,
-                'nbPages' => ceil(count($articles) / $nbArticlesByPage),
-                'routeName' => 'admin_all_article',
-                'paramsRoute' => [
-                    'cat' => $cat,
-                ]
-            ];
+            $pagination = $this->paginationParams($page,$articles,$nbArticlesByPage,$cat);
 
             return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
                 'articles' => $articles,
@@ -61,18 +49,8 @@ class HandleArticleController extends Controller
 
         else if($cat)
         {
-
-            $articles = $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
-
-            // ici ajouter le 3e argument à la methode paginate
-            $pagination = [
-                'page' => $page,
-                'nbPages' => ceil(count($articles) / $nbArticlesByPage),
-                'routeName' => 'admin_all_article',
-                'paramsRoute' => [
-                    'cat' => $cat,
-                ]
-            ];
+            $articles = $this->findArticlesForPagination($page,$nbArticlesByPage,$cat);
+            $pagination = $this->paginationParams($page,$articles,$nbArticlesByPage,$cat);
 
             return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
                 'articles' => $articles,
@@ -80,7 +58,7 @@ class HandleArticleController extends Controller
             ]);
         }
 
-
+        $em = $this->getDoctrine()->getManager();
 
         $articles = $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage);
         // ici ajouter le 3e argument à la methode paginate
@@ -100,6 +78,24 @@ class HandleArticleController extends Controller
 
     }
 
+    public function findArticlesForPagination($page, $nbArticlesByPage, $cat)
+    {
+        $em = $this->getDoctrine()->getManager();
+        return $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
+
+    }
+
+    public function paginationParams($page, $articles, $nbArticlesByPage, $cat)
+    {
+        return $pagination = [
+            'page' => $page,
+            'nbPages' => ceil(count($articles) / $nbArticlesByPage),
+            'routeName' => 'admin_all_article',
+            'paramsRoute' => [
+                'cat' => $cat,
+            ]
+        ];
+    }
 
     public function ajaxRequestAction(Request $request)
     {
