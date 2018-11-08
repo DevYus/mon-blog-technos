@@ -68,14 +68,11 @@ class ArticlesRepository extends \Doctrine\ORM\EntityRepository
 
 
 
-
-
-
     public function getResultsForJsonReponse($category)
     {
         $sql = "SELECT * FROM Articles WHERE category = ?";
-        $em = $this->getEntityManager();
-        $sm = $em->getConnection()->prepare($sql);
+        $entMa = $this->getEntityManager();
+        $sm = $entMa->getConnection()->prepare($sql);
         $sm->execute([$category]);
         return $sm->fetchAll();
     }

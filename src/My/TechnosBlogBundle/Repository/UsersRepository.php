@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class UsersRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function paginate($page, $maxInPage)
+    public function paginate($page, $maxInPage, $category = null)
     {
         if(!is_numeric($page))
         {
@@ -35,11 +35,39 @@ class UsersRepository extends \Doctrine\ORM\EntityRepository
             );
         }
 
-        $queryBuilder = $this->createQueryBuilder('p')
-            ->orderBy('p.id', 'DESC');
+            // Je recois role-admin
+            if($category == 'role-admin')
+            {
+                $role = '["ROLE_ADMIN"]';
+
+                $queryBuilder = $this->createQueryBuilder('p')
+                    ->where('p.roles = :roles')
+                    ->setParameter('roles', $role)
+                    ->orderBy('p.date', 'DESC');
+
+
+            }
+
+            elseif($category == 'role-user')
+            {
+                $role = '["ROLE_USER"]';
+
+                $queryBuilder = $this->createQueryBuilder('p')
+                    ->where('p.roles = :roles')
+                    ->setParameter('roles', $role)
+                    ->orderBy('p.date', 'DESC');
+
+
+            }
+            else
+            {
+                $queryBuilder = $this->createQueryBuilder('p')
+                    ->orderBy('p.date', 'DESC');
+
+            }
+
 
         $query = $queryBuilder->getQuery();
-
         $firstResult = ($page - 1) * $maxInPage;
         $query->setFirstResult($firstResult)->setMaxResults($maxInPage);
         $paginator = new Paginator($query);
@@ -52,6 +80,8 @@ class UsersRepository extends \Doctrine\ORM\EntityRepository
         return $paginator;
 
     }
+
+
 
 
 }

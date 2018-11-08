@@ -44,6 +44,7 @@ class HandleArticleController extends Controller
             return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
                 'articles' => $articles,
                 'pagination' => $pagination,
+                'cat' => $cat
             ]);
         }
 
@@ -55,12 +56,13 @@ class HandleArticleController extends Controller
             return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
                 'articles' => $articles,
                 'pagination' => $pagination,
+                'cat' => $cat
             ]);
         }
 
-        $em = $this->getDoctrine()->getManager();
+        $entMa = $this->getDoctrine()->getManager();
 
-        $articles = $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage);
+        $articles = $entMa->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage);
         // ici ajouter le 3e argument à la methode paginate
         $pagination = [
             'page' => $page,
@@ -80,8 +82,8 @@ class HandleArticleController extends Controller
 
     public function findArticlesForPagination($page, $nbArticlesByPage, $cat)
     {
-        $em = $this->getDoctrine()->getManager();
-        return $em->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
+        $entMa = $this->getDoctrine()->getManager();
+        return $entMa->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
 
     }
 
@@ -103,8 +105,8 @@ class HandleArticleController extends Controller
 
          $cat = $request->request->get('category');
 
-         $em = $this->getDoctrine()->getManager();
-         $rows = $em->getRepository('MyTechnosBlogBundle:Articles')->getResultsForJsonReponse($cat);
+         $entMa = $this->getDoctrine()->getManager();
+         $rows = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getResultsForJsonReponse($cat);
 
          return new JsonResponse($rows);
 
@@ -125,9 +127,9 @@ class HandleArticleController extends Controller
         if($form->isSubmitted() && $form->isValid())
         {
             // Flush to database
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($article);
-            $em->flush();
+            $entMa = $this->getDoctrine()->getManager();
+            $entMa->persist($article);
+            $entMa->flush();
 
             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
 
@@ -149,8 +151,8 @@ class HandleArticleController extends Controller
     public function updateArticleAction(Request $request, $id)
     {
 
-        $em = $this->getDoctrine()->getManager();
-        $article = $em->getRepository('MyTechnosBlogBundle:Articles')->find($id);
+        $entMa = $this->getDoctrine()->getManager();
+        $article = $entMa->getRepository('MyTechnosBlogBundle:Articles')->find($id);
 
         $form = $this->get('form.factory')->create(UpdateArticleType::class, $article);
 
@@ -159,9 +161,9 @@ class HandleArticleController extends Controller
         if($form->isSubmitted() && $form->isValid())
         {
             // Flush to database
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($article);
-            $em->flush();
+            $entMa = $this->getDoctrine()->getManager();
+            $entMa->persist($article);
+            $entMa->flush();
 
             $request->getSession()->getFlashBag()->add('notice', 'L\'article a bien été modifié');
 
@@ -184,8 +186,8 @@ class HandleArticleController extends Controller
     public function deleteArticleAction(Request $request, $id)
     {
 
-        $em = $this->getDoctrine()->getManager();
-        $article = $em->getRepository('MyTechnosBlogBundle:Articles')->find($id);
+        $entMa = $this->getDoctrine()->getManager();
+        $article = $entMa->getRepository('MyTechnosBlogBundle:Articles')->find($id);
 
         $form = $this->get('form.factory')->create(DeleteType::class, $article);
 
@@ -194,9 +196,9 @@ class HandleArticleController extends Controller
         if($form->isSubmitted() && $form->isValid())
         {
             // Flush to database
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($article);
-            $em->flush();
+            $entMa = $this->getDoctrine()->getManager();
+            $entMa->remove($article);
+            $entMa->flush();
 
             $request->getSession()->getFlashBag()->add('notice', 'L\'article a bien été supprimé');
 

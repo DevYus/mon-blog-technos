@@ -22,8 +22,8 @@ class ArticleController extends Controller
 
     public function articleAction($category, $slug, $id)
     {
-        $em = $this->getDoctrine()->getManager();
-        $article = $em->getRepository('MyTechnosBlogBundle:Articles')->find(23);
+        $entMa = $this->getDoctrine()->getManager();
+        $article = $entMa->getRepository('MyTechnosBlogBundle:Articles')->find(23);
 
         $comment = new Comments();
         $comment->setPseudo('Ja');
@@ -31,11 +31,11 @@ class ArticleController extends Controller
 
         $comment->setArticle($article);
 
-        $em->persist($article);
-        $em->persist($comment);
-        $em->flush();
+        $entMa->persist($article);
+        $entMa->persist($comment);
+        $entMa->flush();
 
-        //$listComments = $em->getRepository('MyTechnosBlogBundle:Comments')->findBy(['id' => $article]);
+        //$listComments = $entMa->getRepository('MyTechnosBlogBundle:Comments')->findBy(['id' => $article]);
 
 
         return $this->render('@MyTechnosBlog/Front/Article\article.html.twig', array(

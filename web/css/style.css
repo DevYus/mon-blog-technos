@@ -1619,6 +1619,7 @@ figcaption {background: #FFFFFF; height: 164px;}
 .sectionArticle form button {
     width: 279px;
     padding: 13px;
+    margin-top: 30px;
     border: none;
     background: #9FC537;
     color: #FFF;
@@ -1626,7 +1627,6 @@ figcaption {background: #FFFFFF; height: 164px;}
     text-transform: uppercase;
     box-sizing: border-box;
     cursor: pointer;
-
 }
 
 .deleteContainer {
@@ -1677,7 +1677,7 @@ figcaption {background: #FFFFFF; height: 164px;}
     float: right;
     width: 144px;
     display: block;
-    margin-top: -12px;
+    margin-top: -3px;
     margin-bottom: 16px;
     text-decoration: none;
     color: #9FC537;
@@ -1739,6 +1739,11 @@ tr:nth-child(odd){background: #F1F8E9;}
     list-style: none;
 }
 .colunmchild5 ul li a img {display: block;width: 28px;}
+
+.leftActionComment {
+    position: relative;
+    left: 10px;
+}
 
 .liChildUsers {float: none; margin-left: 13px;}
 
@@ -1842,6 +1847,32 @@ tr:nth-child(odd){background: #F1F8E9;}
     }
 
 }
+
+/******* All customs css *******/
+
+.filterFormUsers{
+    margin: 25px 0 20px;
+}
+
+.filterFormArticles{
+    float: left;
+}
+
+.filterFormSubmit {
+    border: 1px solid #bdbdbd;
+    width: 101px;
+    padding: 7px 0px;
+}
+
+.filterFormSelect {
+    border: 1px solid #bdbdbd;
+    width: 144px;
+    padding: 6px 0px;
+}
+
+
+
+
 
 
 

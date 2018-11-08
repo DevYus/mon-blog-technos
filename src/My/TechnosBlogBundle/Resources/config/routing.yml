@@ -28,20 +28,15 @@ admin_all_article:
     requirements:
         page: "[0-9]+"
 
-admin_ajax_request:
-    path:    /admin/ajax-request
-    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:ajaxRequest }
-
 admin_all_users:
-    path:    /admin/all-users/{page}
-    defaults: {_controller: MyTechnosBlogBundle:Back\AllUsers:allUsers }
-    methods: [GET]
+    path:    /admin/all-users/{page}/{cat}
+    defaults: {_controller: MyTechnosBlogBundle:Back\AllUsers:allUsers, cat: null }
     requirements:
         page: "[0-9]+"
 
 admin_delete_user:
     path:    /admin/delete-user/{id}
-    defaults: {_controller: MyTechnosBlogBundle:Back\DeleteUser:deleteUser }
+    defaults: {_controller: MyTechnosBlogBundle:Back\AllUsers:deleteUser }
     requirements:
         id: "[0-9]+"
 
@@ -60,6 +55,10 @@ admin_delete_comment:
     defaults: {_controller: MyTechnosBlogBundle:Back\AllComments:deleteComment }
     requirements:
         id: "[0-9]+"
+
+ajax_request:
+    path:    /ajax-request
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:ajaxRequest }
 
 contact:
     path:    /contact

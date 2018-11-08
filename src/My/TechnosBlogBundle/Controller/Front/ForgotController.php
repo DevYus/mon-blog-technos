@@ -90,9 +90,9 @@ class ForgotController extends Controller
             $dataBaseUser->setResetToken($token);
             $dataBaseUser->setResetExpires($expiretime);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($dataBaseUser);
-            $em->flush();
+            $entMa = $this->getDoctrine()->getManager();
+            $entMa->persist($dataBaseUser);
+            $entMa->flush();
 
             /* Send email */
 

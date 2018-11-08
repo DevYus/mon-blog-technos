@@ -15,6 +15,31 @@
             </div>
         {% endfor %}
 
+        <form action="{{ path('admin_all_users', { page : 1 }) }}" method="post" class="filterFormUsers">
+            <select name="category" class="filterFormSelect">
+                <option value="">Sans filtre</option>
+                {% if cat is defined and cat == 'role-user'  %}
+                    <option value='role-user' selected>
+                        Membre
+                    </option>
+                {% else %}
+                    <option value='role-user'>
+                        Membre
+                    </option>
+                {% endif %}
+                {% if cat is defined and cat == 'role-admin'  %}
+                    <option value='role-admin' selected>
+                        Administrateur
+                    </option>
+                 {% else %}
+                     <option value='role-admin'>
+                         Administrateur
+                     </option>
+                {% endif %}
+            </select>
+            <input type="submit" id="filterCategoryBtn" class="filterFormSubmit">
+        </form>
+
         <table style="width:100%">
             <thead>
                 <tr>

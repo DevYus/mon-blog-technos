@@ -7,9 +7,7 @@
   <main>
 
     <section class="sectionAll">
-      <h1 id="toto">Vos articles</h1>
-
-
+      <h1>Vos articles</h1>
 
         {% for flash_message in app.session.flashBag.get('notice') %}
             <div class="flash-notice">
@@ -18,24 +16,37 @@
         {% endfor %}
 
 
-        <form action="{{ path('admin_all_article', { page : 1 }) }}" method="post">
-            <select name="category">
-                <option value="bibi">Bibi</option>
-                <option value="jklmjklmjl">jklmjklmjl</option>
+        <form action="{{ path('admin_all_article', { page : 1 }) }}" method="post" class="filterFormArticles">
+            <select name="category" class="filterFormSelect">
+                <option value="">Sans filtre</option>
+
+                {% if cat is defined and cat == 'bibi'  %}
+                    <option value='bibi' selected>
+                        bibi
+                    </option>
+                {% else %}
+                    <option value='bibi'>
+                        bibi
+                    </option>
+                {% endif %}
+                {% if cat is defined and cat == 'jklmjklmjl' %}
+                    <option value='jklmjklmjl' selected>
+                        jklmjklmjl
+                    </option>
+                {% else %}
+                    <option value='jklmjklmjl'>
+                        jklmjklmjl
+                    </option>
+                {% endif %}
+
+
             </select>
-            <input type="submit" id="filterCategoryBtn">
+            <input type="submit" id="filterCategoryBtn" class="filterFormSubmit">
         </form>
 
-        <div class="ajax-result">
 
-
-
-
-        </div>
 
         <a href="{{ path('admin_add_article') }}" class="addBtn">Ajouter un article</a>
-
-
 
 
         <table style="width:100%">

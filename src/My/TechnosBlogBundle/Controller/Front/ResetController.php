@@ -44,9 +44,9 @@ class ResetController extends Controller
                      $userToken->setResetToken("");
                      $userToken->setResetExpires(0);
 
-                     $em = $this->getDoctrine()->getManager();
-                     $em->persist($userToken);
-                     $em->flush();
+                     $entMa = $this->getDoctrine()->getManager();
+                     $entMa->persist($userToken);
+                     $entMa->flush();
 
                      return $this->redirectToRoute('login', ['message' => 'reset_success']);
 

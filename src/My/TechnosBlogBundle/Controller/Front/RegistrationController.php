@@ -45,9 +45,9 @@ class RegistrationController extends Controller
             $user->setRoles(['ROLE_USER']);
 
             // Flush to database
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
+            $entMa = $this->getDoctrine()->getManager();
+            $entMa->persist($user);
+            $entMa->flush();
 
             return $this->redirectToRoute('login');
         }

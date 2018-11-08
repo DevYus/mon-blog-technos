@@ -27,8 +27,8 @@ class AllCommentsController extends Controller
 
             $nbCommentsByPage = 8;
 
-            $em = $this->getDoctrine()->getManager();
-            $comments = $em->getRepository('MyTechnosBlogBundle:Comments')->paginate($page, $nbCommentsByPage);
+            $entMa = $this->getDoctrine()->getManager();
+            $comments = $entMa->getRepository('MyTechnosBlogBundle:Comments')->paginate($page, $nbCommentsByPage);
 
 
             $pagination = [
@@ -51,8 +51,8 @@ class AllCommentsController extends Controller
 
     public function deleteCommentAction(Request $request, $id)
     {
-        $em = $this->getDoctrine()->getManager();
-        $comment = $em->getRepository('MyTechnosBlogBundle:Comments')->find($id);
+        $entMa = $this->getDoctrine()->getManager();
+        $comment = $entMa->getRepository('MyTechnosBlogBundle:Comments')->find($id);
 
         $form = $this->get('form.factory')->create(DeleteType::class, $comment);
 
@@ -61,9 +61,9 @@ class AllCommentsController extends Controller
         if($form->isSubmitted() && $form->isValid())
         {
             // Flush to database
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($comment);
-            $em->flush();
+            $entMa = $this->getDoctrine()->getManager();
+            $entMa->remove($comment);
+            $entMa->flush();
 
             $request->getSession()->getFlashBag()->add('notice', 'Le commentaire a bien été supprimé');
 

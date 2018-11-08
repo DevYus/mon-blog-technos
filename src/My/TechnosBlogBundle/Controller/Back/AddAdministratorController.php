@@ -45,9 +45,9 @@ class AddAdministratorController extends Controller
             $user->setRoles(['ROLE_ADMIN']);
 
             // Flush to database
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
+            $entMa = $this->getDoctrine()->getManager();
+            $entMa->persist($user);
+            $entMa->flush();
 
             $request->getSession()->getFlashBag()->add('notice', 'Un nouvel administrateur à été crée');
 
