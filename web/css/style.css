@@ -325,18 +325,6 @@ figcaption {background: #FFFFFF; height: 164px;}
     margin: 0px 0 30px;
 }
 
-/*
-.sectionHomeThree:before{
-  width: 150vw;
-  left: -50vw;
-  height: 380px;
-  background: #FFF;
-  position: absolute;
-  content: '';
-  z-index: -1;
-
-}
-*/
 .sectionHomeThree h2{
     margin: 30px 0 20px 0;
     text-align: left;

@@ -131,7 +131,7 @@ class HandleArticleController extends Controller
             $entMa->persist($article);
             $entMa->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
+            $request->getSession()->getFlashBag()->add('notice', 'L\'article a bien enregistré.');
 
             return $this->redirectToRoute('admin_all_article', array('page' => 1));
         }
