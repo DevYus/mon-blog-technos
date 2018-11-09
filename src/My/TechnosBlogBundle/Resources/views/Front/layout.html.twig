@@ -6,8 +6,6 @@
     <meta name="description" content="Retrouvez les différentes infos sur les langages des programmations">
     <meta name="viewport" content="width=device-width">
 
-
-    <!-- ne pas oublier de mettre les links entre stylesheet -->
     {% block stylesheets %}
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -15,9 +13,13 @@
 
     {% endblock %}
 
-
 </head>
+
 <body>
+
+<div id="coverSearch">
+    <p class="jsBtnSearch">Cross</p>
+</div>
 
   <header id="headerJs">
       <div>
@@ -26,18 +28,20 @@
         <img src="{{ asset('./img/menu-button-of-three-horizontal-lines.png') }}" id="btn-menu" alt="responsive-logo-mon-techno-blog">
 
         <div class="logoBlock">
-            <img src="{{ asset('./img/Mon-blog-technos-grey.png') }}" alt="MonBlogTechnos">
+            <img src="{{ asset('./img/Mon-blog-technos-white.png') }}" alt="MonBlogTechnos">
         </div>
 
 
           <nav class="navHeader">
             <ul>
-                <li>Home (logo)</li>
+              <li>Home (logo)</li>
               <li>Home (logo)</li>
               <li>Tout sur le PHP</li>
               <li>News Javascript</li>
               <li>HTML5 - CSS3</li>
-              <li>Autres langages</li>
+              <li class="jsBtnSearch">
+                  <img src="{{ asset('./img/search.png') }}" alt="search">
+              </li>
             </ul>
           </nav>
         </div>
@@ -45,11 +49,12 @@
   </header>
 
 
+
+
   {% block main %}
 
 
   {% endblock %}
-
 
 
 <footer>
@@ -82,7 +87,9 @@
 
 </footer>
 
+
 </body>
+
 
   {% block javascripts %}
 
@@ -93,9 +100,15 @@
 
       $(function(){
 
+              $('.jsBtnSearch').click(function(){
+
+                      $("#coverSearch").slideToggle("slow");
+
+              });
+
+          });
 
 
-      });
 
 
     </script>

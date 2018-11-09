@@ -7,39 +7,45 @@ body{
     font-family: 'Open Sans', sans-serif;
     overflow-x:hidden;
     width: 100%;
+    z-index: 1;
 }
 
 header{
-    width: 100%;
+    width: 1200px;
     height: 100%;
     line-height: 60px;
     padding: 0;
-    margin:0;
+    margin:0 auto;
     position: relative;
-    background: #212121;
 }
-
-header > div {background: #212121;}
 
 ul{
     padding: 0;
     margin: 0;
 }
 
+#coverSearch {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    opacity: 0.6;
+    display: none;
+}
+
+
 .containerHeader{
-    background: #212121;
     width: 1200px;
-    margin: 0 auto;
+    height: 100%;
+    margin: 0 0;
     overflow: hidden;
-    position: relative;
 }
 
 .logoBlock{
-    width: 122px;
+    width: 142px;
     position: relative;
-    margin: 0;
-    float: left;
-
+    margin: 18px auto 20px;
 }
 
 .logoBlock img {
@@ -50,12 +56,19 @@ ul{
 }
 
 .navHeader{
-    background: #212121;
-    width: 80%;
+    width: 100%;
     height: 60px;
+}
+
+.navHeader:before{
+    width: 150vw;
+    left: -50vw;
+    height: 58px;
+    background: #FFF;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    content: '';
+    z-index: -1;
+    border: 1px solid #f0f0f0;
 }
 
 .navHeader ul {
@@ -67,21 +80,21 @@ ul{
 
 .navHeader ul>li{
     display: inline-block;
-    text-align: center;
-    width: 192px;
-    color: #FFF;
+    text-align: left;
+    width: 200px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 300;
     transition-duration: 0.3s;
     cursor: pointer;
-    font-size: 13px;
-    height:59px;
+    font-size: 15px;
+    height: 59px;
     float: left;
 }
 
+.navHeader ul>li>img {display:block;margin: 21px auto;}
+
 .navHeader ul>li:hover{
-    background: #757575;
-    color: #212121;
+    color: #A6CE39;
 }
 
 main{
