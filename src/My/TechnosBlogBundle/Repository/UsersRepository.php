@@ -59,6 +59,9 @@ class UsersRepository extends \Doctrine\ORM\EntityRepository
 
 
             }
+
+
+            
             else
             {
                 $queryBuilder = $this->createQueryBuilder('p')
