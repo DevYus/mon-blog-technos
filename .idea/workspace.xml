@@ -56,8 +56,8 @@
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="308">
+              <caret line="25" column="6" lean-forward="true" selection-start-line="19" selection-end-line="25" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -244,7 +244,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1415" />
     <option name="y" value="14" />
     <option name="width" value="1440" />
@@ -602,12 +602,12 @@
       <workItem from="1540457936395" duration="12939000" />
       <workItem from="1541409970987" duration="2858000" />
       <workItem from="1541599397566" duration="32530000" />
-      <workItem from="1542014697634" duration="5000000" />
+      <workItem from="1542014697634" duration="5086000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="543790000" />
+    <option name="totallyTimeSpent" value="543876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -963,8 +963,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="308">
+          <caret line="25" column="6" lean-forward="true" selection-start-line="19" selection-end-line="25" selection-end-column="6" />
         </state>
       </provider>
     </entry>
