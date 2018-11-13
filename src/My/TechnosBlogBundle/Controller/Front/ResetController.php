@@ -4,6 +4,8 @@ namespace My\TechnosBlogBundle\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+
 
 
 
