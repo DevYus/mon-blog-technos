@@ -7,10 +7,10 @@ namespace My\TechnosBlogBundle\Controller\Front;
  * Class ResetController
  * @package My\TechnosBlogBundle\Controller\Front
  */
-class ResetController
+class ResettingController
 {
 
-     public function resetAction()
+     public function resettingAction()
      {
 
 
