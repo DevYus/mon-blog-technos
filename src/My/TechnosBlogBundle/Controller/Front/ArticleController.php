@@ -28,15 +28,11 @@ class ArticleController extends Controller
         $comment = new Comments();
         $comment->setPseudo('Ja');
         $comment->setContent('marcheeeeeee');
-
         $comment->setArticle($article);
 
         $entMa->persist($article);
         $entMa->persist($comment);
         $entMa->flush();
-
-        //$listComments = $entMa->getRepository('MyTechnosBlogBundle:Comments')->findBy(['id' => $article]);
-
 
         return $this->render('@MyTechnosBlog/Front/Article\article.html.twig', array(
             'category' => $category,
