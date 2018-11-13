@@ -90,12 +90,12 @@ ul{
     margin: 0;
 }
 
-.navHeader{
+nav{
     width: 100%;
     height: 60px;
 }
 
-.navHeader:before{
+nav:before{
     width: 150vw;
     left: -50vw;
     height: 58px;
@@ -106,14 +106,26 @@ ul{
     border: 1px solid #f0f0f0;
 }
 
-.navHeader ul {
+nav.change:before{
+    width: 150vw;
+    left: -50vw;
+    height: 58px;
+    background: #FFF;
+    position: absolute;
+    content: '';
+    z-index: -1;
+    border: 1px solid #f0f0f0;
+}
+
+
+nav ul {
     height: 100%;
     width: 100%;
     margin: 0 auto;
     float: right;
 }
 
-.navHeader ul>li{
+nav ul>li{
     display: inline-block;
     text-align: left;
     width: 200px;
@@ -126,9 +138,9 @@ ul{
     float: left;
 }
 
-.navHeader ul>li>img {display:block;margin: 21px auto;}
+nav ul>li>img {display:block;margin: 21px auto;}
 
-.navHeader ul>li:hover{
+nav ul>li:hover{
     color: #A6CE39;
 }
 
