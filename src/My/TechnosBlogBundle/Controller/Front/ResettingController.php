@@ -12,13 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class ResettingController extends Controller
 {
 
-     public function resettingAction()
-     {
-
-
-     }
-
-
 
 
 }
