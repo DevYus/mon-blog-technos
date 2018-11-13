@@ -1,0 +1,96 @@
+
+{% extends "@MyTechnosBlog/Back/layout.html.twig" %}
+
+
+{% block main %}
+
+<!-- Extension du layout au templates fils -->
+
+  <main>
+
+    <section class="sectionAdminFirst">
+      <h1>Interface d'administration</h1>
+      <p>Bienvenue Admin</p>
+
+
+
+      <div class="optionsHomeContainer">
+
+      <a href="{{ path('admin_add_article') }}">
+          <div class="optionsHome">
+           <figure>
+             <img src="{{ asset('./img/add-article.png') }}" alt="">
+             <figcaption>
+               <span>Ajouter un article</span>
+             </figcaption>
+           </figure>
+          </div>
+        </a>
+
+        <a href="{{ path('admin_all_article', { 'page' : 1 }) }}">
+          <div class="optionsHome">
+            <figure>
+              <img src="{{ asset('./img/list.png') }}" alt="">
+              <figcaption>
+                <span> Voir tout les articles</span>
+              </figcaption>
+            </figure>
+          </div>
+        </a>
+
+        <a href="{{ path('admin_all_users', { 'page' : 1 }) }}">
+          <div class="optionsHome">
+            <figure>
+              <img src="{{ asset('./img/users.png') }}" alt="">
+              <figcaption>
+                <span> Mes utilisateurs</span>
+              </figcaption>
+            </figure>
+          </div>
+        </a>
+
+        <a href="{{ path('admin_all_comments', { 'page' : 1 }) }}">
+          <div class="optionsHome">
+            <figure>
+              <img src="{{ asset('./img/comment.png') }}" alt="">
+              <figcaption>
+                <span>Derniers commentaires</span>
+              </figcaption>
+            </figure>
+          </div>
+        </a>
+
+        <a href="{{ path('admin_add_administrator', { 'page' : 1 }) }}">
+          <div class="optionsHome">
+              <figure>
+                <img src="{{ asset('./img/admin.png') }}" alt="">
+                <figcaption>
+                  <span>Ajouter un administrateur</span>
+                </figcaption>
+              </figure>
+          </div>
+        </a>
+
+        <a href="{{ path('logout') }}">
+          <div class="optionsHome">
+            <figure>
+              <img src="{{ asset('./img/logout.png') }}" alt="">
+              <figcaption>
+                <span>Deconnexion</span>
+              </figcaption>
+            </figure>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+{% endblock %}
+
+
+

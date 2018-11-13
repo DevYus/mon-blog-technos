@@ -1,0 +1,108 @@
+homepage:
+    path:     /
+    defaults: { _controller: MyTechnosBlogBundle:Front\Index:index }
+
+admin:
+    path:    /admin
+    defaults: {_controller: MyTechnosBlogBundle:Back\Admin:admin }
+
+admin_add_article:
+    path:    /admin/add-article
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:addArticle }
+
+admin_update_article:
+    path:    /admin/update-article/{id}
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:updateArticle }
+    requirements:
+        id: "[0-9]+"
+
+admin_delete_article:
+    path:    /admin/delete-article/{id}
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:deleteArticle }
+    requirements:
+        id: "[0-9]+"
+
+admin_all_article:
+    path:    /admin/all-articles/{page}/{cat}
+    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:allArticle, cat: null  }
+    requirements:
+        page: "[0-9]+"
+
+admin_all_users:
+    path:    /admin/all-users/{page}/{cat}
+    defaults: {_controller: MyTechnosBlogBundle:Back\AllUsers:allUsers, cat: null }
+    requirements:
+        page: "[0-9]+"
+
+admin_delete_user:
+    path:    /admin/delete-user/{id}
+    defaults: {_controller: MyTechnosBlogBundle:Back\AllUsers:deleteUser }
+    requirements:
+        id: "[0-9]+"
+
+admin_add_administrator:
+    path:    /admin/add-administrator
+    defaults: {_controller: MyTechnosBlogBundle:Back\AddAdministrator:addAdministrator }
+
+admin_all_comments:
+    path:    /admin/all-comments/{page}
+    defaults: {_controller: MyTechnosBlogBundle:Back\AllComments:allComments }
+    requirements:
+        id: "[0-9]+"
+
+admin_delete_comment:
+    path:    /admin/delete-comment/{id}
+    defaults: {_controller: MyTechnosBlogBundle:Back\AllComments:deleteComment }
+    requirements:
+        id: "[0-9]+"
+
+ajax_request:
+    path:    /ajax-request
+    defaults: {_controller: MyTechnosBlogBundle:Front\Index:ajaxRequest }
+
+contact:
+    path:    /contact
+    defaults: { _controller: MyTechnosBlogBundle:Front\Contact:contact }
+
+login:
+    path:    /login
+    defaults: { _controller: MyTechnosBlogBundle:Front\Security:login }
+
+login_check:
+    path:    /login_check
+
+login_redirection:
+    path:    /login/redirection
+    defaults: { _controller: MyTechnosBlogBundle:Front\RedirectAfterLogin:redirection }
+
+logout:
+    path:    /logout
+
+forgot:
+    path:    /forgot
+    defaults: { _controller: MyTechnosBlogBundle:Front\Forgot:forgot}
+
+reset:
+    path:    /reset
+    defaults: { _controller: MyTechnosBlogBundle:Front\Reset:reset}
+
+registration:
+    path:    /registration
+    defaults: {_controller: MyTechnosBlogBundle:Front\Registration:registration }
+
+category:
+    path:    /{category}
+    defaults: {_controller: MyTechnosBlogBundle:Front\Category:category }
+    methods: [GET]
+    requirements:
+        category: "[a-zA-Z]+"
+
+article:
+    path:    /{category}/{slug}/{id}
+    defaults: {_controller: MyTechnosBlogBundle:Front\Article:article }
+    methods: [GET]
+    requirements:
+        category: "[a-zA-Z]+"
+        id: "[0-9]+"
+
+

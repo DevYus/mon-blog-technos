@@ -1,0 +1,235 @@
+
+{% extends "@MyTechnosBlog/Front/layout.html.twig" %}
+
+
+{% block main %}
+
+<!-- Extension du layout au templates fils -->
+
+
+  <main>
+    <section class="sectionHomeOne">
+
+
+        <div class="leftBloc">
+
+          <article class="lastestArticle">
+            <figure>
+              <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_03-1200x700.jpg" />
+              <figcaption>
+                <span class="catFigCaption"><strong>A la une </strong>| Catégorie</span>
+                <h1>C'est notre nouveau titre</h1>
+                <p>Co-working SpaceTeam fund big data prototype long shadow latte big data. Innovate affordances personas user centered design paradigm.</p>
+                <span class="dateFicaption">Le 19 Juin 2018 par Youssef</span>
+              </figcaption>
+            </figure>
+          </article>
+
+
+        </div>
+
+
+        <div class="rightBloc">
+
+          <div class="asideArticle">
+            <figure>
+              <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/space-1200x700.jpg" />
+              <figcaption>
+                <h3 class="asideArticleTitle">Rosetta finds oxygen on comet in most surprising discovery</h3>
+                <span class="dateFicaption">Le 19 Juin 2018 par Youssef</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="asideArticle">
+            <div class="asideArticle">
+              <figure>
+                <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_08-1200x700.jpg" />
+                <figcaption>
+                  <h3 class="asideArticleTitle">Rosetta finds oxygen on comet in most surprising discovery</h3>
+                  <span class="dateFicaption">Le 19 Juin 2018 par Youssef</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="asideArticle">
+            <figure>
+              <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/space-1200x700.jpg" />
+              <figcaption>
+                <h3 class="asideArticleTitle">Rosetta finds oxygen on comet in most surprising discovery</h3>
+                <span class="dateFicaption">Le 19 Juin 2018 par Youssef</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="asideArticle">
+            <div class="asideArticle">
+              <figure>
+                <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_08-1200x700.jpg" />
+                <figcaption>
+                  <h3 class="asideArticleTitle">Rosetta finds oxygen on comet in most surprising discovery</h3>
+                  <span class="dateFicaption">Le 19 Juin 2018 par Youssef</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- attention répétion -->
+
+
+
+    </section>
+
+    <section class="sectionHomeTwo">
+
+      	<h2>Articles populaires</h2>
+
+    	<div class="divFlexWrapper">
+
+	        <article class="asidePopularArticle">
+	          <figure>
+	            <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_02-1200x700.jpg" alt="popular-artilce-blog">
+	            <figcaption>
+	              <h3>Article populaire</h3>
+	              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
+	            </figcaption>
+	          </figure>
+	        </article>
+
+		    <article class="asidePopularArticle">
+		        <figure>
+		          <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_09-1200x700.jpg" alt="popular-artilce-blog">
+		          <figcaption>
+		            <h3>Article populaire</h3>
+		            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
+		          </figcaption>
+		        </figure>
+		    </article>
+
+		    <article class="asidePopularArticle">
+		        <figure>
+		          <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_02-1200x700.jpg" alt="popular-artilce-blog">
+		          <figcaption>
+		            <h3>Article populaire</h3>
+		            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+		          </figcaption>
+		        </figure>
+		    </article>
+
+	  	</div>
+
+
+
+    </section>
+
+
+
+    <section class="sectionHomeThree">
+
+        <h2>Vidéos</h2>
+
+
+
+    	<div class="divFlexWrapper">
+	      <article class="videoBlock">
+	        <figure>
+	          <img src="{{ asset('./img/mini-smartphone.jpg') }}" class="videoBlockImg">
+	          <figcaption class="figcaptionVideo">
+                  <span class="catFigCaption" ><strong>Video |</strong> Youtube</span>
+                  <h3>C'est mon nouveau titre</h3>
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      Ut enim ad minim veniam,
+
+                  </p>
+              </figcaption>
+	          <!--<span class="catVideoBlock">Vidéo</span>-->
+	        </figure>
+	      </article>
+
+	      <article class="videoBlock">
+	        <img src="{{ asset('./img/smartphone-2.jpg') }}" class="videoBlockImg">
+              <figcaption class="figcaptionVideo">
+                  <span class="catFigCaption" ><strong>Video |</strong> Youtube</span>
+                  <h3>C'est mon nouveau titre</h3>
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      Ut enim ad minim veniam,
+
+                  </p>
+              </figcaption>
+	      </article>
+  		</div>
+
+
+    </section>
+
+
+
+    <section class="sectionHomeFour">
+
+        <div class="wrapperTutorialBlocks">
+            <div id="hWrapperLeft">
+                <h2>Tutoriels</h2>
+            </div>
+          <article class="tutorialBlock">
+            <div class="tutorialBlockImg">
+              <img src="http://www.art-spire.com/wp-content/gallery/2011/novembre_2011/21-11-11_chocolate_sculptures/affiche.jpg" alt="articles-populaire">
+            </div>
+            <div class="tutorialBlockContent">
+              <h3>C'est mon nouveau titre</h3>
+                <p>C'est mon contenu</p>
+            </div>
+          </article>
+
+          <article class="tutorialBlock">
+            <div class="tutorialBlockImg">
+              <img src="http://www.art-spire.com/wp-content/gallery/2013/Avril_2013/01-04-13_Game_Of_Thrones/affiche.jpg">
+            </div>
+            <div class="tutorialBlockContent">
+              <h3>C'est mon nouveau titre</h3>
+              <p>C'est mon contenu</p>
+            </div>
+          </article>
+
+          <article class="tutorialBlock">
+            <div class="tutorialBlockImg">
+              <img src="http://www.art-spire.com/wp-content/gallery/2012/Octobre_2012/08-10-12_safety_speed_comfort/affiche.jpg">
+            </div>
+            <div class="tutorialBlockContent">
+              <h3>C'est mon nouveau titre</h3>
+              <p>C'est mon contenu</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="wrapperSurveyBlocks">
+
+            <div id="hWrapperRight">
+                <h2>Votre opinion</h2>
+            </div>
+
+            <aside class="surveyBlock">
+                <figure>
+                    <img src="http://clamps.sa.utoronto.ca/wp-content/blogs.dir/139/files/2017/12/Feedback.jpg" alt="popular-artilce-blog">
+                    <figcaption>
+                        <h3>Dernier sondage !</h3>
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
+                    </figcaption>
+                </figure>
+            </aside>
+
+        </div>
+
+    </section>
+
+
+
+  </main>
+
+
+
+{% endblock %}
+
+
+

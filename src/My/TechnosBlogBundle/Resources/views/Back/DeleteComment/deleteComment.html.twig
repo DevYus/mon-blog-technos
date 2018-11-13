@@ -1,0 +1,44 @@
+
+{% extends "@MyTechnosBlog/Back/layout.html.twig" %}
+
+
+{% block main %}
+
+    <style>
+
+
+
+    </style>
+
+  <main>
+
+    <section class="sectionArticle">
+      <h1>Supprimer un commentaire</h1>
+
+        <span class="deleteText">
+            Attention, êtes vous certains de vouloir supprimer ce commentaire ? <br>
+            Si vous confirmez, le commentaire sera définitivement supprimé.<br><br>
+            Commentaire {{ comment.content }} par {{ comment.pseudo }} le {{ comment.date|date('d M Y') }}.
+        </span>
+
+        <div class="deleteContainer">
+
+            {{ form_errors(form) }}
+              {{ form_start(form) }}
+              {{ form_widget(form) }}
+            <a href="{{ path('admin_all_comments', { 'page' : 1 }) }}" class="returnBtn">Retourner à l'administration</a>
+            {{ form_end(form) }}
+
+        </div>
+
+
+    </section>
+
+  </main>
+
+
+
+{% endblock %}
+
+
+

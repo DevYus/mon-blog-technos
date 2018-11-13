@@ -1,0 +1,29 @@
+{% extends "@MyTechnosBlog/Front/layout.html.twig" %}
+
+
+{% block main %}
+
+    <!-- Extension du layout au templates fils -->
+    <main class="forgotMainBlock">
+
+        <h1>Demande de réinisialisation de mot de passe</h1>
+
+        <section class="sectionForgotOne">
+
+            <div>{{ info }}</div>
+
+            <p>{{ dump() }}</p>
+
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+            {{ form_end(form) }}
+
+        </section>
+
+
+    </main>
+
+{% endblock %}
+
+
+

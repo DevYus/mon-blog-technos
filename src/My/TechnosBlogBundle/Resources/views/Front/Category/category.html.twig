@@ -1,0 +1,104 @@
+
+{% extends "@MyTechnosBlog/Front/layout.html.twig" %}
+
+
+{% block main %}
+
+<!-- Extension du layout au templates fils -->
+
+
+  <main>
+
+
+      <section class="categorySection">
+          <span class="categorySubTitle">Article sur</span>
+          <h1>{{ category }}</h1>
+          <div class="containerCatArticle">
+              <article>
+                  <div class="imgContainer">
+                      <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/space-1200x700.jpg" alt="">
+                  </div>
+                  <div class="contentContainer">
+                      <span class="categoryArticle">Catégorie - {{ category|capitalize }}</span>
+                      <h2>C'est mon nouveau titre</h2>
+                      <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500</p>
+                      <a href="">Lire l'article</a>
+                  </div>
+              </article>
+              <article>
+                  <div class="imgContainer">
+                      <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/space-1200x700.jpg" alt="">
+                  </div>
+                  <div class="contentContainer">
+                      <span class="categoryArticle">Catégorie - {{ category|capitalize }}</span>
+                      <h2>C'est mon nouveau titre</h2>
+                      <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500</p>
+                      <a href="">Lire l'article</a>
+                  </div>
+              </article>
+              <article>
+                  <div class="imgContainer">
+                      <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/space-1200x700.jpg" alt="">
+                  </div>
+                  <div class="contentContainer">
+                      <span class="categoryArticle">Catégorie - {{ category|capitalize }}</span>
+                      <h2>C'est mon nouveau titre</h2>
+                      <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500</p>
+                      <a href="">Lire l'article</a>
+                  </div>
+              </article>
+          </div>
+
+          <div class="asideContainer">
+              <aside>
+                  <h3>Derniers articles</h3>
+                  <ul>
+                      <li>Toto</li>
+                      <li>toto</li>
+                      <li>toto</li>
+                      <li>Toto</li>
+                      <li>toto</li>
+                      <li>toto</li>
+                  </ul>
+              </aside>
+              <aside>
+                  <h3>Catégories</h3>
+                  <ul>
+                      <li>HTML5 - CSS 3</li>
+                      <li>Javascript</li>
+                      <li>PHP</li>
+                      <li>Toto</li>
+                      <li>toto</li>
+                      <li>toto</li>
+                  </ul>
+              </aside>
+
+              <aside class="asidebarSocialNetwork">
+                  <h2>Suivez-nous</h2>
+                  <div>
+                      <a href="">
+                        <img src="{{ asset('./img/facebook.png') }}" alt="facebook">
+                      </a>
+                  </div>
+                  <div>
+                      <a href="">
+                        <img src="{{ asset('./img/twitter.png') }}" alt="facebook">
+                      </a>
+                  </div>
+                  <div>
+                      <a href="">
+                        <img src="{{ asset('./img/google-plus.png') }}" alt="facebook">
+                      </a>
+                  </div>
+              </aside>
+          </div>
+      </section>
+
+
+  </main>
+
+
+{% endblock %}
+
+
+

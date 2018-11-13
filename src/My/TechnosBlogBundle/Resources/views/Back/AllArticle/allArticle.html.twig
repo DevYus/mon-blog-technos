@@ -1,0 +1,150 @@
+
+{% extends "@MyTechnosBlog/Back/layout.html.twig" %}
+
+
+{% block main %}
+
+  <main>
+
+    <section class="sectionAll">
+      <h1>Vos articles</h1>
+
+        {% for flash_message in app.session.flashBag.get('notice') %}
+            <div class="flash-notice">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+
+        <form action="{{ path('admin_all_article', { page : 1 }) }}" method="post" class="filterFormArticles">
+            <select name="category" class="filterFormSelect">
+                <option value="">Sans filtre</option>
+
+                {% if cat is defined and cat == 'bibi'  %}
+                    <option value='bibi' selected>
+                        bibi
+                    </option>
+                {% else %}
+                    <option value='bibi'>
+                        bibi
+                    </option>
+                {% endif %}
+                {% if cat is defined and cat == 'jklmjklmjl' %}
+                    <option value='jklmjklmjl' selected>
+                        jklmjklmjl
+                    </option>
+                {% else %}
+                    <option value='jklmjklmjl'>
+                        jklmjklmjl
+                    </option>
+                {% endif %}
+
+
+            </select>
+            <input type="submit" id="filterCategoryBtn" class="filterFormSubmit">
+        </form>
+
+
+
+        <a href="{{ path('admin_add_article') }}" class="addBtn">Ajouter un article</a>
+
+
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th class="colunmchild1">Titre</th>
+                    <th class="colunmchild2">Auteur</th>
+                    <th class="colunmchild3">Catégories</th>
+                    <th class="colunmchild4">Date</th>
+                    <th class="colunmchild5">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in articles %}
+                    <tr>
+                        <td class="colunmchild1">{{ article.title }}</td>
+                        <td class="colunmchild2">{{ article.author }}</td>
+                        <td class="colunmchild3">{{ article.category }}</td>
+                        <td class="colunmchild4" >{{ article.date|date('d/m/Y') }}</td>
+                        <td class="colunmchild5">
+                            <ul>
+                                <li>
+                                    <a href="{{ path('admin_update_article', { 'id' : article.id }) }}">
+                                        <img src="{{ asset('img/update.png') }}" alt="update">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('admin_delete_article', { 'id' : article.id }) }}">
+                                        <img src="{{ asset('img/delete.png') }}" alt="delete">
+                                    </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% include '@MyTechnosBlog/Back/Includes/pagination.html.twig' %}
+
+
+    </section>
+
+  </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        /*
+        $(function() {
+
+
+            $('#filterCategoryBtn').click(function(e){
+
+                e.preventDefault();
+
+                let category = $('#filtreCategory option:selected').val();
+
+
+                $.ajax({
+                    url:  'http://localhost/mon-blog-technos/web/app_dev.php/admin/ajax-request',
+                    type: 'POST',
+                    dataType: 'json',
+                    data:'category='+ category,
+                    success: function(data){
+
+                        var container = document.querySelector('.ajax-result');
+                        container.innerHTML = "";
+
+                        var data = JSON.parse(JSON.stringify(data));
+
+                        $.each(data,function(index, value){
+
+                            let p = document.createElement('p');
+                            let content = document.createTextNode(value.category);
+                            p.appendChild(content);
+                            container.appendChild(p);
+
+                        });
+
+
+                    },
+                    error : function(){
+                        alert('pas ok');
+                    }
+
+                });
+
+            });
+
+        });
+        */
+
+    </script>
+
+
+
+
+{% endblock %}
+
+
+

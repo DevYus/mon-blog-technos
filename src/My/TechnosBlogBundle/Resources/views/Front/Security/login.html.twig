@@ -1,0 +1,56 @@
+
+{% extends "@MyTechnosBlog/Front/layout.html.twig" %}
+
+
+{% block main %}
+
+<!-- Extension du layout au templates fils -->
+
+  <main>
+
+      <section class="containerLoginForm">
+
+          <h1>Connexion</h1>
+
+
+          {% if error %}
+              <div class="alert alert-danger">
+                  {{ error.messageKey }}
+              </div>
+          {% endif %}
+
+          <form method="post" action="{{ path('login_check') }}">
+
+
+              <label>Login <span class="star">*</span></label>
+              <p class="clear"></p>
+              <input type="text" name="_username" id="username" value="{{ last_username }}">
+
+              <p class="clear"></p>
+              <br>
+
+              <label>Password <span class="star">*</span></label>
+              <p class="clear"></p>
+              <input type="text" name="_password" id="password">
+
+              <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+
+              <a href="" class="lostPassword">Vous avez perdu votre mot de passe ?</a>
+
+
+              <input type="submit" value="LOG IN">
+
+          </form>
+
+          <p>Vous n'avez pas encore de compte ? <a href="">Cliquez ici</a> pour vous inscrire !</p>
+
+      </section>
+
+  </main>
+
+
+{% endblock %}
+
+
+
