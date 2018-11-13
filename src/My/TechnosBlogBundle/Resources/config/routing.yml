@@ -82,8 +82,8 @@ forgot:
     path:    /forgot
     defaults: { _controller: MyTechnosBlogBundle:Front\Forgot:forgot}
 
-reset:
-    path:    /reset
+resetting:
+    path:    /resetting
     defaults: { _controller: MyTechnosBlogBundle:Front\Resetting:resetting}
 
 registration:

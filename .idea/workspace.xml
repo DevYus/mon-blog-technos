@@ -59,8 +59,8 @@
       <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
+            <state relative-caret-position="550">
+              <caret line="85" column="23" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -424,12 +424,12 @@
       <workItem from="1541409970987" duration="2858000" />
       <workItem from="1541599397566" duration="32530000" />
       <workItem from="1542014697634" duration="24613000" />
-      <workItem from="1542118848492" duration="2418000" />
+      <workItem from="1542118848492" duration="2522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="565821000" />
+    <option name="totallyTimeSpent" value="565925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -674,8 +674,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
+        <state relative-caret-position="550">
+          <caret line="85" column="23" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
         </state>
       </provider>
     </entry>
