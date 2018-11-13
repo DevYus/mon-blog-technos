@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="420ff00b-ccea-48c6-8193-f06ad492f80c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/AddAdministratorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/AddAdministratorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RegistrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ResetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ResetController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +38,8 @@
       <file leaf-file-name="ResetController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ResetController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="826">
+              <caret line="87" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="87" />
             </state>
           </provider>
         </entry>
@@ -593,12 +591,12 @@
       <workItem from="1540457936395" duration="12939000" />
       <workItem from="1541409970987" duration="2858000" />
       <workItem from="1541599397566" duration="32530000" />
-      <workItem from="1542014697634" duration="20553000" />
+      <workItem from="1542014697634" duration="20638000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="559343000" />
+    <option name="totallyTimeSpent" value="559428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -990,8 +988,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ResetController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="826">
+          <caret line="87" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="87" />
         </state>
       </provider>
     </entry>
