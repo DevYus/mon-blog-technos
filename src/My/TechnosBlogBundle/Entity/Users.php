@@ -325,8 +325,21 @@ class Users implements UserInterface
         // $this->plainPassword = null;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function serialize()
+    {
+        return serialize([$this->id, $this->fullname, $this->password]);
+    }
 
-
+    /**
+     * {@inheritdoc}
+     */
+    public function unserialize($serialized)
+    {
+        [$this->id, $this->username, $this->password] = unserialize($serialized, ['allowed_classes' => false]);
+    }
 
 
 }
