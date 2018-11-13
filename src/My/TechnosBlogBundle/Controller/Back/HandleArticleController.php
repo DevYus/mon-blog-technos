@@ -80,6 +80,7 @@ class HandleArticleController extends Controller
 
     }
 
+    /*
     private function findArticlesForPagination($page, $nbArticlesByPage, $cat)
     {
         $entMa = $this->getDoctrine()->getManager();
@@ -98,6 +99,7 @@ class HandleArticleController extends Controller
             ]
         ];
     }
+    */
 
     /**
      * @param Request $request
