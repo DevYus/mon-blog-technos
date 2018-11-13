@@ -36,5 +36,12 @@ class SecurityController extends Controller
         ]);
     }
 
+    /**
+     * @throws \Exception
+     */
 
+    public function logout()
+    {
+        throw new \Exception('Ne dois jamais être executé');
+    }
 }
