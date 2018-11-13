@@ -44,9 +44,7 @@ class ResetController extends Controller
                      $userToken->setResetToken("");
                      $userToken->setResetExpires(0);
 
-                     $entMa = $this->getDoctrine()->getManager();
-                     $entMa->persist($userToken);
-                     $entMa->flush();
+                     
 
                      return $this->redirectToRoute('login', ['message' => 'reset_success']);
 
@@ -64,9 +62,23 @@ class ResetController extends Controller
 
 
              }
-             
+
+              else
+              {
+                  //If Expired token
+                  return $this->redirectToRoute('forgot', ['message' => 'expired_token']);
+              }
+
 
          }
+
+         else
+         {
+             // Missing token or invalid token
+             return $this->redirectToRoute('forgot', ['message' => 'invalid_token']);
+         }
+
+
 
 
 

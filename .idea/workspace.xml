@@ -38,12 +38,19 @@
       <file leaf-file-name="ResetController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ResetController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+            <state relative-caret-position="452">
+              <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
               <folding>
                 <element signature="e#57#114#0#PHP" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForgotController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ForgotController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-660" />
           </provider>
         </entry>
       </file>
@@ -378,12 +385,12 @@
       <workItem from="1541409970987" duration="2858000" />
       <workItem from="1541599397566" duration="32530000" />
       <workItem from="1542014697634" duration="24613000" />
-      <workItem from="1542118848492" duration="539000" />
+      <workItem from="1542118848492" duration="767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="563942000" />
+    <option name="totallyTimeSpent" value="564170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -556,7 +563,6 @@
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/HandleArticleController.php" />
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RedirectAfterLoginController.php" />
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/IndexController.php" />
-    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ForgotController.php" />
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/SecurityController.php" />
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RegistrationController.php" />
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Users.php" />
@@ -593,10 +599,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ForgotController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-660" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ResetController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+        <state relative-caret-position="452">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
           <folding>
             <element signature="e#57#114#0#PHP" expanded="true" />
           </folding>
