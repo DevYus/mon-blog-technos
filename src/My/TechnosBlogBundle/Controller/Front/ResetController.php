@@ -6,8 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
 
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-
 
 /**
  * Class ResetController
@@ -16,7 +14,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class ResetController extends Controller
 {
 
-     public function resetAction(UserPasswordEncoderInterface $encoder)
+     public function resetAction()
      {
 
 
