@@ -19,9 +19,6 @@ class ResetController extends Controller
      public function resetAction(Request $request, UserPasswordEncoderInterface $encoder)
      {
 
-         $token = $request->query->get('token');
-
-
          
 
      }
