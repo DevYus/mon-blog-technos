@@ -64,18 +64,11 @@ class ResetController extends Controller
 
 
              }
-
-
-              //If Expired token
-              return $this->redirectToRoute('forgot', ['message' => 'expired_token']);
-
-
+             
 
          }
 
 
-         // Missing token or invalid token
-         return $this->redirectToRoute('forgot', ['message' => 'invalid_token']);
 
      }
 
