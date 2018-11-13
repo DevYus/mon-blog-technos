@@ -2,16 +2,12 @@
 
 namespace My\TechnosBlogBundle\Controller\Front;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
-
-
 
 /**
  * Class ResetController
  * @package My\TechnosBlogBundle\Controller\Front
  */
-class ResetController extends Controller
+class ResetController
 {
 
      public function resetAction()
