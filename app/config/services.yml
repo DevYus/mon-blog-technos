@@ -40,7 +40,7 @@ services:
         autowire: true
         tags: ['controller.service_arguments']
 
-    My\TechnosBlogBundle\Controller\Front\ResetController:
+    My\TechnosBlogBundle\Controller\Front\ResettingController:
         autowire: true
         tags: ['controller.service_arguments']
 
