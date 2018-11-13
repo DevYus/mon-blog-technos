@@ -21,9 +21,8 @@ class ResetController extends Controller
 
          $token = $request->query->get('token');
 
-         $userToken = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Users')->findOneByResetToken($token);
-         
 
+         
 
      }
 
