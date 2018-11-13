@@ -58,7 +58,7 @@ admin_delete_comment:
 
 ajax_request:
     path:    /ajax-request
-    defaults: {_controller: MyTechnosBlogBundle:Back\HandleArticle:ajaxRequest }
+    defaults: {_controller: MyTechnosBlogBundle:Front\Index:ajaxRequest }
 
 contact:
     path:    /contact

@@ -66,15 +66,21 @@ class ArticlesRepository extends \Doctrine\ORM\EntityRepository
     }
 
 
-
-
-    public function getResultsForJsonReponse($category = null)
+    public function getResultsForJsonReponse($title)
     {
-        $sql = "SELECT * FROM Articles WHERE category = ?";
+        $sql = "SELECT * FROM Articles WHERE title LIKE :title LIMIT 0,5";
         $entMa = $this->getEntityManager();
         $sm = $entMa->getConnection()->prepare($sql);
-        $sm->execute(['bibi']);
-        return $sm->fetchAll();
+        $sm->execute(['title' => '%'.$title.'%']);
+
+        $arrayAjaxRequest = [];
+
+        while($data = $sm->fetch())
+        {
+            array_push($arrayAjaxRequest ,$data['title']);
+        }
+
+        return $arrayAjaxRequest;
     }
 
 }

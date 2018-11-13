@@ -113,34 +113,30 @@
 
           });
 
-          var list = [
-              { value : "toto", label : "toto", desc : "toto description"},
-              { value : "titi", label : "titi", desc : "titi description"},
-              { value : "tutu", label : "tutu", desc : "tutu description"}
-          ];
 
           $('#search').autocomplete({
-                source : function(request, response){
 
-                    $.ajax({
-                        url:  'http://localhost/mon-blog-technos/web/app_dev.php/admin/ajax-request',
-                        dataType: 'json',
-                        data: {
-                            name_startsWith : $('#search').val()
-                        },
-                        success: function(data){
+              source : function(request, response){
 
-                               response($.map(data.mbt, function(object){
-                                   return object.title;
+                  $.ajax({
+                      url:  'http://localhost/mon-blog-technos/web/app_dev.php/ajax-request',
+                      dataType: 'json',
+                      data: {
+                          title : $('#search').val(),
+                      },
+                      success: function(data){
 
-                               }));
+                          response($.map(data, function(value){
+                              return value;
 
-                        }});
-                },
+                          }));
 
-                select : function(event,ui){
-                    $('#results').val(ui.item.value)
-                }
+                      }});
+              },
+
+              select : function(event,ui){
+                  $('#results').val(ui.item.value)
+              }
           });
 
     });

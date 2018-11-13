@@ -9,7 +9,7 @@ use My\TechnosBlogBundle\Entity\Articles;
 use My\TechnosBlogBundle\Form\AddArticleType;
 use My\TechnosBlogBundle\Form\UpdateArticleType;
 use My\TechnosBlogBundle\Form\DeleteType;
-use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 
 
@@ -80,14 +80,14 @@ class HandleArticleController extends Controller
 
     }
 
-    public function findArticlesForPagination($page, $nbArticlesByPage, $cat)
+    private function findArticlesForPagination($page, $nbArticlesByPage, $cat)
     {
         $entMa = $this->getDoctrine()->getManager();
         return $entMa->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
 
     }
 
-    public function paginationParams($page, $articles, $nbArticlesByPage, $cat)
+    private function paginationParams($page, $articles, $nbArticlesByPage, $cat)
     {
         return $pagination = [
             'page' => $page,
@@ -98,20 +98,6 @@ class HandleArticleController extends Controller
             ]
         ];
     }
-
-    public function ajaxRequestAction(Request $request)
-    {
-        // Ajax Request
-
-         $cat = $request->request->get('category');
-
-         $entMa = $this->getDoctrine()->getManager();
-         $rows = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getResultsForJsonReponse($cat);
-
-         return new JsonResponse($rows);
-
-    }
-
 
     /**
      * @param Request $request

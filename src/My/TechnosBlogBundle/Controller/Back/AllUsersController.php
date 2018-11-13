@@ -88,7 +88,7 @@ class AllUsersController extends Controller
      * @param $cat
      * @return mixed
      */
-    public function findUsersForPagination($entMa,$page, $nbUsersByPage, $cat)
+    private function findUsersForPagination($entMa,$page, $nbUsersByPage, $cat)
     {
         return $entMa->getRepository('MyTechnosBlogBundle:Users')->paginate($page, $nbUsersByPage, $cat);
 
@@ -101,7 +101,7 @@ class AllUsersController extends Controller
      * @param $cat
      * @return array
      */
-    public function paginationParams($page, $users, $nbUsersByPage, $cat)
+    private function paginationParams($page, $users, $nbUsersByPage, $cat)
     {
         return $pagination = [
             'page' => $page,

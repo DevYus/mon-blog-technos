@@ -76,7 +76,7 @@ class ForgotController extends Controller
      * @param $user
      * @return bool
      */
-    public function checkLogin($user)
+    private function checkLogin($user)
     {
         $requestEmail = $user->getEmail();
         $dataBaseUser = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Users')->findOneByEmail($requestEmail);
