@@ -22,11 +22,60 @@ class AllUsersController extends Controller
      */
     public function allUsersAction(Request $request, $page, $cat)
     {
+        /******* Pagination and display all articles ******/
+
+        $nbUsersByPage = 1;
+        $entMa = $this->getDoctrine()->getManager();
+
+        if($request->isMethod('POST'))
+        {
+            $cat = $request->request->get('category');
+
+            $users = $this->findUsersForPagination($entMa, $page, $nbUsersByPage,$cat);
+            $user = $entMa->getRepository('MyTechnosBlogBundle:Users')->find(2);
+
+            $pagination = $this->paginationParams($page,$users,$nbUsersByPage,$cat);
+
+            return $this->render('@MyTechnosBlog/Back/AllUsers\allUsers.html.twig', [
+                'users' => $users,
+                'pagination' => $pagination,
+                'user' => $user,
+                'cat' => $cat
+            ]);
+        }
+
+        else if($cat)
+        {
+            $users = $this->findUsersForPagination($entMa, $page, $nbUsersByPage,$cat);
+            $user = $entMa->getRepository('MyTechnosBlogBundle:Users')->find(2);
+
+            $pagination = $this->paginationParams($page,$users,$nbUsersByPage,$cat);
+
+            return $this->render('@MyTechnosBlog/Back/AllUsers\allUsers.html.twig', [
+                'users' => $users,
+                'pagination' => $pagination,
+                'user' => $user,
+                'cat' => $cat
+            ]);
+        }
 
 
+        $users = $entMa->getRepository('MyTechnosBlogBundle:Users')->paginate($page, $nbUsersByPage);
+        $user = $entMa->getRepository('MyTechnosBlogBundle:Users')->find(2);
+
+        $pagination = [
+            'page' => $page,
+            'nbPages' => ceil(count($users) / $nbUsersByPage),
+            'routeName' => 'admin_all_users',
+            'paramsRoute' => []
+        ];
 
 
-
+        return $this->render('@MyTechnosBlog/Back/AllUsers\allUsers.html.twig', [
+            'users' => $users,
+            'pagination' => $pagination,
+            'user' => $user
+        ]);
 
 
 
@@ -39,7 +88,6 @@ class AllUsersController extends Controller
      * @param $cat
      * @return mixed
      */
-
     private function findUsersForPagination($entMa,$page, $nbUsersByPage, $cat)
     {
         return $entMa->getRepository('MyTechnosBlogBundle:Users')->paginate($page, $nbUsersByPage, $cat);
@@ -74,7 +122,32 @@ class AllUsersController extends Controller
     public function deleteUserAction(Request $request, $id)
     {
 
+        $entMa = $this->getDoctrine()->getManager();
+        $user = $entMa->getRepository('MyTechnosBlogBundle:Users')->find($id);
 
+        $form = $this->get('form.factory')->create(DeleteUserType::class, $user);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            // Flush to database
+            $entMa = $this->getDoctrine()->getManager();
+            $entMa->remove($user);
+            $entMa->flush();
+
+            $request->getSession()->getFlashBag()->add('notice', 'L\'utilisateur a bien été supprimé');
+
+            return $this->redirectToRoute('admin_all_users', array('page' => 1));
+
+        }
+
+        return $this->render('@MyTechnosBlog/Back/DeleteUser\deleteUser.html.twig',
+            [
+                'form' => $form->createView(),
+                'user' => $user
+
+            ]);
     }
 
 
