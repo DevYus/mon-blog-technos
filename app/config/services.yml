@@ -40,10 +40,6 @@ services:
         autowire: true
         tags: ['controller.service_arguments']
 
-    My\TechnosBlogBundle\Controller\Front\ResettingController:
-        autowire: true
-        tags: ['controller.service_arguments']
-
     My\TechnosBlogBundle\Controller\Back\AddAdministratorController:
         autowire: true
         tags: ['controller.service_arguments']
