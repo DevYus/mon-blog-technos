@@ -1,7 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="420ff00b-ccea-48c6-8193-f06ad492f80c" name="Default" comment="" />
+    <list default="true" id="420ff00b-ccea-48c6-8193-f06ad492f80c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/AddAdministratorController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/AdminController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/AllCommentsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/AllUsersController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/HandleArticleController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ArticleController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/CategoryController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ContactController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ForgotController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/IndexController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RedirectAfterLoginController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RegistrationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ResetController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/SecurityController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/DataFixtures/ORM/MyTechnosBlogFixtures.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/DependencyInjection/Configuration.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/DependencyInjection/MyTechnosBlogExtension.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Articles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Comments.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Users.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/AddArticleType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/DeleteType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/DeleteUserType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/ForgotPasswordType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/ResetPasswordType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/UpdateArticleType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/UsersType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/MyTechnosBlogBundle.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Repository/ArticlesRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Repository/CommentsRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Repository/UsersRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/config/routing.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/config/services.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/AddAdministrator/addAdministrator.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/AddArticle/addArticle.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/Admin/admin.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/AllArticle/allArticle.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/AllComments/allComments.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/AllUsers/allUsers.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/DeleteArticle/deleteArticle.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/DeleteComment/deleteComment.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/DeleteUser/deleteUser.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/Includes/pagination.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/UpdateArticle/updateArticle.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/layout.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Article/article.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Category/category.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Contact/contact.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Forgot/forgot.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Registration/registration.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Reset/reset.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Security/login.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/layout.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Validator/Constraints/NotAMember.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Validator/Constraints/NotAMemberValidator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/tests/AppBundle/Controller/DefaultControllerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/tests/Controller/DefaultControllerTest.php" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,75 +92,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RedirectAfterLoginController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RedirectAfterLoginController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/IndexController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="36" column="102" selection-start-line="36" selection-start-column="102" selection-end-line="36" selection-end-column="102" />
-              <folding>
-                <element signature="e#57#114#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForgotController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ForgotController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1443">
-              <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/SecurityController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResetController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ResetController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/RegistrationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="58" column="5" selection-start-line="19" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-              <folding>
-                <element signature="e#57#114#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Users.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="329" column="7" selection-start-line="329" selection-start-column="7" selection-end-line="329" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
@@ -294,7 +284,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1586" />
     <option name="y" value="40" />
     <option name="width" value="1440" />
@@ -341,74 +331,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="My" type="462c0819:PsiDirectoryNode" />
               <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="DataFixtures" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
@@ -418,115 +341,6 @@
               <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-              <item name="AddArticle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-              <item name="AllArticle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-              <item name="AllComments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-              <item name="AllUsers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-              <item name="DeleteArticle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-              <item name="DeleteComment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-              <item name="DeleteUser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Back" type="462c0819:PsiDirectoryNode" />
-              <item name="Includes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
@@ -537,28 +351,6 @@
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="Front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
-              <item name="Forgot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mon-blog-technos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="My" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnosBlogBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
-              <item name="Registration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mon-blog-technos" type="b2602c69:ProjectViewProjectNode" />
@@ -657,16 +449,15 @@
       <workItem from="1540457936395" duration="12939000" />
       <workItem from="1541409970987" duration="2858000" />
       <workItem from="1541599397566" duration="32530000" />
-      <workItem from="1542014697634" duration="24097000" />
+      <workItem from="1542014697634" duration="24613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="562887000" />
+    <option name="totallyTimeSpent" value="563403000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22867803" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -721,18 +512,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/changementPrixcompulib/estimate-order.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="888" column="83" selection-start-line="888" selection-start-column="83" selection-end-line="888" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/changementPrixcompulib/summary.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12342" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/changementPrixcompulib/SummaryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10626">
@@ -1055,6 +834,14 @@
           <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Validator/Constraints/NotAMemberValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-186" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Validator/Constraints/NotAMember.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/Desktop/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
