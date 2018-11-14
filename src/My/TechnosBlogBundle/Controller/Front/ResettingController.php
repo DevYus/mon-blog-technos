@@ -45,7 +45,6 @@ class ResettingController extends Controller
                      $entMa->flush();
 
                      return $this->redirectToRoute('login', ['message' => 'reset_success']);
-
                 }
 
                  return $this->render(
@@ -55,8 +54,6 @@ class ResettingController extends Controller
 
                      ]
                  );
-
-
             } else {
                  //If Expired token
                  return $this->redirectToRoute('forgot', ['message' => 'expired_token']);
