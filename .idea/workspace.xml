@@ -4,6 +4,7 @@
     <list default="true" id="420ff00b-ccea-48c6-8193-f06ad492f80c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/layout.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/menu-button-of-three-horizontal-lines.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/menu-button-of-three-horizontal-lines.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,8 +40,8 @@
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="120" column="52" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
+            <state relative-caret-position="-1696">
+              <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -48,8 +49,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
+            <state relative-caret-position="469">
+              <caret line="120" selection-start-line="120" selection-end-line="120" />
             </state>
           </provider>
         </entry>
@@ -93,6 +94,7 @@
       <find>$em</find>
       <find>.sectionAr</find>
       <find>paginationParamsAction</find>
+      <find>btn-menu</find>
     </findStrings>
     <replaceStrings>
       <replace>.containerCatArticle</replace>
@@ -154,8 +156,8 @@
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/ResettingController.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/layout.html.twig" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
       </list>
     </option>
   </component>
@@ -220,8 +222,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1586" />
-    <option name="y" value="40" />
+    <option name="x" value="-1487" />
+    <option name="y" value="100" />
     <option name="width" value="1440" />
     <option name="height" value="780" />
   </component>
@@ -400,12 +402,12 @@
       <workItem from="1541409970987" duration="2858000" />
       <workItem from="1541599397566" duration="32530000" />
       <workItem from="1542014697634" duration="24613000" />
-      <workItem from="1542118848492" duration="8377000" />
+      <workItem from="1542118848492" duration="16964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="571780000" />
+    <option name="totallyTimeSpent" value="580367000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -469,16 +471,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/Farid correction/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ajax/ajax-request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/DeleteUserType.php" />
     <entry file="file://$USER_HOME$/Desktop/Farid correction/UsernameFormType.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -650,17 +642,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/apt/layout.html(1).twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-end-line="40" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/apt/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="3" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
+        <state relative-caret-position="469">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="120" column="52" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
+        <state relative-caret-position="-1696">
+          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
         </state>
       </provider>
     </entry>
