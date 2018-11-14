@@ -7,26 +7,25 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-
 /**
  * Class IndexController
  * @package My\TechnosBlogBundle\Controller\Front
  */
-
 class IndexController extends Controller
 {
 
     /**
      * @return Response
      */
-
-
     public function indexAction()
     {
         return $this->render('@MyTechnosBlog/Front/Index\index.html.twig');
     }
 
-
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function ajaxRequestAction(Request $request)
     {
         // Ajax Request
@@ -37,7 +36,5 @@ class IndexController extends Controller
         $rows = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getResultsForJsonReponse($title);
 
         return new JsonResponse($rows);
-
     }
-
 }

@@ -10,33 +10,30 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * Class ResetController
+ *
  * @package My\TechnosBlogBundle\Controller\Front
  */
 class ResettingController extends Controller
 {
-
-     public function resettingAction(Request $request, UserPasswordEncoderInterface $encoder)
-     {
-         // Check the token
-
+    /**
+     * @param Request                      $request
+     * @param UserPasswordEncoderInterface $encoder
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
+    public function resettingAction(Request $request, UserPasswordEncoderInterface $encoder)
+    {
          $token = $request->query->get('token');
-
          $userToken = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Users')->findOneByResetToken($token);
 
-         if($userToken)
-         {
-             // Check token expires
-
+        if ($userToken) {
              $tokenExpireTime = $userToken->getResetExpires();
              $currentTime = time();
 
-             if($currentTime <= $tokenExpireTime)
-             {
+            if ($currentTime <= $tokenExpireTime) {
                  $form = $this->get('form.factory')->create(ResetPasswordType::class, $userToken);
                  $form->handleRequest($request);
 
-                 if($form->isSubmitted() && $form->isValid())
-                 {
+                if ($form->isSubmitted() && $form->isValid()) {
                      // Encode the new password of the user
                      $password = $encoder->encodePassword($userToken, $userToken->getPassword());
                      $userToken->setPassword($password);
@@ -49,8 +46,7 @@ class ResettingController extends Controller
 
                      return $this->redirectToRoute('login', ['message' => 'reset_success']);
 
-                 }
-
+                }
 
                  return $this->render(
                      '@MyTechnosBlog/Front/Reset\reset.html.twig',
@@ -58,31 +54,15 @@ class ResettingController extends Controller
                          'form' => $form->createView(),
 
                      ]
-
                  );
 
 
-             }
-
-             else
-             {
+            } else {
                  //If Expired token
                  return $this->redirectToRoute('forgot', ['message' => 'expired_token']);
-             }
-
-
-         }
-
-         else
-         {
-             // Missing token or invalid token
+            }
+        } else {
              return $this->redirectToRoute('forgot', ['message' => 'invalid_token']);
-         }
-
-
-     }
-
-
-
-
+        }
+    }
 }
