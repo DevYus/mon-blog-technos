@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use My\TechnosBlogBundle\Entity\Comments;
 use My\TechnosBlogBundle\Entity\Articles;
 
-
 /**
  *  Controller that handle Category Blog
  */
@@ -19,7 +18,6 @@ class ArticleController extends Controller
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-
     public function articleAction($category, $slug, $id)
     {
         $entMa = $this->getDoctrine()->getManager();
@@ -34,10 +32,12 @@ class ArticleController extends Controller
         $entMa->persist($comment);
         $entMa->flush();
 
-        return $this->render('@MyTechnosBlog/Front/Article\article.html.twig', array(
+        return $this->render(
+            '@MyTechnosBlog/Front/Article\article.html.twig', array(
             'category' => $category,
             'slug' => $slug,
             'id' => $id,
-        ));
+            )
+        );
     }
 }

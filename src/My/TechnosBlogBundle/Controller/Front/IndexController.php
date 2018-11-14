@@ -13,7 +13,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  */
 class IndexController extends Controller
 {
-
     /**
      * @return Response
      */
