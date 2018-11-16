@@ -3,15 +3,13 @@
 namespace My\TechnosBlogBundle\Controller\Back;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use My\TechnosBlogBundle\Entity\Articles;
 use My\TechnosBlogBundle\Form\AddArticleType;
 use My\TechnosBlogBundle\Form\UpdateArticleType;
 use My\TechnosBlogBundle\Form\DeleteType;
-
-
-
 
 /**
  * Class IndexController
@@ -80,28 +78,9 @@ class HandleArticleController extends Controller
 
     }
 
-    private function findArticlesForPagination($page, $nbArticlesByPage, $cat)
-    {
-        $entMa = $this->getDoctrine()->getManager();
-        return $entMa->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
-
-    }
-
-    private function paginationParams($page, $articles, $nbArticlesByPage, $cat)
-    {
-        return $pagination = [
-            'page' => $page,
-            'nbPages' => ceil(count($articles) / $nbArticlesByPage),
-            'routeName' => 'admin_all_article',
-            'paramsRoute' => [
-                'cat' => $cat,
-            ]
-        ];
-    }
-
     /**
      * @param Request $request
-     * @return Response
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function addArticleAction(Request $request)
     {
@@ -110,8 +89,21 @@ class HandleArticleController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
+            $file = $article->getpathImg();
+            $originalName = $file->getClientOriginalName();
+            $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
+
+            try {
+                $file->move(
+                    $this->getParameter('uploads'),
+                    $fileName
+                );
+            } catch (FileException $e) {
+                die();
+            }
+
+            $article->setpathImg($fileName);
             // Flush to database
             $entMa = $this->getDoctrine()->getManager();
             $entMa->persist($article);
@@ -122,10 +114,7 @@ class HandleArticleController extends Controller
             return $this->redirectToRoute('admin_all_article', array('page' => 1));
         }
 
-        return $this->render('@MyTechnosBlog/Back/AddArticle\addArticle.html.twig',
-            [
-                'form' => $form->createView()
-        ]);
+        return $this->render('@MyTechnosBlog/Back/AddArticle\addArticle.html.twig', ['form' => $form->createView()]);
     }
 
 
@@ -136,12 +125,10 @@ class HandleArticleController extends Controller
      */
     public function updateArticleAction(Request $request, $id)
     {
-
         $entMa = $this->getDoctrine()->getManager();
         $article = $entMa->getRepository('MyTechnosBlogBundle:Articles')->find($id);
 
         $form = $this->get('form.factory')->create(UpdateArticleType::class, $article);
-
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid())
@@ -198,6 +185,45 @@ class HandleArticleController extends Controller
                 'article' => $article
 
             ]);
+    }
+
+    /**
+     * @param $page
+     * @param $nbArticlesByPage
+     * @param $cat
+     * @return mixed
+     */
+    private function findArticlesForPagination($page, $nbArticlesByPage, $cat)
+    {
+        $entMa = $this->getDoctrine()->getManager();
+        return $entMa->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
+    }
+
+    /**
+     * @param $page
+     * @param $articles
+     * @param $nbArticlesByPage
+     * @param $cat
+     * @return array
+     */
+    private function paginationParams($page, $articles, $nbArticlesByPage, $cat)
+    {
+        return $pagination = [
+            'page' => $page,
+            'nbPages' => ceil(count($articles) / $nbArticlesByPage),
+            'routeName' => 'admin_all_article',
+            'paramsRoute' => [
+                'cat' => $cat,
+            ]
+        ];
+    }
+
+    /**
+     * @return string
+     */
+    private function generateUniqueFileName()
+    {
+        return md5(uniqid());
     }
 
 

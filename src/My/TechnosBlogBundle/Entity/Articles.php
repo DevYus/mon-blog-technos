@@ -47,6 +47,13 @@ class Articles
     private $date;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updatedate", type="datetime")
+     */
+    private $updatedate;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="category", type="string", length=255)
@@ -57,10 +64,19 @@ class Articles
     /**
      * @var string
      *
+     * @ORM\Column(name="pathImg", type="string")
+     */
+    private $pathImg;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="content", type="text")
      * @BlogAssert\NotBlank(message="Ce champs est obligatoire")
      */
     private $content;
+
+    public $file;
 
     /**
      * Articles constructor.
@@ -153,6 +169,14 @@ class Articles
     }
 
     /**
+     * @ORM\PostLoad()
+     */
+    public function postLoad()
+    {
+        $this->updatedate = new \DateTime();
+    }
+
+    /**
      * Set category
      *
      * @param string $category
@@ -162,6 +186,30 @@ class Articles
     public function setCategory($category)
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get pathImg
+     *
+     * @return string
+     */
+    public function getpathImg()
+    {
+        return $this->pathImg;
+    }
+
+    /**
+     * Set pathImg
+     *
+     * @param string $pathImg
+     *
+     * @return Articles
+     */
+    public function setpathImg($pathImg)
+    {
+        $this->pathImg = $pathImg;
 
         return $this;
     }
@@ -198,6 +246,30 @@ class Articles
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set file
+     *
+     * @param string $file
+     *
+     * @return Articles
+     */
+    public function setFile($file)
+    {
+        $this->author = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return string
+     */
+    public function getFile()
+    {
+        return $this->file;
     }
 
 }

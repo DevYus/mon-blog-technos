@@ -9,33 +9,36 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class AddArticleType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title',  TextType::class, ['label' => 'Titre de l\'article', 'required' => false])
-            ->add('author',  TextType::class, ['label' => 'Auteur', 'required' => false])
-            ->add('category',  TextType::class, ['label' => 'Catégorie', 'required' => false])
-            ->add('date',  DateType::class, [
+            ->add('title', TextType::class, ['label' => 'Titre de l\'article', 'required' => false])
+            ->add('author', TextType::class, ['label' => 'Auteur', 'required' => false])
+            ->add('category', TextType::class, ['label' => 'Catégorie', 'required' => false])
+            ->add('date', DateType::class, [
                 'label' => 'Date',
                 'required' => false,
-                'format' => 'dd MM yyyy'
+                'format' => 'dd MM yyyy',
             ])
-            ->add('content',  TextareaType::class, array(
+            ->add('pathImg', FileType::class, [
+                    'label' => 'Image à la une',
+                    'required' => false,
+                    'attr' => [ 'accept' => '.jpg, .jpeg, .png'],
+            ])
+            ->add('content', TextareaType::class, [
                 'attr' => array('class' => 'editor'),
                 'label' => 'Contenu',
                 'required' => true,
-
-            ))
+            ])
             ->add('submit', SubmitType::class, ['label' => 'VALIDER']);
-
     }
 
     /**

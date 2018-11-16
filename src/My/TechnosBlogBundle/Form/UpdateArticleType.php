@@ -9,7 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class UpdateArticleType extends AbstractType
 {
@@ -27,6 +27,11 @@ class UpdateArticleType extends AbstractType
             ->add('date',  DateType::class, [
                 'label' => 'Date',
                 'required' => false,
+            ])
+            ->add('file', FileType::class, [
+                'label' => 'Image à la une',
+                'required' => false,
+                'attr' => [ 'accept' => '.jpg, .jpeg, .png'],
             ])
             ->add('content',  TextareaType::class, array(
                 'attr' => array('class' => 'editor'),

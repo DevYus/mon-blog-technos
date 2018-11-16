@@ -3,6 +3,7 @@
 namespace My\TechnosBlogBundle\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use My\TechnosBlogBundle\Entity\Articles;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -18,7 +19,14 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('@MyTechnosBlog/Front/Index\index.html.twig');
+        $lastArticle = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findOneBy(
+            [],
+            ['id' => 'desc']
+        );
+
+        return $this->render('@MyTechnosBlog/Front/Index\index.html.twig', [
+            'lastArticle' => $lastArticle,
+        ]);
     }
 
     /**

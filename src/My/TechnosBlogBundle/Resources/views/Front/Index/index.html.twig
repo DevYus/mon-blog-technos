@@ -10,20 +10,26 @@
   <main>
     <section class="sectionHomeOne">
 
+        {{ dump() }}
+
 
         <div class="leftBloc">
 
+        {% if lastArticle is defined %}
+
           <article class="lastestArticle">
             <figure>
-              <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_03-1200x700.jpg" />
+              <img src="{{ asset('uploads/' ~ lastArticle.pathImg) }}" />
               <figcaption>
-                <span class="catFigCaption"><strong>A la une </strong>| Catégorie</span>
-                <h1>C'est notre nouveau titre</h1>
-                <p>Co-working SpaceTeam fund big data prototype long shadow latte big data. Innovate affordances personas user centered design paradigm.</p>
-                <span class="dateFicaption">Le 19 Juin 2018 par Youssef</span>
+                <span class="catFigCaption"><strong>A la une </strong>| {{ lastArticle.category }}</span>
+                <h1>{{ lastArticle.title }}</h1>
+                <p>{{ lastArticle.content|slice(0,200)|striptags('p')|raw }}...</p>
+                <span class="dateFicaption">Le {{ lastArticle.date|date('d M Y') }}</span>
               </figcaption>
             </figure>
           </article>
+
+        {% endif %}
 
 
         </div>
