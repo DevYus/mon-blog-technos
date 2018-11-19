@@ -21,26 +21,26 @@ class UpdateArticleType extends AbstractType
     {
 
         $builder
-            ->add('title',  TextType::class, ['label' => 'Titre de l\'article', 'required' => false])
-            ->add('author',  TextType::class, ['label' => 'Auteur', 'required' => false])
-            ->add('category',  TextType::class, ['label' => 'Catégorie', 'required' => false])
-            ->add('date',  DateType::class, [
+            ->add('title', TextType::class, ['label' => 'Titre de l\'article', 'required' => false])
+            ->add('author', TextType::class, ['label' => 'Auteur', 'required' => false])
+            ->add('category', TextType::class, ['label' => 'Catégorie', 'required' => false])
+            ->add('date', DateType::class, [
                 'label' => 'Date',
                 'required' => false,
             ])
-            ->add('file', FileType::class, [
+            ->add('pathImg', FileType::class, [
+                'data_class' => null,
                 'label' => 'Image à la une',
                 'required' => false,
                 'attr' => [ 'accept' => '.jpg, .jpeg, .png'],
             ])
-            ->add('content',  TextareaType::class, array(
+            ->add('content', TextareaType::class, array(
                 'attr' => array('class' => 'editor'),
                 'label' => 'Contenu',
                 'required' => true,
 
             ))
             ->add('submit', SubmitType::class, ['label' => 'VALIDER']);
-
     }
 
     /**

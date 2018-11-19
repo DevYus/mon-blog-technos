@@ -10,9 +10,6 @@
   <main>
     <section class="sectionHomeOne">
 
-        {{ dump() }}
-
-
         <div class="leftBloc">
 
         {% if lastArticle is defined %}
@@ -23,7 +20,7 @@
               <figcaption>
                 <span class="catFigCaption"><strong>A la une </strong>| {{ lastArticle.category }}</span>
                 <h1>{{ lastArticle.title }}</h1>
-                <p>{{ lastArticle.content|slice(0,200)|striptags('p')|raw }}...</p>
+                <p>{{ lastArticle.content|slice(0,150)|striptags('p')|raw }}...</p>
                 <span class="dateFicaption">Le {{ lastArticle.date|date('d M Y') }}</span>
               </figcaption>
             </figure>
@@ -33,51 +30,32 @@
 
 
         </div>
-
-
         <div class="rightBloc">
 
-          <div class="asideArticle">
-            <figure>
-              <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/space-1200x700.jpg" />
-              <figcaption>
-                <h3 class="asideArticleTitle">Rosetta finds oxygen on comet in most surprising discovery</h3>
-                <span class="dateFicaption">Le 19 Juin 2018 par Youssef</span>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="asideArticle">
-            <div class="asideArticle">
-              <figure>
-                <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_08-1200x700.jpg" />
-                <figcaption>
-                  <h3 class="asideArticleTitle">Rosetta finds oxygen on comet in most surprising discovery</h3>
-                  <span class="dateFicaption">Le 19 Juin 2018 par Youssef</span>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-          <div class="asideArticle">
-            <figure>
-              <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/space-1200x700.jpg" />
-              <figcaption>
-                <h3 class="asideArticleTitle">Rosetta finds oxygen on comet in most surprising discovery</h3>
-                <span class="dateFicaption">Le 19 Juin 2018 par Youssef</span>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="asideArticle">
-            <div class="asideArticle">
-              <figure>
-                <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_08-1200x700.jpg" />
-                <figcaption>
-                  <h3 class="asideArticleTitle">Rosetta finds oxygen on comet in most surprising discovery</h3>
-                  <span class="dateFicaption">Le 19 Juin 2018 par Youssef</span>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
+        {% if rightArticles is defined %}
+
+            {% for articleRight in rightArticles %}
+
+
+                    <div class="asideArticle">
+                        <figure>
+                            <img src="{{ asset('uploads/' ~ articleRight.pathImg) }}" />
+                            <figcaption>
+                                <h3 class="asideArticleTitle">{{ articleRight.title }}</h3>
+                                <span class="dateFicaption">Le {{ articleRight.date|date('d M Y') }} par {{ articleRight.author }}</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+
+
+            {% endfor %}
+
+        {% endif %}
+
+
+
+
 
         <!-- attention répétion -->
 

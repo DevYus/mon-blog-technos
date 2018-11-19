@@ -29,9 +29,10 @@ class AddArticleType extends AbstractType
                 'format' => 'dd MM yyyy',
             ])
             ->add('pathImg', FileType::class, [
-                    'label' => 'Image à la une',
-                    'required' => false,
-                    'attr' => [ 'accept' => '.jpg, .jpeg, .png'],
+                'data_class' => null,
+                'label' => 'Image à la une',
+                'required' => false,
+                'attr' => [ 'accept' => '.jpg, .jpeg, .png'],
             ])
             ->add('content', TextareaType::class, [
                 'attr' => array('class' => 'editor'),

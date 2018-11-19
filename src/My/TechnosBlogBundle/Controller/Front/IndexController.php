@@ -24,8 +24,16 @@ class IndexController extends Controller
             ['id' => 'desc']
         );
 
+        $rightArticles = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findBy(
+            [],
+            ['id' => 'desc'],
+            4,
+            0
+        );
+
         return $this->render('@MyTechnosBlog/Front/Index\index.html.twig', [
             'lastArticle' => $lastArticle,
+            'rightArticles' => $rightArticles,
         ]);
     }
 

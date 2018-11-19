@@ -84,6 +84,7 @@ class Articles
     public function __construct()
     {
         $this->date = new \DateTime();
+        $this->updatedate = new \DateTime();
     }
 
     /**
@@ -166,6 +167,30 @@ class Articles
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $updatedate
+     *
+     * @return Articles
+     */
+    public function setUpdateDate($updatedate)
+    {
+        $this->updatedate = $updatedate;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getUpdateDate()
+    {
+        return $this->updatedate;
     }
 
     /**

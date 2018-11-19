@@ -9,6 +9,8 @@
     <section class="sectionAll">
       <h1>Vos articles</h1>
 
+        {{ dump() }}
+
         {% for flash_message in app.session.flashBag.get('notice') %}
             <div class="flash-notice">
                 {{ flash_message }}

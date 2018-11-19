@@ -3,6 +3,7 @@
 namespace My\TechnosBlogBundle\Controller\Back;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,26 +31,22 @@ class HandleArticleController extends Controller
 
         $nbArticlesByPage = 3;
 
-        if($request->isMethod('POST'))
-        {
+        if ($request->isMethod('POST')) {
             $cat = $request->request->get('category');
 
-            $articles = $this->findArticlesForPagination($page,$nbArticlesByPage,$cat);
+            $articles = $this->findArticlesForPagination($page, $nbArticlesByPage, $cat);
 
             // ici ajouter le 3e argument à la methode paginate
-            $pagination = $this->paginationParams($page,$articles,$nbArticlesByPage,$cat);
+            $pagination = $this->paginationParams($page, $articles, $nbArticlesByPage, $cat);
 
             return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
                 'articles' => $articles,
                 'pagination' => $pagination,
                 'cat' => $cat
             ]);
-        }
-
-        else if($cat)
-        {
-            $articles = $this->findArticlesForPagination($page,$nbArticlesByPage,$cat);
-            $pagination = $this->paginationParams($page,$articles,$nbArticlesByPage,$cat);
+        } elseif ($cat) {
+            $articles = $this->findArticlesForPagination($page, $nbArticlesByPage, $cat);
+            $pagination = $this->paginationParams($page, $articles, $nbArticlesByPage, $cat);
 
             return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
                 'articles' => $articles,
@@ -75,7 +72,6 @@ class HandleArticleController extends Controller
             'articles' => $articles,
             'pagination' => $pagination,
         ]);
-
     }
 
     /**
@@ -91,7 +87,6 @@ class HandleArticleController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $file = $article->getpathImg();
-            $originalName = $file->getClientOriginalName();
             $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
 
             try {
@@ -117,23 +112,38 @@ class HandleArticleController extends Controller
         return $this->render('@MyTechnosBlog/Back/AddArticle\addArticle.html.twig', ['form' => $form->createView()]);
     }
 
-
     /**
-     * @param Request $request
-     * @param $id
+     * @param Request   $request
+     * @param IdArticle $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function updateArticleAction(Request $request, $id)
     {
         $entMa = $this->getDoctrine()->getManager();
         $article = $entMa->getRepository('MyTechnosBlogBundle:Articles')->find($id);
+        $imgPath = '/' . $article->getpathImg();
+
+        if ($imgPath !== null) {
+             $article->setPathImg(new File($this->getParameter('uploads') . $imgPath));
+        }
 
         $form = $this->get('form.factory')->create(UpdateArticleType::class, $article);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
-            // Flush to database
+        if ($form->isSubmitted() && $form->isValid()) {
+            if ($article->getpathImg() !== null) {
+                $newFile = $article->getpathImg();
+                $newFileName = $this->generateUniqueFileName() . '.' . $newFile->guessExtension();
+
+                $newFile->move(
+                    $this->getParameter('uploads'),
+                    $newFileName
+                );
+                $article->setpathImg($newFileName);
+            } else {
+                $article->setpathImg($imgPath);
+            }
+
             $entMa = $this->getDoctrine()->getManager();
             $entMa->persist($article);
             $entMa->flush();
@@ -141,19 +151,19 @@ class HandleArticleController extends Controller
             $request->getSession()->getFlashBag()->add('notice', 'L\'article a bien été modifié');
 
             return $this->redirectToRoute('admin_all_article', array('page' => 1));
-
         }
 
-        return $this->render('@MyTechnosBlog/Back/UpdateArticle\updateArticle.html.twig',
+        return $this->render(
+            '@MyTechnosBlog/Back/UpdateArticle\updateArticle.html.twig',
             [
                 'form' => $form->createView(),
-
-            ]);
+            ]
+        );
     }
 
     /**
-     * @param Request $request
-     * @param $id
+     * @param Request   $request
+     * @param ArticleId $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function deleteArticleAction(Request $request, $id)
@@ -166,8 +176,7 @@ class HandleArticleController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             // Flush to database
             $entMa = $this->getDoctrine()->getManager();
             $entMa->remove($article);
@@ -176,15 +185,16 @@ class HandleArticleController extends Controller
             $request->getSession()->getFlashBag()->add('notice', 'L\'article a bien été supprimé');
 
             return $this->redirectToRoute('admin_all_article', array('page' => 1));
-
         }
 
-        return $this->render('@MyTechnosBlog/Back/DeleteArticle\deleteArticle.html.twig',
+        return $this->render(
+            '@MyTechnosBlog/Back/DeleteArticle\deleteArticle.html.twig',
             [
                 'form' => $form->createView(),
-                'article' => $article
+                'article' => $article,
 
-            ]);
+            ]
+        );
     }
 
     /**
@@ -225,7 +235,4 @@ class HandleArticleController extends Controller
     {
         return md5(uniqid());
     }
-
-
-
 }
