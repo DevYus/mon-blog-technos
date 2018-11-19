@@ -2,16 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="420ff00b-ccea-48c6-8193-f06ad492f80c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/HandleArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/HandleArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Articles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/AddArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/AddArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/UpdateArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/UpdateArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/AllArticle/allArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/AllArticle/allArticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/UpdateArticle/updateArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/UpdateArticle/updateArticle.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Index/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/02d2e22c8bdc77f6f35dfdc6fa606655.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/31dab304efec59804b7e5938127af17d.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/3e5a5d3eebe9024a200a47d96cefc47c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/40d1d269efe69027b3b8581d427c419c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/50f4eeca9783657dfda3f78ec55043ce.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/62e36266c1d3586f113af203598910d3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/8113a0d30cc5b828ca60eb5c3d0c520b.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/86acf74f6d25f41298c65a69d874bbe3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/9070e782b63b9b48bef7ccd86dee2a0c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/d388bc2f141a20c9b49392f88b90ab7b.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/e358757ef5413fb2d0d173718a53c575.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/eed5e1bda1e2f0441688af04223cc7fc.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/fbd41dfe030358563a5296bcd4ad4bce.jpeg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,8 +54,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Index/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+            <state relative-caret-position="264">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -56,8 +63,8 @@
       <file leaf-file-name="Articles.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Articles.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-54">
-              <caret line="218" column="18" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="18" />
+            <state relative-caret-position="430">
+              <caret line="228" column="18" selection-start-line="228" selection-start-column="18" selection-end-line="228" selection-end-column="18" />
               <folding>
                 <element signature="e#47#79#0#PHP" expanded="true" />
               </folding>
@@ -68,8 +75,8 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="330">
+              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding>
                 <element signature="e#57#114#0#PHP" expanded="true" />
               </folding>
@@ -92,8 +99,8 @@
       <file leaf-file-name="HandleArticleController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/HandleArticleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="143" column="47" selection-start-line="143" selection-start-column="47" selection-end-line="143" selection-end-column="47" />
+            <state relative-caret-position="572">
+              <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
               <folding>
                 <element signature="e#56#113#0#PHP" expanded="true" />
               </folding>
@@ -245,13 +252,13 @@
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$USER_HOME$/Desktop/newlogo/app.php" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/AddArticleType.php" />
-        <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/IndexController.php" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
-        <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Index/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Articles.php" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/UpdateArticle/updateArticle.html.twig" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Back/AllArticle/allArticle.html.twig" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/UpdateArticleType.php" />
+        <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Articles.php" />
+        <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Index/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/IndexController.php" />
         <option value="$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/HandleArticleController.php" />
       </list>
     </option>
@@ -319,8 +326,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1437" />
-    <option name="y" value="40" />
+    <option name="x" value="-1803" />
+    <option name="y" value="238" />
     <option name="width" value="1440" />
     <option name="height" value="780" />
   </component>
@@ -604,12 +611,12 @@
       <workItem from="1541599397566" duration="32530000" />
       <workItem from="1542014697634" duration="24613000" />
       <workItem from="1542118848492" duration="22142000" />
-      <workItem from="1542206673757" duration="29699000" />
+      <workItem from="1542206673757" duration="34266000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="615244000" />
+    <option name="totallyTimeSpent" value="619811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -883,57 +890,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Index/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/newlogo/RessourcesType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="e#42#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding>
-            <element signature="e#57#114#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/UpdateArticleType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="37" />
-          <folding>
-            <element signature="e#45#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Repository/ArticlesRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Articles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="218" column="18" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="18" />
-          <folding>
-            <element signature="e#47#79#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -951,10 +911,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Form/UpdateArticleType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="37" />
+          <folding>
+            <element signature="e#45#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Resources/views/Front/Index/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/newlogo/RessourcesType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#42#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Entity/Articles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="228" column="18" selection-start-line="228" selection-start-column="18" selection-end-line="228" selection-end-column="18" />
+          <folding>
+            <element signature="e#47#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Front/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="e#57#114#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/My/TechnosBlogBundle/Controller/Back/HandleArticleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="143" column="47" selection-start-line="143" selection-start-column="47" selection-end-line="143" selection-end-column="47" />
+        <state relative-caret-position="572">
+          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
           <folding>
             <element signature="e#56#113#0#PHP" expanded="true" />
           </folding>

@@ -86,7 +86,7 @@ class HandleArticleController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $file = $article->getpathImg();
+            $file = $article->getPathImg();
             $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
 
             try {
@@ -98,7 +98,7 @@ class HandleArticleController extends Controller
                 die();
             }
 
-            $article->setpathImg($fileName);
+            $article->setPathImg($fileName);
             // Flush to database
             $entMa = $this->getDoctrine()->getManager();
             $entMa->persist($article);
@@ -121,7 +121,7 @@ class HandleArticleController extends Controller
     {
         $entMa = $this->getDoctrine()->getManager();
         $article = $entMa->getRepository('MyTechnosBlogBundle:Articles')->find($id);
-        $imgPath = '/' . $article->getpathImg();
+        $imgPath = '/' . $article->getPathImg();
 
         if ($imgPath !== null) {
              $article->setPathImg(new File($this->getParameter('uploads') . $imgPath));
@@ -131,17 +131,19 @@ class HandleArticleController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if ($article->getpathImg() !== null) {
-                $newFile = $article->getpathImg();
+            if ($article->getPathImg() !== null) {
+                $newFile = $article->getPathImg();
+                unlink('./uploads/' . str_replace('/', '', $imgPath));
                 $newFileName = $this->generateUniqueFileName() . '.' . $newFile->guessExtension();
 
                 $newFile->move(
                     $this->getParameter('uploads'),
                     $newFileName
                 );
-                $article->setpathImg($newFileName);
+                $article->setPathImg($newFileName);
+
             } else {
-                $article->setpathImg($imgPath);
+                $article->setPathImg($imgPath);
             }
 
             $entMa = $this->getDoctrine()->getManager();

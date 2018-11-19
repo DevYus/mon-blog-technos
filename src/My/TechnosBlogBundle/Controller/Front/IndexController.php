@@ -19,6 +19,7 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
+
         $lastArticle = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findOneBy(
             [],
             ['id' => 'desc']
@@ -34,6 +35,7 @@ class IndexController extends Controller
         return $this->render('@MyTechnosBlog/Front/Index\index.html.twig', [
             'lastArticle' => $lastArticle,
             'rightArticles' => $rightArticles,
+
         ]);
     }
 

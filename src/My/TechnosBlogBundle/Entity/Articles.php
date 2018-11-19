@@ -220,7 +220,7 @@ class Articles
      *
      * @return string
      */
-    public function getpathImg()
+    public function getPathImg()
     {
         return $this->pathImg;
     }
@@ -232,7 +232,7 @@ class Articles
      *
      * @return Articles
      */
-    public function setpathImg($pathImg)
+    public function setPathImg($pathImg)
     {
         $this->pathImg = $pathImg;
 
