@@ -22,20 +22,51 @@ class IndexController extends Controller
 
         $lastArticle = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findOneBy(
             [],
-            ['id' => 'desc']
+            ['date' => 'desc']
         );
 
         $rightArticles = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findBy(
             [],
-            ['id' => 'desc'],
-            4,
+            ['date' => 'desc'],
+            5,
+            1
+        );
+
+        $popularArticles = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findBy(
+            [],
+            ['date' => 'desc'],
+            3,
+            0
+        );
+
+        $videos = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findBy(
+            ['category' => 'Video'],
+            ['date' => 'desc'],
+            2,
+            0
+        );
+
+        $tutorials = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findBy(
+            ['category' => 'Tutoriel'],
+            ['date' => 'desc'],
+            3,
+            0
+        );
+
+        $surveys = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findBy(
+            ['category' => 'Sondage'],
+            ['date' => 'desc'],
+            3,
             0
         );
 
         return $this->render('@MyTechnosBlog/Front/Index\index.html.twig', [
             'lastArticle' => $lastArticle,
             'rightArticles' => $rightArticles,
-
+            'popularArticles' => $popularArticles,
+            'videos' => $videos,
+            'tutorials' => $tutorials,
+            'surveys' => $surveys,
         ]);
     }
 

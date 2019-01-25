@@ -22,7 +22,7 @@
               <figcaption>
                 <span class="catFigCaption"><strong>A la une </strong>| {{ lastArticle.category }}</span>
                 <h1>{{ lastArticle.title }}</h1>
-                <p>{{ lastArticle.content|slice(0,150)|striptags('p')|raw }}...</p>
+                <p>{{ lastArticle.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,150)|striptags('p')|raw }}...</p>
                 <span class="dateFicaption">Le {{ lastArticle.date|date('d M Y') }}</span>
               </figcaption>
             </figure>
@@ -41,7 +41,9 @@
 
                     <div class="asideArticle">
                         <figure>
-                            <img src="{{ asset('uploads/' ~ articleRight.pathImg) }}" />
+                            <div class="truncateWrapperImg rightBlocsWidth">
+                                <img src="{{ asset('uploads/' ~ articleRight.pathImg) }}" />
+                            </div>
                             <figcaption>
                                 <h3 class="asideArticleTitle">{{ articleRight.title }}</h3>
                                 <span class="dateFicaption">Le {{ articleRight.date|date('d M Y') }} par {{ articleRight.author }}</span>
@@ -55,12 +57,9 @@
 
         {% endif %}
 
-
-
-
+        </div>
 
         <!-- attention répétion -->
-
 
 
     </section>
@@ -71,39 +70,27 @@
 
     	<div class="divFlexWrapper">
 
-	        <article class="asidePopularArticle">
-	          <figure>
-	            <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_02-1200x700.jpg" alt="popular-artilce-blog">
-	            <figcaption>
-	              <h3>Article populaire</h3>
-	              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-	            </figcaption>
-	          </figure>
-	        </article>
+            {% if popularArticles is defined %}
 
-		    <article class="asidePopularArticle">
-		        <figure>
-		          <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_09-1200x700.jpg" alt="popular-artilce-blog">
-		          <figcaption>
-		            <h3>Article populaire</h3>
-		            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-		          </figcaption>
-		        </figure>
-		    </article>
+                {% for popular in popularArticles %}
 
-		    <article class="asidePopularArticle">
-		        <figure>
-		          <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/post_02-1200x700.jpg" alt="popular-artilce-blog">
-		          <figcaption>
-		            <h3>Article populaire</h3>
-		            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-		          </figcaption>
-		        </figure>
-		    </article>
+                    <article class="asidePopularArticle">
+                        <figure>
+                            <div class="truncateWrapperImg">
+                                <img src="{{ asset('uploads/' ~ popular.pathImg) }}" alt="popular-artilce-blog" class="truncateImg">
+                            </div>
+                            <figcaption>
+                                <h3>{{ popular.title }}</h3>
+                                <p>{{ popular.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                {% endfor %}
+
+            {% endif %}
 
 	  	</div>
-
-
 
     </section>
 
@@ -111,39 +98,32 @@
 
     <section class="sectionHomeThree">
 
-        <h2>Vidéos</h2>
-
-
+        <h2>Médias</h2>
 
     	<div class="divFlexWrapper">
-	      <article class="videoBlock">
-	        <figure>
-	          <img src="{{ asset('./img/mini-smartphone.jpg') }}" class="videoBlockImg">
-	          <figcaption class="figcaptionVideo">
-                  <span class="catFigCaption" ><strong>Video |</strong> Youtube</span>
-                  <h3>C'est mon nouveau titre</h3>
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam,
 
-                  </p>
-              </figcaption>
-	          <!--<span class="catVideoBlock">Vidéo</span>-->
-	        </figure>
-	      </article>
+            {% if videos is defined %}
 
-	      <article class="videoBlock">
-	        <img src="{{ asset('./img/smartphone-2.jpg') }}" class="videoBlockImg">
-              <figcaption class="figcaptionVideo">
-                  <span class="catFigCaption" ><strong>Video |</strong> Youtube</span>
-                  <h3>C'est mon nouveau titre</h3>
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam,
+                {% for video in videos %}
 
-                  </p>
-              </figcaption>
-	      </article>
+                    <article class="videoBlock">
+                        <figure>
+                            <div class="truncateWrapperImgVideo">
+                                <img src="{{ asset('uploads/' ~ video.pathImg) }}" class="videoBlockImg">
+                            </div>
+                            <figcaption class="figcaptionVideo">
+                                <span class="catFigCaption" ><strong>Ressources |</strong> {{ video.category }} </span>
+                                <h3>{{ video.title }}</h3>
+                                <p>{{ video.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                {% endfor %}
+
+            {% endif %}
+
+
   		</div>
 
 
@@ -157,56 +137,60 @@
             <div id="hWrapperLeft">
                 <h2>Tutoriels</h2>
             </div>
-          <article class="tutorialBlock">
-            <div class="tutorialBlockImg">
-              <img src="http://www.art-spire.com/wp-content/gallery/2011/novembre_2011/21-11-11_chocolate_sculptures/affiche.jpg" alt="articles-populaire">
-            </div>
-            <div class="tutorialBlockContent">
-              <h3>C'est mon nouveau titre</h3>
-                <p>C'est mon contenu</p>
-            </div>
-          </article>
 
-          <article class="tutorialBlock">
-            <div class="tutorialBlockImg">
-              <img src="http://www.art-spire.com/wp-content/gallery/2013/Avril_2013/01-04-13_Game_Of_Thrones/affiche.jpg">
-            </div>
-            <div class="tutorialBlockContent">
-              <h3>C'est mon nouveau titre</h3>
-              <p>C'est mon contenu</p>
-            </div>
-          </article>
+            {% if tutorials is defined %}
 
-          <article class="tutorialBlock">
-            <div class="tutorialBlockImg">
-              <img src="http://www.art-spire.com/wp-content/gallery/2012/Octobre_2012/08-10-12_safety_speed_comfort/affiche.jpg">
-            </div>
-            <div class="tutorialBlockContent">
-              <h3>C'est mon nouveau titre</h3>
-              <p>C'est mon contenu</p>
-            </div>
-          </article>
+                {% for tutorial in tutorials %}
+
+
+                    <article class="tutorialBlock">
+                        <div class="tutorialBlockImg">
+                            <img src="{{ asset('uploads/' ~ tutorial.pathImg) }}" alt="articles-populaire">
+                        </div>
+                        <div class="tutorialBlockContent">
+                            <h3>{{ tutorial.title }}</h3>
+                            <p>{{ tutorial.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
+                        </div>
+                    </article>
+
+                {% endfor %}
+
+            {% endif %}
+
+
 
         </div>
 
         <div class="wrapperSurveyBlocks">
 
             <div id="hWrapperRight">
-                <h2>Votre opinion</h2>
+                <h2>Étude de marché</h2>
             </div>
 
-            <aside class="surveyBlock">
-                <figure>
-                    <img src="http://clamps.sa.utoronto.ca/wp-content/blogs.dir/139/files/2017/12/Feedback.jpg" alt="popular-artilce-blog">
-                    <figcaption>
-                        <h3>Dernier sondage !</h3>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-                    </figcaption>
-                </figure>
-            </aside>
+            {% if surveys is defined %}
+
+                {% for survey in surveys %}
+
+                    <aside class="surveyBlock">
+                        <figure>
+                            <img src="http://clamps.sa.utoronto.ca/wp-content/blogs.dir/139/files/2017/12/Feedback.jpg" alt="popular-artilce-blog">
+                            <figcaption>
+                                <h3>{{ survey.title }}</h3>
+                                <p>{{ survey.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}... </p>
+                            </figcaption>
+                        </figure>
+                    </aside>
+
+                {% endfor %}
+
+            {% endif %}
+
 
         </div>
 
+    </section>
+
+    <section class="sectionHomeFive">
     </section>
 
 
