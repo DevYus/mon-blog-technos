@@ -49,8 +49,9 @@ class Comments
     private $date;
 
 
-    // Comments constructor
-
+    /**
+     * Comments constructor.
+     */
     public function __construct()
     {
         $this->date = new \Datetime();
@@ -146,7 +147,7 @@ class Comments
      *
      * @return Comments
      */
-    public function setArticle(\My\TechnosBlogBundle\Entity\Articles $article)
+    public function setArticle($article)
     {
         $this->article = $article;
 

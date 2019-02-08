@@ -65,22 +65,46 @@ class ArticlesRepository extends EntityRepository
 
     }
 
-
+    /**
+     * @param \Article $title
+     * @return array
+     * @throws \Doctrine\DBAL\DBALException
+     */
     public function getResultsForJsonReponse($title)
     {
         $sql = "SELECT * FROM Articles WHERE title LIKE :title LIMIT 0,5";
         $entMa = $this->getEntityManager();
         $sm = $entMa->getConnection()->prepare($sql);
-        $sm->execute(['title' => '%'.$title.'%']);
+        $sm->execute(['title' => '%' . $title . '%']);
 
         $arrayAjaxRequest = [];
 
-        while($data = $sm->fetch())
-        {
-            array_push($arrayAjaxRequest ,$data['title']);
+        while ($data = $sm->fetch()) {
+            array_push($arrayAjaxRequest, $data['title']);
         }
 
         return $arrayAjaxRequest;
     }
 
+    /**
+     * @return array
+     */
+    public function getLastArticles()
+    {
+        return $query = $this->createQueryBuilder('a')
+            ->setMaxResults(5)
+            ->getQuery()
+            ->getResult();
+    }
+
+    /**
+     * @return array
+     */
+    public function getOthersArticles()
+    {
+        return $query = $this->createQueryBuilder('a')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
 }

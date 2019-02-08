@@ -9,56 +9,55 @@
 
   <main>
 
-
       <section class="categorySection">
           <span class="categorySubTitle">Article sur</span>
           <h1>{{ category }}</h1>
           <div class="containerCatArticle">
-              <article>
-                  <div class="imgContainer">
-                      <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/space-1200x700.jpg" alt="">
-                  </div>
-                  <div class="contentContainer">
-                      <span class="categoryArticle">Catégorie - {{ category|capitalize }}</span>
-                      <h2>C'est mon nouveau titre</h2>
-                      <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500</p>
-                      <a href="">Lire l'article</a>
-                  </div>
-              </article>
-              <article>
-                  <div class="imgContainer">
-                      <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/space-1200x700.jpg" alt="">
-                  </div>
-                  <div class="contentContainer">
-                      <span class="categoryArticle">Catégorie - {{ category|capitalize }}</span>
-                      <h2>C'est mon nouveau titre</h2>
-                      <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500</p>
-                      <a href="">Lire l'article</a>
-                  </div>
-              </article>
-              <article>
-                  <div class="imgContainer">
-                      <img src="https://themedemo.createandcode.com/jefferson/wp-content/uploads/sites/39/2017/08/space-1200x700.jpg" alt="">
-                  </div>
-                  <div class="contentContainer">
-                      <span class="categoryArticle">Catégorie - {{ category|capitalize }}</span>
-                      <h2>C'est mon nouveau titre</h2>
-                      <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500</p>
-                      <a href="">Lire l'article</a>
-                  </div>
-              </article>
+
+
+              {% if articlesCategory is defined %}
+
+                  {% for articleCategory in articlesCategory %}
+
+                      <a href="{{ path('article', {'category' : articleCategory.category|replace({ 'é' : 'e' }), 'id' : articleCategory.id , 'slug' : articleCategory.slug}) }}">
+                        <article>
+                              <div class="imgContainer">
+                                  <img src="{{ asset('uploads/' ~ articleCategory.pathImg) }}" alt="">
+                              </div>
+                              <div class="contentContainer">
+                                  <span class="categoryArticle">Catégorie - {{ category|capitalize }}</span>
+                                  <h2>{{ articleCategory.title }}</h2>
+                                  <p>{{ articleCategory.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,150)|striptags('p')|raw }}...</p>
+                              </div>
+                       </article>
+                      </a>
+
+                  {% endfor %}
+
+              {% else %}
+
+              {% endif %}
+
+
           </div>
 
           <div class="asideContainer">
               <aside>
                   <h3>Derniers articles</h3>
                   <ul>
-                      <li>Toto</li>
-                      <li>toto</li>
-                      <li>toto</li>
-                      <li>Toto</li>
-                      <li>toto</li>
-                      <li>toto</li>
+                      {% if lastArticles is defined %}
+
+                          {% for lastArticle in lastArticles %}
+
+                              <li>
+                                  <a href="{{ path('article', {'category' : lastArticle.category|replace({ 'é' : 'e' }), 'id' : lastArticle.id , 'slug' : lastArticle.slug}) }}">
+                                      {{ lastArticle.title }}
+                                  </a>
+                              </li>
+
+                          {% endfor %}
+
+                      {% endif %}
                   </ul>
               </aside>
               <aside>

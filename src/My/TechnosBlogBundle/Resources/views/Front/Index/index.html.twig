@@ -10,57 +10,54 @@
   <main>
     <section class="sectionHomeOne">
 
-        {{ dump() }}
-
         <div class="leftBloc">
 
-        {% if lastArticle is defined %}
+            {% if lastArticle is defined %}
 
-          <article class="lastestArticle">
-            <figure>
-              <img src="{{ asset('uploads/' ~ lastArticle.pathImg) }}" />
-              <figcaption>
-                <span class="catFigCaption"><strong>A la une </strong>| {{ lastArticle.category }}</span>
-                <h1>{{ lastArticle.title }}</h1>
-                <p>{{ lastArticle.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,150)|striptags('p')|raw }}...</p>
-                <span class="dateFicaption">Le {{ lastArticle.date|date('d M Y') }}</span>
-              </figcaption>
-            </figure>
-          </article>
+              <article class="lastestArticle">
+                  <a href="{{ path('article', {'category' : lastArticle.category, 'id' : lastArticle.id , 'slug' : lastArticle.slug}) }}">
+                    <figure>
+                      <img src="{{ asset('uploads/' ~ lastArticle.pathImg) }}" />
+                      <figcaption>
+                        <span class="catFigCaption"><strong>A la une </strong>| {{ lastArticle.category }}</span>
+                        <h1>{{ lastArticle.title }}</h1>
+                        <p>{{ lastArticle.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,150)|striptags('p')|raw }}...</p>
+                        <span class="dateFicaption">Le {{ lastArticle.date|date('d M Y') }}</span>
+                      </figcaption>
+                    </figure>
+                  </a>
+              </article>
 
-        {% endif %}
-
+            {% endif %}
 
         </div>
+
         <div class="rightBloc">
 
-        {% if rightArticles is defined %}
+            {% if rightArticles is defined %}
 
-            {% for articleRight in rightArticles %}
+                {% for articleRight in rightArticles %}
+
+                        <article class="asideArticle">
+                            <a href="{{ path('article', {'category' : articleRight.category, 'id' : articleRight.id , 'slug' : articleRight.slug}) }}">
+                                <figure>
+                                    <div class="truncateWrapperImg rightBlocsWidth">
+                                        <img src="{{ asset('uploads/' ~ articleRight.pathImg) }}" />
+                                    </div>
+                                    <figcaption>
+                                        <h3 class="asideArticleTitle">{{ articleRight.title }}</h3>
+                                        <span class="dateFicaption">Le {{ articleRight.date|date('d M Y') }} par {{ articleRight.author }}</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </article>
 
 
-                    <div class="asideArticle">
-                        <figure>
-                            <div class="truncateWrapperImg rightBlocsWidth">
-                                <img src="{{ asset('uploads/' ~ articleRight.pathImg) }}" />
-                            </div>
-                            <figcaption>
-                                <h3 class="asideArticleTitle">{{ articleRight.title }}</h3>
-                                <span class="dateFicaption">Le {{ articleRight.date|date('d M Y') }} par {{ articleRight.author }}</span>
-                            </figcaption>
-                        </figure>
-                    </div>
+                {% endfor %}
 
-
-
-            {% endfor %}
-
-        {% endif %}
+            {% endif %}
 
         </div>
-
-        <!-- attention répétion -->
-
 
     </section>
 
@@ -75,15 +72,17 @@
                 {% for popular in popularArticles %}
 
                     <article class="asidePopularArticle">
-                        <figure>
-                            <div class="truncateWrapperImg">
-                                <img src="{{ asset('uploads/' ~ popular.pathImg) }}" alt="popular-artilce-blog" class="truncateImg">
-                            </div>
-                            <figcaption>
-                                <h3>{{ popular.title }}</h3>
-                                <p>{{ popular.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
-                            </figcaption>
-                        </figure>
+                        <a href="{{ path('article', {'category' : popular.category, 'id' : popular.id , 'slug' : popular.slug}) }}">
+                            <figure>
+                                <div class="truncateWrapperImg">
+                                    <img src="{{ asset('uploads/' ~ popular.pathImg) }}" alt="popular-artilce-blog" class="truncateImg">
+                                </div>
+                                <figcaption>
+                                    <h3>{{ popular.title }}</h3>
+                                    <p>{{ popular.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
+                                </figcaption>
+                            </figure>
+                        </a>
                     </article>
 
                 {% endfor %}
@@ -93,8 +92,6 @@
 	  	</div>
 
     </section>
-
-
 
     <section class="sectionHomeThree">
 
@@ -106,30 +103,30 @@
 
                 {% for video in videos %}
 
+
+
                     <article class="videoBlock">
-                        <figure>
-                            <div class="truncateWrapperImgVideo">
-                                <img src="{{ asset('uploads/' ~ video.pathImg) }}" class="videoBlockImg">
-                            </div>
-                            <figcaption class="figcaptionVideo">
-                                <span class="catFigCaption" ><strong>Ressources |</strong> {{ video.category }} </span>
-                                <h3>{{ video.title }}</h3>
-                                <p>{{ video.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
-                            </figcaption>
-                        </figure>
+                        <a href="{{ path('article', {'category' : video.category|replace({ 'é' : 'e' }), 'id' : video.id , 'slug' : video.slug}) }}">
+                            <figure>
+                                <div class="truncateWrapperImgVideo">
+                                    <img src="{{ asset('uploads/' ~ video.pathImg) }}" class="videoBlockImg">
+                                </div>
+                                <figcaption class="figcaptionVideo">
+                                    <span class="catFigCaption" ><strong>Ressources |</strong> {{ video.category }} </span>
+                                    <h3>{{ video.title }}</h3>
+                                    <p>{{ video.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
+                                </figcaption>
+                            </figure>
+                        </a>
                     </article>
 
                 {% endfor %}
 
             {% endif %}
 
-
   		</div>
 
-
     </section>
-
-
 
     <section class="sectionHomeFour">
 
@@ -142,15 +139,20 @@
 
                 {% for tutorial in tutorials %}
 
-
                     <article class="tutorialBlock">
-                        <div class="tutorialBlockImg">
-                            <img src="{{ asset('uploads/' ~ tutorial.pathImg) }}" alt="articles-populaire">
-                        </div>
-                        <div class="tutorialBlockContent">
-                            <h3>{{ tutorial.title }}</h3>
-                            <p>{{ tutorial.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
-                        </div>
+                        <a href="{{ path('article', {'category' : tutorial.category, 'id' : tutorial.id , 'slug' : tutorial.slug}) }}">
+                        <figure>
+                            <div class="tutorialBlockImg">
+                                <img src="{{ asset('uploads/' ~ tutorial.pathImg) }}" alt="articles-populaire">
+                            </div>
+                            <figcaption>
+                                <div class="tutorialBlockContent">
+                                    <h3>{{ tutorial.title }}</h3>
+                                    <p>{{ tutorial.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
+                                </div>
+                            </figcaption>
+                        </figure>
+                        </a>
                     </article>
 
                 {% endfor %}
@@ -172,13 +174,15 @@
                 {% for survey in surveys %}
 
                     <aside class="surveyBlock">
-                        <figure>
-                            <img src="http://clamps.sa.utoronto.ca/wp-content/blogs.dir/139/files/2017/12/Feedback.jpg" alt="popular-artilce-blog">
-                            <figcaption>
-                                <h3>{{ survey.title }}</h3>
-                                <p>{{ survey.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}... </p>
-                            </figcaption>
-                        </figure>
+                        <a href="{{ path('article', {'category' : survey.category, 'id' : survey.id , 'slug' : survey.slug}) }}">
+                            <figure>
+                                <img src="{{ asset('uploads/' ~ survey.pathImg) }}" alt="popular-artilce-blog">
+                                <figcaption>
+                                    <h3>{{ survey.title }}</h3>
+                                    <p>{{ survey.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}... </p>
+                                </figcaption>
+                            </figure>
+                        </a>
                     </aside>
 
                 {% endfor %}

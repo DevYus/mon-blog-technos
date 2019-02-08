@@ -4,6 +4,7 @@ namespace My\TechnosBlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as BlogAssert;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Articles
@@ -29,6 +30,12 @@ class Articles
      * @BlogAssert\NotBlank(message="Ce champs est obligatoire")
      */
     private $title;
+
+    /**
+     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(name="slug", type="string", length=255, unique=true, nullable=true)
+     */
+    private $slug;
 
     /**
      * @var string
@@ -119,6 +126,28 @@ class Articles
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Articles
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 
     /**

@@ -102,7 +102,7 @@ article:
     defaults: {_controller: MyTechnosBlogBundle:Front\Article:article }
     methods: [GET]
     requirements:
-        category: "[a-zA-Z]+"
+        category: "[a-zA-Z-é]+"
         id: "[0-9]+"
 
 
