@@ -42,12 +42,21 @@
         <aside>
           <h3>Catégories</h3>
           <ul>
-            <li>HTML5 - CSS 3</li>
-            <li>Javascript</li>
-            <li>PHP</li>
-            <li>Toto</li>
-            <li>toto</li>
-            <li>toto</li>
+            <li>
+              <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript</a>
+            </li>
+            <li>
+              <a href="{{ path('category', { 'category' : 'php' }) }}">PHP</a>
+            </li>
+            <li>
+              <a href="{{ path('category', { 'category' : 'rubis' }) }}">Rubis</a>
+            </li>
+            <li>
+              <a href="{{ path('category', { 'category' : 'tutoriel' }) }}">Tutoriels</a>
+            </li>
+            <li>
+              <a href="{{ path('category', { 'category' : 'sondage' }) }}">Sondages</a>
+            </li>
           </ul>
         </aside>
         <aside class="asidebarSocialNetwork">

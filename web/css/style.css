@@ -176,6 +176,7 @@ nav ul {
     float: right;
 }
 
+
 nav ul>li{
     display: inline-block;
     text-align: left;
@@ -189,7 +190,10 @@ nav ul>li{
     float: left;
 }
 
+nav ul>li>a {display:block;width: 100%;}
+
 nav ul>li>img {display:block;margin: 21px auto;}
+
 
 nav ul>li:hover{
     color: #A6CE39;

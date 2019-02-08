@@ -28,11 +28,24 @@
         <img src="{{ asset('./img/cancel-white.png') }}" class="jsBtnCross" alt="crossBtn">
         <nav class="navHeaderResponsive">
             <ul>
-                <li>Home (logo)</li>
-                <li>Home (logo)</li>
-                <li>Tout sur le PHP</li>
-                <li>News Javascript</li>
-                <li>HTML5 - CSS3</li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'php' }) }}">PHP</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'rubis' }) }}">Rubis</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'tutoriel' }) }}">Tutoriels</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'sondage' }) }}">Sondages</a>
+                </li>
+                <li class="jsBtnSearch">
+                    <img src="{{ asset('./img/search.png') }}" alt="search">
+                </li>
             </ul>
         </nav>
     </div>
@@ -47,17 +60,26 @@
             <img src="{{ asset('./img/Mon-blog-technos-white.png') }}" alt="MonBlogTechnos">
         </div>
 
-
           <nav class="navHeader">
             <ul>
-              <li>Home (logo)</li>
-              <li>Home (logo)</li>
-              <li>Tout sur le PHP</li>
-              <li>News Javascript</li>
-              <li>HTML5 - CSS3</li>
-              <li class="jsBtnSearch">
+                <li>
+                    <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'php' }) }}">PHP</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'rubis' }) }}">Rubis</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'tutoriel' }) }}">Tutoriels</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'sondage' }) }}">Sondages</a>
+                </li>
+                <li class="jsBtnSearch">
                   <img src="{{ asset('./img/search.png') }}" alt="search">
-              </li>
+                </li>
             </ul>
           </nav>
         </div>
