@@ -8,19 +8,16 @@ use My\TechnosBlogBundle\Form\ForgotPasswordType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Reponse;
 
-
 /**
  * Class ForgotController
  * @package My\TechnosBlogBundle\Controller\Front
  */
-
 class ForgotController extends Controller
 {
     /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-
     public function forgotAction(Request $request)
     {
         $info = null;
@@ -32,25 +29,15 @@ class ForgotController extends Controller
 
         $error = $form->getErrors();
 
-
-        if($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->checkLogin($user);
-
             $info = "Un Émail vous a été envoyé avec les instructions correspondantes";
             $success = true;
-
-        }
-        else
-        {
+        } else {
             $message = $request->query->get('message');
-            if($message == 'expired_token')
-            {
+            if ($message == 'expired_token') {
                 $info = "Votre token de demande de changement de mot de passe est expiré";
-
-            }
-            else if ($message == 'invalid_token')
-            {
+            } else if ($message == 'invalid_token') {
                 $info = "Votre token de demande de changement de mot de passe est invalide";
             }
 
@@ -65,15 +52,13 @@ class ForgotController extends Controller
                 'success' => $success,
                 'info' => $info,
                 'error' => $error,
-
             ]
 
         );
     }
 
-
     /**
-     * @param $user
+     * @param \Users $user
      * @return bool
      */
     private function checkLogin($user)
@@ -81,8 +66,7 @@ class ForgotController extends Controller
         $requestEmail = $user->getEmail();
         $dataBaseUser = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Users')->findOneByEmail($requestEmail);
 
-        if($dataBaseUser)
-        {
+        if ($dataBaseUser) {
             /* Generation of the token */
             $token = bin2hex(openssl_random_pseudo_bytes(16));
 
@@ -102,13 +86,13 @@ class ForgotController extends Controller
             $to = $dataBaseUser->getEmail();
             $toName = $dataBaseUser->getFullname();
             $subject = "Demande de réitilisation de mot de passe";
-            $link = "http://localhost/mon-blog-technos/web/app_dev.php/reset?token=".$token;
+            $link = "http://localhost/mon-blog-technos/web/app_dev.php/reset?token=" . $token;
 
             /* Link for réinizalisation */
 
 
             $message = \Swift_Message::newInstance()
-                ->setSubject($webSiteName.' - '.$subject)
+                ->setSubject($webSiteName . ' - ' . $subject)
                 ->setFrom($from)
                 ->setTo($to)
                 ->setContentType("text/html")
@@ -126,7 +110,7 @@ class ForgotController extends Controller
                             </html>
                 ");
 
-            # Send the message
+            // Send the message
             $this->get('mailer')->send($message);
 
             return true;
@@ -134,7 +118,6 @@ class ForgotController extends Controller
         }
 
         return false;
-
     }
 
 }

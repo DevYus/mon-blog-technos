@@ -16,9 +16,8 @@ use My\TechnosBlogBundle\Entity\Articles;
 
 class AllCommentsController extends Controller
 {
-
     /**
-     * @param $page
+     * @param PageNumber $page
      * @return Response
      */
     public function allCommentsAction($page)
@@ -30,25 +29,24 @@ class AllCommentsController extends Controller
             $entMa = $this->getDoctrine()->getManager();
             $comments = $entMa->getRepository('MyTechnosBlogBundle:Comments')->paginate($page, $nbCommentsByPage);
 
-
             $pagination = [
                 'page' => $page,
                 'nbPages' => ceil(count($comments) / $nbCommentsByPage),
                 'routeName' => 'admin_all_comments',
-                'paramsRoute' => []
+                'paramsRoute' => [],
             ];
 
-        /**********/
-
-
-        return $this->render('@MyTechnosBlog/Back/AllComments\allComments.html.twig', [
+            return $this->render('@MyTechnosBlog/Back/AllComments\allComments.html.twig', [
                 'comments' => $comments,
                 'pagination' => $pagination,
-
-        ]);
-
+            ]);
     }
 
+    /**
+     * @param Request $request
+     * @param Id      $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
     public function deleteCommentAction(Request $request, $id)
     {
         $entMa = $this->getDoctrine()->getManager();
@@ -58,9 +56,7 @@ class AllCommentsController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
-            // Flush to database
+        if ($form->isSubmitted() && $form->isValid()) {
             $entMa = $this->getDoctrine()->getManager();
             $entMa->remove($comment);
             $entMa->flush();
@@ -68,20 +64,11 @@ class AllCommentsController extends Controller
             $request->getSession()->getFlashBag()->add('notice', 'Le commentaire a bien été supprimé');
 
             return $this->redirectToRoute('admin_all_comments', array('page' => 1));
-
         }
 
-        return $this->render('@MyTechnosBlog/Back/DeleteComment\deleteComment.html.twig',
-            [
+        return $this->render('@MyTechnosBlog/Back/DeleteComment\deleteComment.html.twig', [
                 'form' => $form->createView(),
-                'comment' => $comment
-
-            ]);
-
-
+                'comment' => $comment,
+        ]);
     }
-
-
-
-
 }

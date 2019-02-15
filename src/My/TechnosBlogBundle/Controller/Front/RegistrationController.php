@@ -8,21 +8,17 @@ use My\TechnosBlogBundle\Form\UsersType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-
 /**
  * Class RegistrationController
  * @package My\TechnosBlogBundle\Controller\Front
  */
-
 class RegistrationController extends Controller
 {
-
     /**
-     * @param Request $request
+     * @param Request                      $request
      * @param UserPasswordEncoderInterface $encoder
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-
     public function registrationAction(Request $request, UserPasswordEncoderInterface $encoder)
     {
         $user = new Users();
@@ -30,8 +26,7 @@ class RegistrationController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             // Encode password of the user
             $password = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);

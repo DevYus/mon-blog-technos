@@ -7,9 +7,9 @@ use My\TechnosBlogBundle\Entity\Comments;
 use My\TechnosBlogBundle\Entity\Articles;
 
 /**
- *  Controller that handle Category Blog
+ * Class ArticleController
+ * @package My\TechnosBlogBundle\Controller\Front
  */
-
 class ArticleController extends Controller
 {
     /**

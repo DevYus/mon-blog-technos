@@ -8,8 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
- * Class ResetController
- *
+ * Class ResettingController
  * @package My\TechnosBlogBundle\Controller\Front
  */
 class ResettingController extends Controller

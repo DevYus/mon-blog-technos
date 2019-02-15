@@ -268,7 +268,7 @@ summary {
 
 #btn-menu { display: none;}
 
-/**** Responsive Home ****/
+/**** Responsive Layout ****/
 
 @media screen and (max-width: 1280px)
 {
@@ -287,6 +287,8 @@ summary {
     }
 
     .logoBlock img {margin: 10px 0 0 0px;}
+    .navHeaderResponsive ul > li {height: 56px;}
+    .navHeaderResponsive ul > li > a {color: #FFFFFF;}
 
     #btn-menu {
         position: absolute;
@@ -296,9 +298,6 @@ summary {
         display: block;
         cursor: pointer;
     }
-
-    header {width: 100%;}
-    footer {height: 576px;}
 
     .footerWrapper {
         width: 100%;
@@ -314,6 +313,12 @@ summary {
         margin-bottom: 100px;
     }
 
+    header {width: 100%;}
+    footer {height: 576px;}
+
+    ::after {display: none;}
+    figcaption {height: 100%;}
+
 }
 
 @media screen and (max-width: 420px)
@@ -327,6 +332,7 @@ summary {
     #btn-menu {left: 19px;width: 6%;}
 
     footer {height: 735px;}
+    p {font-size: 14px;}
 
     .footerWrapper aside {margin-bottom: 46px;}
 
@@ -470,9 +476,7 @@ figure img {
     width: 100%;
 }
 
-figcaption {background: #FFFFFF; height: 164px;}
-
-
+figcaption {background: #FFFFFF; }
 
 .sectionHomeThree{
     width: 100%;
@@ -501,7 +505,6 @@ figcaption {background: #FFFFFF; height: 164px;}
     top: 62px;
     border-radius: 4px;
 }
-
 
 .videoBlock {
     background: #FFFFFF;
@@ -616,6 +619,48 @@ figcaption {background: #FFFFFF; height: 164px;}
 .surveyBlock > figure > figcaption > h3 { width:100%; margin: 0; font-weight: 600; border: none; }
 .surveyBlock > figure > figcaption > p { width:100%; margin: 10px 0;}
 
+
+.sectionHomeFive{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 100px;
+    position: relative;
+    background: red;
+
+}
+.sectionHomeFive h2{
+    margin: 0px 0 20px 0;
+    text-align: left;
+    font-size: 21px;
+    width: 121px;
+    text-transform: uppercase;
+}
+
+.sliderContainer {
+    width: 90%;
+    background: #9FC537;
+    margin: 0 auto;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.item {
+    background: #9FC537;
+    height: 156px;
+}
+
+.subContainer::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.sliderItem {float: left;}
+
 /**** Clear ****/
 
 .clear {clear: both;}
@@ -630,20 +675,22 @@ figcaption {background: #FFFFFF; height: 164px;}
         padding: 20px 20px 0 20px;
         box-sizing: border-box;
     }
-    .leftBloc {width: 100%;}
+    .leftBloc {width: 100%;height: 100%;}
     .leftBloc h1 {font-size: 35px;}
-    .rightBloc {width: 100%;margin:90px 0 0 0;}
+    .lastestArticle > a > figure > figcaption {height: 100%;}
+    .rightBloc {width: 100%;height:100%;margin:44px 0 0 0;}
     .asideArticle {
         width: 100%;
         height: 100%;
         border-bottom: none;
+        margin-bottom: 32px;
     }
     .asideArticle:nth-child(2n) {
         margin-left: 0px;
     }
 
     .asideArticle figure figcaption {
-        height: 126px;
+        height: 100%;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -668,13 +715,13 @@ figcaption {background: #FFFFFF; height: 164px;}
     }
     .asidePopularArticle {
         height: 100%;
-        width: 70%;
+        width: 100%;
         display: block;
         margin: 10px auto;
     }
 
     .videoBlock {
-        width: 70%;
+        width: 100%;
         height: 100%;
         margin: 0 auto;
         float: none;
@@ -686,28 +733,37 @@ figcaption {background: #FFFFFF; height: 164px;}
     #hWrapperLeft h2 {width: 100%;}
 
     .tutorialBlock {
-        width: 70%;
-        height: 200px;
+        width: 100%;
+        height: 100%;
         border-top: 1px solid #EEEEEE;
         margin: 0 auto;
+        overflow: hidden;
     }
 
-    .tutorialBlockContent {width: 52%;}
+    .tutorialBlockContent {width: 50%;padding: 4px 15px;}
 
     .tutorialBlockContent h3 {
-        font-size: 22px;
+        font-size: 20px;
         text-transform: uppercase;
         margin: 0;
     }
 
-    .wrapperSurveyBlocks {width: 100%;float: none;margin-top: 66px;}
+    .wrapperSurveyBlocks {width: 100%;float: none;margin-top: 46px;}
     #hWrapperRight h2 {width: 100%;}
     .surveyBlock {
-        width: 48%;
-        height: 472px;
+        width: 100%;
+        height: 100%;
         display: block;
         margin: 0 auto;
     }
+
+    .truncateWrapperImg {width: 100%; height: 100%;}
+    h3 {font-size: 25px;}
+    .truncateImg {width: 100%;}
+    .truncateWrapperImgVideo {height: 190px;}
+    .figcaptionVideo {height: 100%;}
+    .truncateWrapperImgVideo {height: 100%;}
+    .tutorialBlockImg {width:50%;}
 
 }
 
@@ -755,7 +811,7 @@ figcaption {background: #FFFFFF; height: 164px;}
 
     .tutorialBlockImg {
         width: 100%;
-        height: 163px;
+        height: 205px;
         float: none;
     }
 
@@ -770,6 +826,11 @@ figcaption {background: #FFFFFF; height: 164px;}
     .surveyBlock {width: 100%;}
     .surveyBlock > figure > figcaption > p {
         font-size: 14px;
+    }
+
+    .truncateWrapperImg {
+        width: 100%;
+        height: 100%;
     }
 
 
@@ -850,8 +911,6 @@ figcaption {background: #FFFFFF; height: 164px;}
 }
 .asideContainer aside ul li {list-style: none;font-size: 14px;font-weight: bold;color: #444;}
 .asideContainer aside ul li:nth-child(1) {}
-
-.asideContainer aside + aside {height: 230px;}
 .asideContainer h2 {font-size: 15px;}
 
 .asidebarSocialNetwork {width: 100%;height: 30px;}
@@ -909,6 +968,7 @@ figcaption {background: #FFFFFF; height: 164px;}
     .containerCatArticle {
         width: 100%;
         float: none;
+        height: 100%;
     }
 
     .containerCatArticle article {
@@ -941,12 +1001,6 @@ figcaption {background: #FFFFFF; height: 164px;}
         justify-content: space-around;
     }
 
-    .asideContainer aside {
-        width: 48%;
-        height: 300px;
-
-    }
-
     .asideContainer aside h3 {
         padding-top: 14px;
         font-size: 23px;
@@ -958,22 +1012,22 @@ figcaption {background: #FFFFFF; height: 164px;}
 
     .asidebarSocialNetwork {display: none;}
 
-
 }
 
 @media screen and (max-width: 1024px)
 {
     .contentContainer h2 {
-        font-size: 26px;
+        font-size: 19px;
         margin: 13px 0px;
     }
 
     .contentContainer {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .containerCatArticle article {
         margin: 0px auto 0px;
+        height: 250px;
     }
 
 }
@@ -1005,6 +1059,7 @@ figcaption {background: #FFFFFF; height: 164px;}
 
     .categoryArticle {
         font-size: 15px;
+        margin-top: 15px;
     }
 
     .contentContainer h2 {
@@ -1021,11 +1076,6 @@ figcaption {background: #FFFFFF; height: 164px;}
         width: 100%;
         height: 100%;
     }
-    .asideContainer aside + aside {
-        width: 100%;
-        height: 100%;
-    }
-
 
 }
 
@@ -1054,8 +1104,8 @@ figcaption {background: #FFFFFF; height: 164px;}
 }
 
 .truncateAsideWrapperImg {
-    width: 260px;
-    height: 168px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -1083,43 +1133,13 @@ figcaption {background: #FFFFFF; height: 164px;}
     padding: 21px;
     box-sizing: border-box;
     margin-top: 14px;
+    height: 100%;
 }
 .asideContainer aside ul li {list-style: none;font-size: 14px;font-weight: bold;color: #444;margin-bottom: 10px;}
 .asideContainer aside ul li:nth-child(1) {}
 
-.asideContainer aside + aside {height: 230px;margin-top: 84px;}
+.asideContainer aside + aside {height: 340px;margin-top: 84px;}
 .asideContainer h2 {font-size: 15px;}
-
-/*
-
-.asidebarSocialNetwork {width: 100%;height: 30px;}
-
-.asidebarSocialNetwork div {
-    width: 32.4%;
-    height: 100%;
-    float: left;
-    overflow: hidden;
-    position: relative;
-    padding: 3px;
-    box-sizing: border-box;
-}
-.asidebarSocialNetwork div:nth-child(2) {background: #3b5998;}
-.asidebarSocialNetwork div:nth-child(3) {background: #55ACEE;}
-.asidebarSocialNetwork div:nth-child(4) {background: #DD4B39;}
-
-.asidebarSocialNetwork div a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.asidebarSocialNetwork div > a > img {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-*/
 
 @media screen and (max-width: 1280px) {
     main {
@@ -1133,19 +1153,40 @@ figcaption {background: #FFFFFF; height: 164px;}
         text-align: center;
     }
 
+
     .containerArticle article {
         width: 100%;
         float: none;
     }
 
+
     .othersArticlesContainer {
+        display: block;
         width: 100%;
+    }
+
+    .othersArticle {
+        width: 100%;
+        height: 100%;
+        float: none;
     }
 
     .asideContainer {
         width: 100%;
         height: 100%;
         float: none;
+    }
+
+    .asideContainer aside {
+        width: 48%;
+        height: 340px;
+    }
+
+    .truncateAsideWrapperImg {margin: 0 auto;}
+    .asideContainer aside + aside {margin-top: 0px;}
+    .othersArticle > a > figure > figcaption {height: 74px;text-align: center;}
+    .othersArticle figure figcaption h3 {
+        font-size: 30px;
     }
 
 }
@@ -1158,16 +1199,12 @@ figcaption {background: #FFFFFF; height: 164px;}
 
     }
 
-    .othersArticlesContainer {
-        display: block;
-    }
 
-    .othersArticle {
+    .asideContainer aside + aside {
         width: 100%;
-        height: 300px;
-        float: none;
+        height: 100%;
+        margin-top: 55px;
     }
-
 
 }
 

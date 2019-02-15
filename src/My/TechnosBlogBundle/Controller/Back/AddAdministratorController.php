@@ -9,8 +9,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use My\TechnosBlogBundle\Entity\Users;
 use My\TechnosBlogBundle\Form\UsersType;
 
-
-
 /**
  * Class IndexController
  * @package My\TechnosBlogBundle\Controller\Back
@@ -19,7 +17,7 @@ use My\TechnosBlogBundle\Form\UsersType;
 class AddAdministratorController extends Controller
 {
     /**
-     * @param Request $request
+     * @param Request                      $request
      * @param UserPasswordEncoderInterface $encoder
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
@@ -30,8 +28,7 @@ class AddAdministratorController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             // Encode password of the user
             $password = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
@@ -54,12 +51,8 @@ class AddAdministratorController extends Controller
             return $this->redirectToRoute('admin_all_users');
         }
 
-        return $this->render('@MyTechnosBlog/Back/AddAdministrator\addAdministrator.html.twig',
-            [
-                'form' => $form->createView()
-            ]);
-
+        return $this->render('@MyTechnosBlog/Back/AddAdministrator\addAdministrator.html.twig', [
+                'form' => $form->createView(),
+        ]);
     }
-
-
 }

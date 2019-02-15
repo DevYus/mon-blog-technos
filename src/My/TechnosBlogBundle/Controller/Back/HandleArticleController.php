@@ -16,13 +16,12 @@ use My\TechnosBlogBundle\Form\DeleteType;
  * Class IndexController
  * @package My\TechnosBlogBundle\Controller\Back
  */
-
 class HandleArticleController extends Controller
 {
     /**
-     * @param Request $request
-     * @param $page
-     * @param $cat
+     * @param Request    $request
+     * @param Pagination $page
+     * @param Category   $cat
      * @return Response
      */
     public function allArticleAction(Request $request, $page, $cat)
@@ -42,7 +41,7 @@ class HandleArticleController extends Controller
             return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
                 'articles' => $articles,
                 'pagination' => $pagination,
-                'cat' => $cat
+                'cat' => $cat,
             ]);
         } elseif ($cat) {
             $articles = $this->findArticlesForPagination($page, $nbArticlesByPage, $cat);
@@ -51,7 +50,7 @@ class HandleArticleController extends Controller
             return $this->render('@MyTechnosBlog/Back/AllArticle\allArticle.html.twig', [
                 'articles' => $articles,
                 'pagination' => $pagination,
-                'cat' => $cat
+                'cat' => $cat,
             ]);
         }
 
@@ -63,7 +62,7 @@ class HandleArticleController extends Controller
             'page' => $page,
             'nbPages' => ceil(count($articles) / $nbArticlesByPage),
             'routeName' => 'admin_all_article',
-            'paramsRoute' => []
+            'paramsRoute' => [],
         ];
 
         /**********/
@@ -200,22 +199,23 @@ class HandleArticleController extends Controller
     }
 
     /**
-     * @param $page
-     * @param $nbArticlesByPage
-     * @param $cat
+     * @param Pagination $page
+     * @param Parameters $nbArticlesByPage
+     * @param Catgeory   $cat
      * @return mixed
      */
     private function findArticlesForPagination($page, $nbArticlesByPage, $cat)
     {
         $entMa = $this->getDoctrine()->getManager();
+
         return $entMa->getRepository('MyTechnosBlogBundle:Articles')->paginate($page, $nbArticlesByPage, $cat);
     }
 
     /**
-     * @param $page
-     * @param $articles
-     * @param $nbArticlesByPage
-     * @param $cat
+     * @param Pagination $page
+     * @param \Article   $articles
+     * @param Parameters $nbArticlesByPage
+     * @param Category   $cat
      * @return array
      */
     private function paginationParams($page, $articles, $nbArticlesByPage, $cat)
@@ -226,7 +226,7 @@ class HandleArticleController extends Controller
             'routeName' => 'admin_all_article',
             'paramsRoute' => [
                 'cat' => $cat,
-            ]
+            ],
         ];
     }
 

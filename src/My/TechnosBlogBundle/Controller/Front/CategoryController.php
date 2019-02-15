@@ -5,9 +5,9 @@ namespace My\TechnosBlogBundle\Controller\Front;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
- *  Controller that handle Category Blog
+ * Class CategoryController
+ * @package My\TechnosBlogBundle\Controller\Front
  */
-
 class CategoryController extends Controller
 {
     /**
