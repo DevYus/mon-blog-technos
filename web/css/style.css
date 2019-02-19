@@ -623,7 +623,6 @@ figcaption {background: #FFFFFF; }
 .sectionHomeFive{
     width: 100%;
     height: 100%;
-    overflow: hidden;
     padding-bottom: 100px;
     position: relative;
     background: red;
@@ -643,14 +642,20 @@ figcaption {background: #FFFFFF; }
     margin: 0 auto;
 }
 
-.slider {
-    position: relative;
-    overflow: hidden;
-}
+.slider, items {position: relative;}
 
 .item {
     background: #9FC537;
-    height: 156px;
+    margin: 10px;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    transition: transform .3s;
+    transform: translate3d(0,-1px,0);
+    overflow: hidden;
+}
+
+.subContainer {
+    transition: transform 0.6s;
+    transform: translate3d(0,0,0);
 }
 
 .subContainer::after {
@@ -660,6 +665,41 @@ figcaption {background: #FFFFFF; }
 }
 
 .sliderItem {float: left;}
+.articleSlide {
+    width: 200px;
+    height: 285px;
+    float: left;
+    background: pink;
+    margin-right: 20px;
+}
+
+
+.sliderPrev, .sliderNext {
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF url(../img/right-arrow.svg) center no-repeat;
+    background-size: 20px 20px;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    border-radius: 50%;
+    margin-top: -20px;
+    cursor: pointer;
+    box-shadow: 0 15px 35px #3232321a , 0 5px 15px #000001;
+    transition: transform 0.6s;
+}
+
+.sliderPrev:hover, .sliderNext:hover {
+    transform: scale(1.3);
+}
+
+
+.sliderPrev {
+    left: 0px;
+    right: auto;
+    background: #FFFFFF url(../img/left-arrow.svg) center no-repeat;
+    background-size: 20px 20px;
+}
 
 /**** Clear ****/
 
