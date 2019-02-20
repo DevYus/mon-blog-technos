@@ -34,6 +34,7 @@ class Slider {
         this.currentSlide = 0;
         this.createNav();
 
+
     }
 
     /**
@@ -51,11 +52,13 @@ class Slider {
      */
     createNav () {
 
+        let mainContainer = document.getElementById('mainContainer');
+
         let prevBtn = this.createWrapperAndClass('sliderPrev');
         let nextBtn = this.createWrapperAndClass('sliderNext');
 
-        this.wrapper.appendChild(prevBtn);
-        this.wrapper.appendChild(nextBtn);
+        mainContainer.appendChild(prevBtn);
+        mainContainer.appendChild(nextBtn);
 
         prevBtn.addEventListener('click', this.prev.bind(this));
         nextBtn.addEventListener('click', this.next.bind(this));
@@ -96,11 +99,12 @@ class Slider {
         return div;
     }
 
+
 }
 
 document.addEventListener('DOMContentLoaded', function(){
 
-    new Slider(document.querySelector("#slider-1"), {
+    new Slider(document.querySelector("#sliderFix"), {
         numberSlidesNext : 1,
         numberSlidesVisible : 1,
     });

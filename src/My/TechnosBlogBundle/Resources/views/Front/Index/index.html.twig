@@ -198,129 +198,84 @@
 
         <div id="mainContainer">
 
-            <div class="sliderTitle">Toto</div>
+            <div class="sliderTitle">
+                <h2>Vous avez peut-être raté :</h2>
+            </div>
 
-            <div id="slider-1">
-                <div class="item">
+            <div id="sliderFix">
 
-                    <div class="articleSlide">
-                        <div class="imgSlide">
-                            <img src="" alt="">
-                        </div>
-                        <div class="contentSlide">
-                            <div class="titleSlide">
-                                Mon titre 1
-                            </div>
-                            <div class="descSlide">
-                                Ques ta toi
-                            </div>
-                        </div>
-                    </div>
+                {% if articlesCarrousel is defined %}
 
-                    <div class="articleSlide">
-                        <div class="imgSlide">
-                            <img src="" alt="">
-                        </div>
-                        <div class="articleSlide">
-                            <div class="contentSlide">
-                                <div class="titleSlide">
-                                    Mon titre 2
+                    <div class="item">
+
+                        {% for articleCarrousel in articlesCarrousel[0:3] %}
+
+                            <div class="articleSlide">
+                                <div class="imgSlide">
+                                    <img src="{{ asset('uploads/' ~ articleCarrousel.pathImg) }}" alt="">
                                 </div>
-                                <div class="descSlide">
-                                    Ques ta toi 3
+                                <div class="contentSlide">
+                                    <div class="titleSlide">
+                                        {{ articleCarrousel.title }}
+                                    </div>
+                                    <div class="descSlide">
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+                        {% endfor %}
+
                     </div>
 
-                </div>
+                    <div class="item">
 
-                <div class="item">
+                        {% for articleCarrousel in articlesCarrousel[3:3] %}
 
-                    <div class="articleSlide">
-                        <div class="imgSlide">
-                            <img src="" alt="">
-                        </div>
-                        <div class="contentSlide">
-                            <div class="titleSlide">
-                                Mon titre 2
-                            </div>
-                            <div class="descSlide">
-                                Ques ta toi 2
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="articleSlide">
-                        <div class="imgSlide">
-                            <img src="" alt="">
-                        </div>
-                        <div class="articleSlide">
-                            <div class="contentSlide">
-                                <div class="titleSlide">
-                                    Mon titre 2
+                            <div class="articleSlide">
+                                <div class="imgSlide">
+                                    <img src="{{ asset('uploads/' ~ articleCarrousel.pathImg) }}" alt="">
                                 </div>
-                                <div class="descSlide">
-                                    Ques ta toi 2
+                                <div class="contentSlide">
+                                    <div class="titleSlide">
+                                        {{ articleCarrousel.title }}
+                                    </div>
+                                    <div class="descSlide">
+                                        Ques ta toi
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+
+                        {% endfor %}
+
                     </div>
 
-                </div>
-                <!--
-                <div class="item">
-                    <div class="imgSlide">
-                        <img src="" alt="">
+                    <div class="item">
+
+                        {% for articleCarrousel in articlesCarrousel[6:3] %}
+
+                            <div class="articleSlide">
+                                <div class="imgSlide">
+                                    <img src="{{ asset('uploads/' ~ articleCarrousel.pathImg) }}" alt="">
+                                </div>
+                                <div class="contentSlide">
+                                    <div class="titleSlide">
+                                        {{ articleCarrousel.title }}
+                                    </div>
+                                    <div class="descSlide">
+                                        Ques ta toi
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        {% endfor %}
+
                     </div>
-                    <div class="contentSlide">
-                        <div class="titleSlide">
-                            Mon titre 1
-                        </div>
-                        <div class="descSlide">
-                            Ques ta toi
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="imgSlide">
-                        <img src="" alt="">
-                    </div>
-                    <div class="contentSlide">
-                        <div class="titleSlide">
-                            Mon titre 1
-                        </div>
-                        <div class="descSlide">
-                            Ques ta toi
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="imgSlide">
-                        <img src="" alt="">
-                    </div>
-                    <div class="contentSlide">
-                        <div class="titleSlide">
-                            Mon titre 1
-                        </div>
-                        <div class="descSlide">
-                            Ques ta toi
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="imgSlide">
-                        <img src="" alt="">
-                    </div>
-                    <div class="contentSlide">
-                        <div class="titleSlide">
-                            Mon titre 1
-                        </div>
-                        <div class="descSlide">
-                            Ques ta toi
-                        </div>
-                    </div>
-                </div>-->
+
+                {% endif %}
+
             </div>
 
         </div>

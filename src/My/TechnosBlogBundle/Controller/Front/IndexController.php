@@ -19,7 +19,6 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
-
         $lastArticle = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findOneBy(
             [],
             ['date' => 'desc']
@@ -60,6 +59,13 @@ class IndexController extends Controller
             0
         );
 
+        $articlesCarrousel = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findBy(
+            [],
+            ['id' => 'desc'],
+            10,
+            0
+        );
+
         return $this->render('@MyTechnosBlog/Front/Index\index.html.twig', [
             'lastArticle' => $lastArticle,
             'rightArticles' => $rightArticles,
@@ -67,6 +73,7 @@ class IndexController extends Controller
             'videos' => $videos,
             'tutorials' => $tutorials,
             'surveys' => $surveys,
+            'articlesCarrousel' => $articlesCarrousel,
         ]);
     }
 
