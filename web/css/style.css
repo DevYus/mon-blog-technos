@@ -11,7 +11,7 @@ body{
 }
 
 header{
-    width: 1200px;
+    width: 1250px;
     height: 100%;
     line-height: 60px;
     padding: 0;
@@ -69,7 +69,8 @@ a {text-decoration: none; color: #000;}
     box-sizing: border-box;
 }
 
-#coverSearch form img {float: right;cursor: pointer;}
+.jsBtnSearch {width: 50px;}
+#coverSearch form img {float: right;cursor: pointer; width: 20px;}
 
 .menuResponsive {
     width: 500px;
@@ -122,7 +123,7 @@ a {text-decoration: none; color: #000;}
 }
 
 .containerHeader{
-    width: 1200px;
+    width: 100%;
     height: 100%;
     margin: 0 0;
     overflow: hidden;
@@ -174,6 +175,7 @@ nav ul {
     width: 100%;
     margin: 0 auto;
     float: right;
+
 }
 
 
@@ -190,13 +192,13 @@ nav ul>li{
     float: left;
 }
 
-nav ul>li>a {display:block;width: 100%;}
 
+nav ul>li>a {display:block;width: 100%;}
 nav ul>li>img {display:block;margin: 21px auto;}
 
-
-nav ul>li:hover{
+nav ul>li>a:hover{
     color: #A6CE39;
+    transition-duration: 0.3s;
 }
 
 main{
@@ -475,7 +477,7 @@ figure img {
     width: 100%;
 }
 
-figcaption {background: #FFFFFF; }
+figcaption {background: #FFFFFF;overflow: hidden; }
 
 .sectionHomeThree{
     width: 100%;
@@ -582,7 +584,7 @@ figcaption {background: #FFFFFF; }
 }
 
 .tutorialBlockImg{
-    width: 330px;
+    width: 320px;
     height: 100%;
     float: left;
 }
@@ -597,12 +599,12 @@ figcaption {background: #FFFFFF; }
     box-sizing: border-box;
 }
 
-.tutorialBlockContent h3 {margin:0;font-size: 18px;text-transform: uppercase;}
+.tutorialBlockContent h3 {margin:0;}
 .tutorialBlockContent p {font-size: 16px;}
 
 .surveyBlock{
     height: 400px;
-    width: 344px;
+    width: 320px;
     display: inline-block;
     margin-bottom: 10px;
 }
@@ -642,6 +644,8 @@ figcaption {background: #FFFFFF; }
     top: 35px;
     border-radius: 4px;
 }
+
+#sliderFixResonsive {display: none;}
 
 .sliderContainer {
     width: 90%;
@@ -688,7 +692,7 @@ figcaption {background: #FFFFFF; }
     background: #FFFFFF url(../img/right-arrow.svg) center no-repeat;
     background-size: 20px 20px;
     position: absolute;
-    top: 50%;
+    top: 36%;
     right: -25px;
     border-radius: 50%;
     margin-top: -20px;
@@ -717,7 +721,7 @@ figcaption {background: #FFFFFF; }
 @media screen and (max-width: 1280px)
 {
     main {width: 100%;}
-    .sectionHomeOne, .sectionHomeTwo, .sectionHomeThree, .sectionHomeFour{
+    .sectionHomeOne, .sectionHomeTwo, .sectionHomeThree, .sectionHomeFour, .sectionHomeFive {
         margin: 0;
         padding: 20px 20px 0 20px;
         box-sizing: border-box;
@@ -787,13 +791,8 @@ figcaption {background: #FFFFFF; }
         overflow: hidden;
     }
 
-    .tutorialBlockContent {width: 50%;padding: 4px 15px;}
+    .tutorialBlockContent {width: 100%;padding: 4px 15px;}
 
-    .tutorialBlockContent h3 {
-        font-size: 20px;
-        text-transform: uppercase;
-        margin: 0;
-    }
 
     .wrapperSurveyBlocks {width: 100%;float: none;margin-top: 46px;}
     #hWrapperRight h2 {width: 100%;}
@@ -811,6 +810,24 @@ figcaption {background: #FFFFFF; }
     .figcaptionVideo {height: 100%;}
     .truncateWrapperImgVideo {height: 100%;}
     .tutorialBlockImg {width:50%;}
+
+    #sliderFix {display: none;}
+    #sliderFixResonsive {display: block;}
+    .sliderPrev, .sliderNext {display: none;}
+
+    .item {
+        transition: transform .3s;
+        transform: translate3d(0,-1px,0);
+        overflow: hidden;
+        display: block;
+    }
+
+    .articleSlide {
+        width: 100%;
+        height: 100%;
+        float: none;
+        padding-bottom: 50px;
+    }
 
 }
 
@@ -852,19 +869,19 @@ figcaption {background: #FFFFFF; }
 
     .tutorialBlock {
         width: 100%;
-        height: 310px;
+        height: 100%;
         border: none;
     }
 
     .tutorialBlockImg {
         width: 100%;
-        height: 205px;
+        height: 100%;
         float: none;
     }
 
     .tutorialBlockContent {
         width: 100%;
-        height: 126px;
+        height: 100%;
         padding: 15px 0;
     }
 
@@ -900,11 +917,9 @@ figcaption {background: #FFFFFF; }
     font-weight: 600;
 }
 
-
-
 .containerCatArticle {
     width: 800px;
-    height: 216px;
+    height: 100%;
     float: left;
     overflow: hidden;
     margin-bottom: 60px;
@@ -913,7 +928,8 @@ figcaption {background: #FFFFFF; }
 .containerCatArticle article {
     width: 800px;
     height: 100%;
-
+    overflow: hidden;
+    margin: 0 0 40px 0;
 }
 
 .imgContainer {width: 380px;height: 100%;float: left;}
@@ -1146,7 +1162,7 @@ figcaption {background: #FFFFFF; }
 }
 .othersArticle{
     width: 258px;
-    height: 250px;
+    height: 100%;
     float: left;
 }
 

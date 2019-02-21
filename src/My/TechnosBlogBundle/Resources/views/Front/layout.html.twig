@@ -4,7 +4,8 @@
     <title>Mon blog Technos</title>
     <meta charset="UTF-8">
     <meta name="description" content="Retrouvez les différentes infos sur les langages des programmations">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {% block stylesheets %}
 
@@ -62,6 +63,9 @@
 
           <nav class="navHeader">
             <ul>
+                <li>
+                    <a href="{{ path('homepage') }}">Home</a>
+                </li>
                 <li>
                     <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript</a>
                 </li>
@@ -170,6 +174,17 @@
               let nav = document.getElementById("menuJsResponsive");
               nav.classList.toggle('openMenu');
           });
+      }
+
+      /*********** DESC TREATEMENT ***********/
+
+      var widthWin = window.innerWidth;
+
+      if (widthWin <= 1280) {
+
+          var originalText = document.querySelector('.tutorialBlockContent p').textContent;
+          var minifyDesc = originalText.slice(0,80);
+          document.querySelector('.tutorialBlockContent p').innerHTML = minifyDesc + '...';
       }
 
       /************************************/
