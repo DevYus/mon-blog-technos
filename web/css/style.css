@@ -901,15 +901,15 @@ figcaption {background: #FFFFFF;overflow: hidden; }
 
 }
 
-/********** Category style ***********/
+/********** Category + search style ***********/
 
-.categorySection {width: 1200px;margin-bottom: 100px;padding: 0;overflow: hidden;}
-.categorySection h1 {
+.categorySection, .searchSection {width: 1200px;margin-bottom: 100px;padding: 0;overflow: hidden;}
+.categorySection h1, searchSection h1 {
     text-transform: uppercase;
     font-size: 28px;
     margin: 5px 0 20px;
 }
-.categorySubTitle {
+.categorySubTitle, .searchSubTitle {
     color: #868686;
     margin: 26px 0 8px;
     display: block;

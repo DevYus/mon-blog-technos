@@ -1,0 +1,112 @@
+
+{% extends "@MyTechnosBlog/Front/layout.html.twig" %}
+
+
+{% block main %}
+
+<!-- Extension du layout au templates fils -->
+
+
+  <main>
+
+      {{ dump() }}
+
+      <section class="searchSection">
+          <span class="searchSubTitle">Resultat(s)</span>
+          <h1></h1>
+          <div class="containerCatArticle">
+
+              {% if articlesCategory is defined %}
+
+                  {% for articleCategory in articlesCategory %}
+
+                      <a href="{{ path('article', {'category' : articleCategory.category|replace({ 'é' : 'e' }), 'id' : articleCategory.id , 'slug' : articleCategory.slug}) }}">
+                        <article>
+                              <div class="imgContainer">
+                                  <img src="{{ asset('uploads/' ~ articleCategory.pathImg) }}" alt="">
+                              </div>
+                              <div class="contentContainer">
+                                  <span class="categoryArticle">Catégorie - {{ category|capitalize }}</span>
+                                  <h2>{{ articleCategory.title }}</h2>
+                                  <p>{{ articleCategory.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,150)|striptags('p')|raw }}...</p>
+                              </div>
+                       </article>
+                      </a>
+
+                  {% endfor %}
+
+              {% else %}
+
+              {% endif %}
+
+          </div>
+
+          <div class="asideContainer">
+              <aside>
+                  <h3>Derniers articles</h3>
+                  <ul>
+                      {% if lastArticles is defined %}
+
+                          {% for lastArticle in lastArticles %}
+
+                              <li>
+                                  <a href="{{ path('article', {'category' : lastArticle.category|replace({ 'é' : 'e' }), 'id' : lastArticle.id , 'slug' : lastArticle.slug}) }}">
+                                      {{ lastArticle.title }}
+                                  </a>
+                              </li>
+
+                          {% endfor %}
+
+                      {% endif %}
+                  </ul>
+              </aside>
+              <aside>
+                  <h3>Catégories</h3>
+                  <ul>
+                      <li>
+                          <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript</a>
+                      </li>
+                      <li>
+                          <a href="{{ path('category', { 'category' : 'php' }) }}">PHP</a>
+                      </li>
+                      <li>
+                          <a href="{{ path('category', { 'category' : 'rubis' }) }}">Rubis</a>
+                      </li>
+                      <li>
+                          <a href="{{ path('category', { 'category' : 'tutoriel' }) }}">Tutoriels</a>
+                      </li>
+                      <li>
+                          <a href="{{ path('category', { 'category' : 'sondage' }) }}">Sondages</a>
+                      </li>
+                  </ul>
+              </aside>
+
+              <aside class="asidebarSocialNetwork">
+                  <h2>Suivez-nous</h2>
+                  <div>
+                      <a href="">
+                        <img src="{{ asset('./img/facebook.png') }}" alt="facebook">
+                      </a>
+                  </div>
+                  <div>
+                      <a href="">
+                        <img src="{{ asset('./img/twitter.png') }}" alt="facebook">
+                      </a>
+                  </div>
+                  <div>
+                      <a href="">
+                        <img src="{{ asset('./img/google-plus.png') }}" alt="facebook">
+                      </a>
+                  </div>
+              </aside>
+          </div>
+      </section>
+
+
+  </main>
+
+
+{% endblock %}
+
+
+

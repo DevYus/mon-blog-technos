@@ -34,7 +34,6 @@ class Slider {
         this.currentSlide = 0;
         this.createNav();
 
-
     }
 
     /**
@@ -98,7 +97,6 @@ class Slider {
 
         return div;
     }
-
 
 }
 

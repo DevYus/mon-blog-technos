@@ -87,6 +87,27 @@ class ArticlesRepository extends EntityRepository
     }
 
     /**
+     * @param \Article $title
+     * @return array
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function getResultsSearch($title)
+    {
+        $sql = "SELECT * FROM Articles WHERE title LIKE :title";
+        $entMa = $this->getEntityManager();
+        $sm = $entMa->getConnection()->prepare($sql);
+        $sm->execute(['title' => '%' . $title . '%']);
+
+        $searchCollections = [];
+
+        while ($data = $sm->fetch()) {
+            array_push($searchCollections, $data['title']);
+        }
+
+        return $searchCollections;
+    }
+
+    /**
      * @return array
      */
     public function getLastArticles()

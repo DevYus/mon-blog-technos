@@ -90,6 +90,10 @@ registration:
     path:    /registration
     defaults: {_controller: MyTechnosBlogBundle:Front\Registration:registration }
 
+search:
+   path:    /search
+   defaults: {_controller: MyTechnosBlogBundle:Front\Search:search }
+
 category:
     path:    /{category}
     defaults: {_controller: MyTechnosBlogBundle:Front\Category:category }
@@ -104,5 +108,10 @@ article:
     requirements:
         category: "[a-zA-Z-é]+"
         id: "[0-9]+"
+
+
+
+
+
 
 
