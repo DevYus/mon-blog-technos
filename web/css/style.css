@@ -426,6 +426,11 @@ summary {
     justify-content: space-between;
 }
 
+.divBlockWrapper {
+    width: 100%;
+    display: block;
+}
+
 .sectionHomeTwo > article{
     width: 70%;
     background: grey;
@@ -460,7 +465,8 @@ summary {
 .truncateWrapperImgVideo {
     height: 336px;
     overflow: hidden;
-    width: 100%;
+    width: 50%;
+    float: left;
 }
 
 .asidePopularArticle > figure > figcaption  {
@@ -477,13 +483,23 @@ figure img {
     width: 100%;
 }
 
-figcaption {background: #FFFFFF;overflow: hidden; }
+figcaption {overflow: hidden; }
 
+
+.sectionHomeThree:before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 200%;
+    height: 100%;
+    background: rgba(0,0,0,.05);
+    z-index: -1;
+    left: -50%;
+}
 .sectionHomeThree{
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    background: #FFF;
+    padding-top: 50px;
     margin: 0px 0 82px;
     position: relative;
 }
@@ -494,29 +510,37 @@ figcaption {background: #FFFFFF;overflow: hidden; }
     font-size: 21px;
     width: 89px;
     text-transform: uppercase;
+    position: relative;
 }
 
-.sectionHomeThree h2::after{
+.sectionHomeThree h2:after{
     content: '';
     width: 60px;
     height: 3px;
     background: #ccc;
     position: absolute;
     left: 0;
-    top: 62px;
+    top: 35px;
     border-radius: 4px;
 }
 
 .videoBlock {
-    background: #FFFFFF;
-    width: 596px;
+    width: 100%;
     height: 100%;
-    float: left;
     margin: 0px 0 0 0px;
-
+    overflow: hidden;
 }
-.videoBlock figure {width: 100%; position: relative;}
-.figcaptionVideo {width: 100%; height:178px;padding-top: 18px;}
+.videoBlock figure {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.videoBlock:nth-child(2n) figure {flex-direction: row-reverse;}
+
+.figcaptionVideo {width: 50%; height:120px;padding-top: 18px;float: left;}
 .figcaptionVideo h3 {margin: 10px 0px;}
 .videoBlockImg {width: 100%;display: block;}
 
