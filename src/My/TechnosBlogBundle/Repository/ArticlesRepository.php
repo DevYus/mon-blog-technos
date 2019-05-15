@@ -101,7 +101,7 @@ class ArticlesRepository extends EntityRepository
         $searchCollections = [];
 
         while ($data = $sm->fetch()) {
-            array_push($searchCollections, $data['title']);
+            array_push($searchCollections, $data);
         }
 
         return $searchCollections;

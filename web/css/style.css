@@ -465,7 +465,7 @@ summary {
 .truncateWrapperImgVideo {
     height: 336px;
     overflow: hidden;
-    width: 50%;
+    width: 50.5%;
     float: left;
 }
 
@@ -540,8 +540,16 @@ figcaption {overflow: hidden; }
 
 .videoBlock:nth-child(2n) figure {flex-direction: row-reverse;}
 
-.figcaptionVideo {width: 50%; height:120px;padding-top: 18px;float: left;}
+.figcaptionVideo {
+    width: 50%;
+    height: 120px;
+    padding-top: 18px;
+    padding-left: 16px;
+    float: left;
+}
+.videoBlock:nth-child(2n) .figcaptionVideo {padding-left: 0;}
 .figcaptionVideo h3 {margin: 10px 0px;}
+.figcaptionVideo p {width: 99%;}
 .videoBlockImg {width: 100%;display: block;}
 
 
@@ -555,7 +563,7 @@ figcaption {overflow: hidden; }
     width: 100%;
     height: 100%;
     overflow: hidden;
-    padding-bottom: 40px;
+    padding-bottom: 120px;
     position: relative;
 }
 
@@ -646,8 +654,20 @@ figcaption {overflow: hidden; }
 .sectionHomeFive{
     width: 100%;
     height: 100%;
-    padding-bottom: 50px;
     position: relative;
+    margin: 0px 0px 0px;
+}
+
+.sectionHomeFive::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 200%;
+    height: 108%;
+    background: rgba(0, 0, 0, .05);
+    z-index: -1;
+    left: -50%;
+    top:-7%;
 }
 
 .sectionHomeFive h2{
@@ -1171,11 +1191,60 @@ figcaption {overflow: hidden; }
 
 
 .containerArticle {width: 100%;overflow: hidden;}
-.containerArticle h1 {margin: 34px 0 20px;font-size: 32px;}
+.containerArticle h1 {margin: 34px 0 20px;font-size: 32px;width: 76%;}
 .containerArticle article {width: 71%;display: block;float: left;}
 .containerArticle article img {width: 100%;}
 .asideInfosArticle {display: block;font-size: 14px;color: #616161;margin: 34px 0px 0px;}
-.containerArticle article div {margin-top: 32px;text-align: justify;padding-bottom: 100px;border-bottom: 1px solid #dfdfdf;}
+.contentArticle, .listComments {
+    margin-top: 32px;
+    text-align: justify;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.commentsArticle {padding-bottom: 60px;}
+
+.commentsArticle form label {
+    display: block;
+    margin-top: 30px;
+}
+
+.commentsArticle form #content {
+    margin-top: 20px;
+    width: 100%;
+    height: 300px;
+    border:1px solid #BDBDBD;
+    font-size: 16px;
+    resize: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.commentsArticle button {
+    width: 230px;
+    padding: 11px;
+    border: none;
+    background: #9FC537;
+    color: #FFF;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.listComments span {
+    display: block;
+}
+.listComments p {margin-top: 30px;font-style: italic;}
+.listComments strong {font-style: normal;}
+
+.listCommentsTitle {
+    font-size: 18px;
+    font-weight: 600;
+}
 
 .othersArticlesContainer {
     width: 71%;
@@ -1246,7 +1315,6 @@ figcaption {overflow: hidden; }
         float: none;
     }
 
-
     .othersArticlesContainer {
         display: block;
         width: 100%;
@@ -1285,7 +1353,6 @@ figcaption {overflow: hidden; }
         font-size: 27px;
 
     }
-
 
     .asideContainer aside + aside {
         width: 100%;
@@ -1971,7 +2038,6 @@ figcaption {overflow: hidden; }
     text-transform: uppercase;
     box-sizing: border-box;
     display: block;
-
 }
 
 /****** ADMIN ALL ARTICLES *******/

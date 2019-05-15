@@ -16,28 +16,36 @@
           <h1></h1>
           <div class="containerCatArticle">
 
-              {% if articlesCategory is defined %}
+              {% if searchArticles is iterable %}
 
-                  {% for articleCategory in articlesCategory %}
+                  {% if count != 0 %}
 
-                      <a href="{{ path('article', {'category' : articleCategory.category|replace({ 'é' : 'e' }), 'id' : articleCategory.id , 'slug' : articleCategory.slug}) }}">
-                        <article>
-                              <div class="imgContainer">
-                                  <img src="{{ asset('uploads/' ~ articleCategory.pathImg) }}" alt="">
-                              </div>
-                              <div class="contentContainer">
-                                  <span class="categoryArticle">Catégorie - {{ category|capitalize }}</span>
-                                  <h2>{{ articleCategory.title }}</h2>
-                                  <p>{{ articleCategory.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,150)|striptags('p')|raw }}...</p>
-                              </div>
-                       </article>
-                      </a>
+                      {% for search in searchArticles %}
 
-                  {% endfor %}
+                          <a href="{{ path('article', {'category' : search.category|replace({ 'é' : 'e' }), 'id' : search.id , 'slug' : search.slug}) }}">
+                                <article>
+                                      <div class="imgContainer">
+                                          <img src="{{ asset('uploads/' ~ search.pathImg) }}" alt="">
+                                      </div>
+                                      <div class="contentContainer">
+                                          <span class="categoryArticle">Catégorie - {{ search.category|capitalize }}</span>
+                                          <h2>{{ search.title }}</h2>
+                                          <p>{{ search.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,150)|striptags('p')|raw }}...</p>
+                                      </div>
+                               </article>
+                          </a>
 
-              {% else %}
+                      {% endfor %}
+
+                  {% else %}
+
+                      <p>Aucun resultat(s) n'a été trouvé</p>
+
+                  {% endif %}
+
 
               {% endif %}
+
 
           </div>
 

@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 
-class AddArticleType extends AbstractType
+class CommentsType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -20,24 +20,9 @@ class AddArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', TextType::class, ['label' => 'Titre de l\'article', 'required' => false])
-            ->add('author', TextType::class, ['label' => 'Auteur', 'required' => false])
-            ->add('category', TextType::class, ['label' => 'Catégorie', 'required' => false])
-            ->add('date', DateType::class, [
-                'label' => 'Date',
-                'required' => false,
-                'format' => 'dd MM yyyy',
-            ])
-            ->add('pathImg', FileType::class, [
-                'data_class' => null,
-                'label' => 'Image à la une',
-                'required' => false,
-                'attr' => [ 'accept' => '.jpg, .jpeg, .png'],
-            ])
             ->add('content', TextareaType::class, [
-                'attr' => array('class' => 'editor'),
-                'label' => 'Contenu',
-                'required' => true,
+                'label' => 'Laisser un commentaire',
+                'required' => false,
             ])
             ->add('submit', SubmitType::class, ['label' => 'VALIDER']);
     }
@@ -48,7 +33,7 @@ class AddArticleType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'My\TechnosBlogBundle\Entity\Articles',
+            'data_class' => 'My\TechnosBlogBundle\Entity\Comments',
         ));
     }
 

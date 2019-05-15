@@ -19,14 +19,16 @@ class SearchController extends Controller
     {
         $entMa = $this->getDoctrine()->getManager();
 
-        $query = $request->query->get('search');
+        $query = $request->query->get('query');
 
         $searchArticles = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getResultsSearch($query);
+        $count = count($searchArticles);
         $lastArticles = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getLastArticles();
 
         return $this->render('@MyTechnosBlog/Front/Search\search.html.twig', [
             'lastArticles' => $lastArticles,
             'searchArticles' => $searchArticles,
+            'count' => $count,
         ]);
     }
 }

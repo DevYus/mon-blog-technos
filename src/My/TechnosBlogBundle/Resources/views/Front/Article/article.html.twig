@@ -7,7 +7,7 @@
 <!-- Extension du layout au templates fils -->
 
   <main>
-
+      {{ dump() }}
     <section class="containerArticle">
 
       <h1>{{ article.title }}</h1>
@@ -18,6 +18,33 @@
         <div class="contentArticle">
           {{ article.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|striptags('<p><strong><br>')|raw  }}
         </div>
+
+      {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+        <div class="commentsArticle">
+            {{ form_start(form , { 'action': path('article',{ 'category': article.category , 'slug' : article.slug, 'id' : article.id }  ) }) }}
+                <div class="my-custom-class-for-errors">
+                    {{ form_errors(form) }}
+                </div>
+                {{ form_label(form.content, 'Laisser un commentaire') }}
+                {{ form_widget(form.content) }}
+
+                {{ form_widget(form.submit) }}
+
+            {{ form_end(form) }}
+        </div>
+
+      {% else %}
+
+      {% endif %}
+
+        <div class="listComments">
+          <span class="listCommentsTitle">Espace commentaire</span>
+          {% for comment in allComments %}
+              <p><strong> {{ comment.pseudo }} </strong> le {{ comment.date|date('d/m/Y') }}</p>
+              <span>{{ comment.content }}</span>
+          {% endfor %}
+        </div>
       </article>
 
       <div class="asideContainer">
@@ -25,17 +52,13 @@
           <h3>Derniers articles</h3>
           <ul>
               {% if lastArticles is defined %}
-
                   {% for lastArticle in lastArticles %}
-
                     <li>
                       <a href="{{ path('article', {'category' : lastArticle.category|replace({ 'é' : 'e' }), 'id' : lastArticle.id , 'slug' : lastArticle.slug}) }}">
                         {{ lastArticle.title }}
                       </a>
                     </li>
-
                   {% endfor %}
-
               {% endif %}
           </ul>
         </aside>

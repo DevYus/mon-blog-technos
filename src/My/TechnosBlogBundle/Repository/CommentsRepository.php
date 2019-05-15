@@ -72,5 +72,34 @@ class CommentsRepository extends EntityRepository
         return $results;
     }
 
+    /**
+     * @param $article_id
+     * @return array
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function getAllComments($article_id)
+    {
+        $sql = "
+            SELECT * 
+            FROM comments 
+            WHERE article_id = :article_id 
+            ORDER BY date
+            DESC
+           "
+        ;
+
+        $entMa = $this->getEntityManager();
+        $sm = $entMa->getConnection()->prepare($sql);
+        $sm->execute(['article_id' => $article_id]);
+
+        $arrayDatas = [];
+
+        while ($data = $sm->fetch()) {
+            array_push($arrayDatas, $data);
+        }
+
+        return $arrayDatas;
+    }
+
 
 }

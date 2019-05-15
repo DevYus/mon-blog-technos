@@ -4,7 +4,8 @@ namespace My\TechnosBlogBundle\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use My\TechnosBlogBundle\Entity\Comments;
-use My\TechnosBlogBundle\Entity\Articles;
+use Symfony\Component\HttpFoundation\Request;
+use My\TechnosBlogBundle\Form\CommentsType;
 
 /**
  * Class ArticleController
@@ -13,37 +14,54 @@ use My\TechnosBlogBundle\Entity\Articles;
 class ArticleController extends Controller
 {
     /**
-     * @param  \Article $id
+     * @param Request $request
+     * @param Int     $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function articleAction($id)
+    public function articleAction(Request $request, $id)
     {
         $entMa = $this->getDoctrine()->getManager();
         $article = $entMa->getRepository('MyTechnosBlogBundle:Articles')->find($id);
 
+        $idUser = $this->getUser()->getId();
+        $user = $entMa->getRepository('MyTechnosBlogBundle:Users')->find($idUser);
+
         $lastArticles = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getLastArticles();
         $othersArticles = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getOthersArticles();
 
-        /*
+        $allComments = $entMa->getRepository('MyTechnosBlogBundle:Comments')->getAllComments($article->getId());
 
         $comment = new Comments();
-        $comment->setPseudo('Ja');
-        $comment->setContent('marcheeeeeee');
-        $comment->setArticle($article);
 
-        $entMa->persist($article);
-        $entMa->persist($comment);
-        $entMa->flush();
+        $form = $this->get('form.factory')->create(CommentsType::class, $comment);
+        $form->handleRequest($request);
 
-        */
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Set Comment User
+            $comment->setPseudo($user->getPseudo());
+            $comment->setContent($request->request->get('content'));
+            $comment->setArticle($article);
+
+            $entMa->persist($article);
+            $entMa->persist($comment);
+            $entMa->flush();
+
+            return $this->redirectToRoute('article', [
+                'category' => $article->getCategory(),
+                'slug' => $article->getSlug(),
+                'id' => $article->getId(),
+            ]);
+        }
 
         return $this->render(
             '@MyTechnosBlog/Front/Article\article.html.twig',
-            array(
-            'article' => $article,
-            'lastArticles' => $lastArticles,
-            'othersArticles' => $othersArticles,
-            )
+            [
+                'article' => $article,
+                'lastArticles' => $lastArticles,
+                'othersArticles' => $othersArticles,
+                'form' => $form->createView(),
+                'allComments' => $allComments,
+            ]
         );
     }
 }
