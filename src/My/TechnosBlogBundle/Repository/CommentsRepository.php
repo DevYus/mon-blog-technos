@@ -19,28 +19,31 @@ use My\TechnosBlogBundle\Entity\Articles;
  */
 class CommentsRepository extends EntityRepository
 {
+    /**
+     * @param int $page
+     * @param int $maxInPage
+     * @return Paginator
+     */
     public function paginate($page, $maxInPage)
     {
-        if(!is_numeric($page))
-        {
+        if (!is_numeric($page)) {
             throw new InvalidArgumentException(
-                'La valeur de l\'argument '.$page.' est incorrecte.'
+                'La valeur de l\'argument ' . $page . ' est incorrecte.'
             );
         }
 
-        if($page < 1)
-        {
+        if ($page < 1) {
             throw new NotFoundHttpException('La page demandée n\'existe pas');
         }
 
         if (!is_numeric($maxInPage)) {
             throw new InvalidArgumentException(
-                'La valeur de l\'argument '.$page.' est incorrecte.'
+                'La valeur de l\'argument ' . $page . ' est incorrecte.'
             );
         }
 
         $queryBuilder = $this->createQueryBuilder('c')
-            ->join('c.article','a')->addSelect('a')
+            ->join('c.article', 'a')->addSelect('a')
             ->orderBy('c.date');
 
         $query = $queryBuilder->getQuery();
@@ -49,19 +52,20 @@ class CommentsRepository extends EntityRepository
         $query->setFirstResult($firstResult)->setMaxResults($maxInPage);
         $paginator = new Paginator($query);
 
-        if ( ($paginator->count() <= $firstResult) && $page != 1)
-        {
+        if (($paginator->count() <= $firstResult) && $page != 1) {
             throw new NotFoundHttpException('La page demandée n\'existe pas.');
         }
 
         return $paginator;
-
     }
 
+    /**
+     * @return array
+     */
     public function getTitleOfArticleComment()
     {
         $queryBuilder = $this->createQueryBuilder('c')
-            ->join('c.article','a')->addSelect('a')
+            ->join('c.article', 'a')->addSelect('a')
             ->orderBy('c.date');
 
         $query = $queryBuilder->getQuery();
@@ -73,7 +77,7 @@ class CommentsRepository extends EntityRepository
     }
 
     /**
-     * @param $article_id
+     * @param  int $article_id
      * @return array
      * @throws \Doctrine\DBAL\DBALException
      */

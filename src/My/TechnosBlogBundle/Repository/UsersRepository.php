@@ -15,29 +15,32 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class UsersRepository extends EntityRepository
 {
+    /**
+     * @param int  $page
+     * @param int  $maxInPage
+     * @param null $category
+     * @return Paginator
+     */
     public function paginate($page, $maxInPage, $category = null)
     {
-        if(!is_numeric($page))
-        {
+        if (!is_numeric($page)) {
             throw new InvalidArgumentException(
-                'La valeur de l\'argument '.$page.' est incorrecte.'
+                'La valeur de l\'argument ' . $page . ' est incorrecte.'
             );
         }
 
-        if($page < 1)
-        {
+        if ($page < 1) {
             throw new NotFoundHttpException('La page demandée n\'existe pas');
         }
 
         if (!is_numeric($maxInPage)) {
             throw new InvalidArgumentException(
-                'La valeur de l\'argument '.$page.' est incorrecte.'
+                'La valeur de l\'argument ' . $page . ' est incorrecte.'
             );
         }
 
             // Je recois role-admin
-            if($category == 'role-admin')
-            {
+            if ($category == 'role-admin') {
                 $role = '["ROLE_ADMIN"]';
 
                 $queryBuilder = $this->createQueryBuilder('p')
@@ -45,11 +48,7 @@ class UsersRepository extends EntityRepository
                     ->setParameter('roles', $role)
                     ->orderBy('p.date', 'DESC');
 
-
-            }
-
-            elseif($category == 'role-user')
-            {
+            } elseif ($category == 'role-user') {
                 $role = '["ROLE_USER"]';
 
                 $queryBuilder = $this->createQueryBuilder('p')
@@ -57,14 +56,9 @@ class UsersRepository extends EntityRepository
                     ->setParameter('roles', $role)
                     ->orderBy('p.date', 'DESC');
 
-
-            }
-
-            else
-            {
+            } else {
                 $queryBuilder = $this->createQueryBuilder('p')
                     ->orderBy('p.date', 'DESC');
-
             }
 
 
@@ -73,13 +67,11 @@ class UsersRepository extends EntityRepository
         $query->setFirstResult($firstResult)->setMaxResults($maxInPage);
         $paginator = new Paginator($query);
 
-        if ( ($paginator->count() <= $firstResult) && $page != 1)
-        {
+        if (($paginator->count() <= $firstResult) && $page != 1) {
             throw new NotFoundHttpException('La page demandée n\'existe pas.');
         }
 
         return $paginator;
-
     }
 
 

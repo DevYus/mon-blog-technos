@@ -21,10 +21,13 @@ class ArticleController extends Controller
     public function articleAction(Request $request, $id)
     {
         $entMa = $this->getDoctrine()->getManager();
+
         $article = $entMa->getRepository('MyTechnosBlogBundle:Articles')->find($id);
 
-        $idUser = $this->getUser()->getId();
-        $user = $entMa->getRepository('MyTechnosBlogBundle:Users')->find($idUser);
+        if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            $idUser = $this->getUser()->getId();
+            $user = $entMa->getRepository('MyTechnosBlogBundle:Users')->find($idUser);
+        }
 
         $lastArticles = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getLastArticles();
         $othersArticles = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getOthersArticles();

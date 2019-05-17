@@ -7,8 +7,6 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 use InvalidArgumentException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-
-
 /**
  * ArticlesRepository
  *
@@ -17,39 +15,38 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class ArticlesRepository extends EntityRepository
 {
-    public function paginate($page, $maxInPage, $category = null) // Ici ajouter un argument qui sera la variable SQL envoyé en post par AJAX
+    /**
+     * @param int  $page
+     * @param int  $maxInPage
+     * @param null $category
+     * @return Paginator
+     */
+    public function paginate($page, $maxInPage, $category = null)
     {
-        if(!is_numeric($page))
-        {
+        if (!is_numeric($page)) {
             throw new InvalidArgumentException(
-                'La valeur de l\'argument '.$page.' est incorrecte.'
+                'La valeur de l\'argument ' . $page . ' est incorrecte.'
             );
         }
 
-        if($page < 1)
-        {
+        if ($page < 1) {
             throw new NotFoundHttpException('La page demandée n\'existe pas');
         }
 
         if (!is_numeric($maxInPage)) {
             throw new InvalidArgumentException(
-                'La valeur de l\'argument '.$page.' est incorrecte.'
+                'La valeur de l\'argument ' . $page . ' est incorrecte.'
             );
         }
-
-            if($category)
-            {
+            if ($category) {
                 $queryBuilder = $this->createQueryBuilder('p')
                 ->where('p.category = :category')
                 ->setParameter('category', $category)
                 ->orderBy('p.date', 'DESC');
-            }
-            else
-            {
+            } else {
                 $queryBuilder = $this->createQueryBuilder('p')
                     ->orderBy('p.date', 'DESC');
             }
-
 
             $query = $queryBuilder->getQuery();
 
@@ -62,7 +59,6 @@ class ArticlesRepository extends EntityRepository
             }
 
             return $paginator;
-
     }
 
     /**

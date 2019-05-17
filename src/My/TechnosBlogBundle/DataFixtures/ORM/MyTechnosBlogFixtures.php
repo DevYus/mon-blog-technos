@@ -1,18 +1,11 @@
 <?php
 
-/*
-* @author Ouldamri Youssef
-* @subject for 3W academy
-*/
-
-
 namespace My\TechnosBlogBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use My\TechnosBlogBundle\Entity\Users;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-
 
 class MyTechnosBlogFixtures implements FixtureInterface
 {
@@ -36,12 +29,11 @@ class MyTechnosBlogFixtures implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         $datas = [
-            ['Ouldamri Youssef','ouldamri_youssef', 'ouldamri.youssef@gmail.com', '********', ['ROLE_ADMIN']],
-            ['Ouldamri Youssef User','ouldamri_youssef_user', 'ouldamri.youssef@ymail.com', '********', ['ROLE_USER']],
+            ['Ouldamri Youssef', 'ouldamri_youssef', 'ouldamri.youssef@gmail.com', '********', ['ROLE_ADMIN']],
+            ['Ouldamri Youssef User', 'ouldamri_youssef_user', 'ouldamri.youssef@ymail.com', '********', ['ROLE_USER']],
         ];
 
-        foreach($datas as [$fullname,$username,$email,$password,$roles])
-        {
+        foreach ($datas as [$fullname, $username, $email, $password, $roles]) {
             $user = new Users();
             $user->setFullname($fullname);
             $user->setUsername($username);
@@ -50,11 +42,8 @@ class MyTechnosBlogFixtures implements FixtureInterface
             $user->setRoles($roles);
 
             $manager->persist($user);
-
         }
 
         $manager->flush();
-
     }
-
 }

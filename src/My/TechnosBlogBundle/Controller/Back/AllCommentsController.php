@@ -13,11 +13,10 @@ use My\TechnosBlogBundle\Entity\Articles;
  * Class IndexController
  * @package My\TechnosBlogBundle\Controller\Back
  */
-
 class AllCommentsController extends Controller
 {
     /**
-     * @param PageNumber $page
+     * @param int $page
      * @return Response
      */
     public function allCommentsAction($page)
