@@ -8,6 +8,7 @@
 
     <section class="sectionAll">
       <h1>Utilisateurs inscrits</h1>
+      <a href="{{ path('admin') }}" class="adminBtn">Retourner à l'accueil</a>
 
         {% for flash_message in app.session.flashBag.get('notice') %}
             <div class="flash-notice">
@@ -67,7 +68,7 @@
 
                         {% endfor %}
 
-                        <td class="colunmchild4" >{{ user.date|date('d/M/Y') }}</td>
+                        <td class="colunmchild4" >{{ user.date|date('d/m/Y') }}</td>
                         <td class="colunmchild5">
                             <ul>
                                 <li class="liChildUsers">

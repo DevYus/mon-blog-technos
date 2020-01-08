@@ -19,7 +19,7 @@ class UsersType extends AbstractType
     {
         $builder
             ->add('pseudo',  TextType::class)
-            ->add('username',  TextType::class)
+            ->add('username',  TextType::class, ['label' => 'Nom'])
             ->add('email',     EmailType::class)
             ->add('password',  RepeatedType::class, [
                  'type' => PasswordType::class,

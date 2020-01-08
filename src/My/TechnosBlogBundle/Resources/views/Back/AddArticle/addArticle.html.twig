@@ -7,23 +7,20 @@
   <main>
 
     <section class="sectionArticle">
-      <h1>Ajouter un article</h1>
 
+      <h1>Ajouter un article</h1>
+      <a href="{{ path('admin') }}" class="adminBtn">Retourner à l'accueil</a>
 
         {{ form_errors(form) }}
 
         {{ form_start(form) }}
         {{ form_widget(form) }}
-
-
+      
         {{ form_end(form) }}
-
 
     </section>
 
   </main>
-
-
 
 {% endblock %}
 

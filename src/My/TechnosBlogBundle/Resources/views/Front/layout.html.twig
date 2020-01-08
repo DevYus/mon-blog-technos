@@ -20,15 +20,21 @@
 <body>
     <div id="coverSearch">
         <form action="http://localhost/mon-blog-technos/web/app_dev.php/search" method="get">
-            <img src="{{ asset('./img/cancel.png') }}" class="jsBtnSearch" alt="crossBtn">
+
+            <img src="{{ asset('./img/cancel.png') }}" class="jsBtnSearch handleResponsive" alt="crossBtn">
+
             <label>Rechercher des articles :</label>
             <input type="text" name="query" id="search">
+
         </form>
     </div>
     <div class="menuResponsive" id="menuJsResponsive">
         <img src="{{ asset('./img/cancel-white.png') }}" class="jsBtnCross" alt="crossBtn">
         <nav class="navHeaderResponsive">
             <ul>
+                <li>
+                    <a href="{{ path('homepage') }}">Home</a>
+                </li>
                 <li>
                     <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript</a>
                 </li>
@@ -44,8 +50,17 @@
                 <li>
                     <a href="{{ path('category', { 'category' : 'sondage' }) }}">Sondages</a>
                 </li>
+                <li>
+                    <a href="{{ path('login') }}">Connexion</a>
+                </li>
+                <li>
+                    <a href="{{ path('registration') }}">S'inscrire</a>
+                </li>
                 <li class="jsBtnSearch">
                     <img src="{{ asset('./img/search.png') }}" alt="search">
+                </li>
+                <li class="jsBtnSearchResponsive">
+                    <span>Rechercher</span>
                 </li>
             </ul>
         </nav>
@@ -55,10 +70,43 @@
       <div>
         <div class="containerHeader">
 
+            <div class="divLoginResgistration">
+
+                {% if is_granted('ROLE_ADMIN') %}
+
+                    <span>Vous êtes connecté {{ app.user.username }}</span>
+                    <span><a href="{{ path('admin') }}">Revenir au back-office</a></span>
+
+                {% elseif is_granted('ROLE_USER') %}
+
+                    <span>Vous êtes connecté {{ app.user.username }}</span>
+                    <span><a href="{{ path('logout') }}">Deconnexion</a></span>
+
+                {% else %}
+
+                <ul>
+                    <li>
+                        <a href="{{ path('login') }}">
+                            Connexion
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('registration') }}">
+                            S'inscrire
+                        </a>
+                    </li>
+                </ul>
+
+                {% endif %}
+
+            </div>
+
         <img src="{{ asset('./img/menu-button-of-three-horizontal-lines.png') }}" id="btn-menu" class="jsBtnCross" alt="responsive-logo-mon-techno-blog">
 
         <div class="logoBlock">
-            <img src="{{ asset('./img/Mon-blog-technos-white.png') }}" alt="MonBlogTechnos">
+            <a href="/">
+                <img src="{{ asset('./img/Mon-blog-technos-white.png') }}" alt="MonBlogTechnos">
+            </a>
         </div>
 
           <nav class="navHeader">
@@ -90,7 +138,6 @@
       </div>
   </header>
 
-
   {% block main %}
 
 
@@ -107,10 +154,22 @@
         <ul>
             <li>Browse</li>
             <li>Home</li>
-            <li>Tout sur le php</li>
-            <li>News javascript</li>
-            <li>Html5-CSS3</li>
-            <li>Autres langages</li>
+            <li>
+                <a href="{{ path('category', { 'category' : 'php' }) }}">PHP</a>
+            </li>
+            <li>
+                <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('category', { 'category' : 'rubis' }) }}">Rubis</a>
+            </li>
+            <li>
+                <a href="{{ path('category', { 'category' : 'tutoriel' }) }}">Tutoriels</a>
+            </li>
+            <li>
+                <a href="{{ path('category', { 'category' : 'sondage' }) }}">Sondages</a>
+            </li>
         </ul>
         <ul>
             <li>Connect</li>
@@ -134,103 +193,13 @@
 
   {% block javascripts %}
 
-    <!-- jQuery library (served from Google) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="{{ asset('js/slider.js') }}" async></script>
-    <!-- bxSlider Javascript file -->
-    <script type="text/javascript">
-
-      /******** NATIF - SCROLL MENU *********/
-
-      window.addEventListener('scroll', function (e) {
-
-          var nav = document.querySelector('.navHeader');
-
-          if( window.scrollY > 400 ) {
-
-              nav.style.position = 'fixed';
-              nav.style.top = '0';
-              nav.style.zIndex = '100';
-
-          } else if ( window.scrollY < 400 ) {
-
-              nav.style.position = 'initial';
-              nav.style.transitionDuration = '0.1s';
-              nav.classList.add('change');
-          }
-
-      });
-
-      /**************************************/
-
-      /****** NATIF - TOOGLE MENU RESPONSIVE ********/
-
-      var btnMenuResponsive = document.querySelectorAll(".jsBtnCross");
-
-      for(var i = 0; i < btnMenuResponsive.length; i++){
-          btnMenuResponsive[i].addEventListener('click', function(e){
-              let nav = document.getElementById("menuJsResponsive");
-              nav.classList.toggle('openMenu');
-          });
-      }
-
-      /*********** DESC TREATEMENT ***********/
-
-      var widthWin = window.innerWidth;
-
-      if (widthWin <= 1280) {
-
-          var originalText = document.querySelector('.tutorialBlockContent p').textContent;
-          var minifyDesc = originalText.slice(0,80);
-          document.querySelector('.tutorialBlockContent p').innerHTML = minifyDesc + '...';
-      }
-
-      /************************************/
-
-      /********** JQUERY CODE *************/
-
-      $(function(){
-
-          $('.jsBtnSearch').click(function(){
-
-                  $("#coverSearch").slideToggle("slow");
-
-          });
-
-          $('#search').autocomplete({
-
-              source : function(request, response){
-
-                  $.ajax({
-                      url:  'http://localhost/mon-blog-technos/web/app_dev.php/ajax-request',
-                      dataType: 'json',
-                      data: {
-                          title : $('#search').val(),
-                      },
-                      success: function(data){
-
-                          response($.map(data, function(value){
-                              return value;
-
-                          }));
-
-                      }});
-              },
-
-              select : function(event,ui){
-                  $('#results').val(ui.item.value)
-              }
-          });
-
-    });
-
-
-
-
-    </script>
-
+      <!-- jQuery library (served from Google) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <!-- bxSlider Javascript file -->
+      <script src="{{ asset('js/slider.js') }}" asyn></script>
+      <script src="{{ asset('js/main.js') }}" asyn></script>
 
   {% endblock %}
 

@@ -23,7 +23,7 @@ class AllCommentsController extends Controller
     {
         /******* Pagination and display all comments ******/
 
-            $nbCommentsByPage = 8;
+            $nbCommentsByPage = 10;
 
             $entMa = $this->getDoctrine()->getManager();
             $comments = $entMa->getRepository('MyTechnosBlogBundle:Comments')->paginate($page, $nbCommentsByPage);

@@ -39,7 +39,7 @@ class UsersRepository extends EntityRepository
             );
         }
 
-            // Je recois role-admin
+            // Je reçois role-admin
             if ($category == 'role-admin') {
                 $role = '["ROLE_ADMIN"]';
 

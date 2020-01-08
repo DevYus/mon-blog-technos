@@ -12,7 +12,7 @@
     <section class="containerAddAdministratorForm">
 
       <h1>Ajouter administrateur</h1>
-
+      <a href="{{ path('admin') }}" class="adminBtn">Retourner à l'accueil</a>
 
         {{ form_start(form) }}
           {{ form_row(form.pseudo) }}
@@ -22,8 +22,7 @@
           {{ form_row(form.password.second) }}
           <input type="submit" value="Je m'inscrit">
         {{ form_end(form) }}
-
-      <p> <a href="">Revenir à l'acceuil</a> </p>
+      
 
     </section>
 

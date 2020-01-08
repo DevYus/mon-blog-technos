@@ -22,7 +22,7 @@ class AllUsersController extends Controller
     public function allUsersAction(Request $request, $page, $cat)
     {
         /******* Pagination and display all articles ******/
-        $nbUsersByPage = 1;
+        $nbUsersByPage = 10;
         $entMa = $this->getDoctrine()->getManager();
 
         if ($request->isMethod('POST')) {

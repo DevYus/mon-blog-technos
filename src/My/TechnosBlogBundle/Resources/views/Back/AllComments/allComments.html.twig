@@ -8,6 +8,7 @@
 
     <section class="sectionAll">
       <h1 id="toto">Commentaires membres</h1>
+      <a href="{{ path('admin') }}" class="adminBtn">Retourner à l'accueil</a>
 
         {% for flash_message in app.session.flashBag.get('notice') %}
             <div class="flash-notice">

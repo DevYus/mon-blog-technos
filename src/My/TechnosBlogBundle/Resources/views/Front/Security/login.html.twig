@@ -12,16 +12,21 @@
 
           <h1>Connexion</h1>
 
-
           {% if error %}
               <div class="alert alert-danger">
-                  {{ error.messageKey }}
+                  {{ error.messageKey|trans(error.messageData, 'security', 'fr') }}
               </div>
           {% endif %}
 
+          {% for label, messages in app.flashes %}
+              {% for message in messages %}
+                  <div class="alert alert-{{ label }}">
+                      {{ message }}
+                  </div>
+              {% endfor %}
+          {% endfor %}
+
           <form method="post" action="{{ path('login_check') }}">
-
-
               <label>Login <span class="star">*</span></label>
               <p class="clear"></p>
               <input type="text" name="_username" id="username" value="{{ last_username }}">
@@ -31,19 +36,17 @@
 
               <label>Password <span class="star">*</span></label>
               <p class="clear"></p>
-              <input type="text" name="_password" id="password">
+              <input type="password" name="_password" id="password">
 
               <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
+              <a href="http://localhost/mon-blog-technos/web/app_dev.php/forgot" class="lostPassword">Vous avez perdu votre mot de passe ?</a>
 
-              <a href="" class="lostPassword">Vous avez perdu votre mot de passe ?</a>
-
-
-              <input type="submit" value="LOG IN">
+              <input type="submit" value="Connexion">
 
           </form>
 
-          <p>Vous n'avez pas encore de compte ? <a href="">Cliquez ici</a> pour vous inscrire !</p>
+          <p>Vous n'avez pas encore de compte ? <a href="{{ path('registration') }}">Cliquez ici pour vous inscrire !</a></p>
 
       </section>
 

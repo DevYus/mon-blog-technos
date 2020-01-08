@@ -4,8 +4,8 @@
     <title>Mon blog Technos</title>
     <meta charset="UTF-8">
     <meta name="description" content="Retrouvez les différentes infos sur les langages des programmations">
-    <meta name="viewport" content="width=device-width">
-
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- ne pas oublier de mettre les links entre stylesheet -->
     {% block stylesheets %}
@@ -21,24 +21,40 @@
 
   <header id="headerJs">
       <div>
-        <div class="containerHeader">
+          <div class="containerHeader">
 
-        <img src="{{ asset('./img/menu-button-of-three-horizontal-lines.png') }}" id="btn-menu" alt="responsive-logo-mon-techno-blog">
+              <div class="logoBlock">
+                  <a href="/">
+                      <img src="{{ asset('./img/Mon-blog-technos-white.png') }}" alt="MonBlogTechnos">
+                  </a>
+              </div>
 
-        <div class="logoBlock">
-            <img src="{{ asset('./img/Mon-blog-technos-grey.png') }}" alt="MonBlogTechnos">
-        </div>
-          <nav class="navHeader">
-            <ul>
-                <li>Home (logo)</li>
-              <li>Home (logo)</li>
-              <li>Tout sur le PHP</li>
-              <li>News Javascript</li>
-              <li>HTML5 - CSS3</li>
-              <li>Autres langages</li>
-            </ul>
-          </nav>
-        </div>
+              <nav class="navHeader">
+                  <ul>
+                      <li>
+                          <a href="{{ path('homepage') }}">Home</a>
+                      </li>
+                      <li>
+                          <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript</a>
+                      </li>
+                      <li>
+                          <a href="{{ path('category', { 'category' : 'php' }) }}">PHP</a>
+                      </li>
+                      <li>
+                          <a href="{{ path('category', { 'category' : 'rubis' }) }}">Rubis</a>
+                      </li>
+                      <li>
+                          <a href="{{ path('category', { 'category' : 'tutoriel' }) }}">Tutoriels</a>
+                      </li>
+                      <li>
+                          <a href="{{ path('category', { 'category' : 'sondage' }) }}">Sondages</a>
+                      </li>
+                      <li class="jsBtnSearch">
+                          <img src="{{ asset('./img/search.png') }}" alt="search">
+                      </li>
+                  </ul>
+              </nav>
+          </div>
       </div>
   </header>
 
@@ -87,40 +103,25 @@
     <!-- jQuery library (served from Google) -->
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-      <script src="//cdn.ckeditor.com/4.10.1/full/ckeditor.js"></script>
-      <script type="text/javascript">
 
-          $(function(){
+      {% if(app.request.pathInfo == '/admin/add-article' or app.request.pathInfo == '/admin/add-administrator?page=1') %}
 
-              CKEDITOR.replace('content', {
-                  height:500
+          <script src="//cdn.ckeditor.com/4.10.1/full/ckeditor.js"></script>
+          <script type="text/javascript">
 
-              });
+              $(function(){
 
+                  CKEDITOR.replace('content', {
+                      height:500
 
-            /*
-              $('#toto').on('click',function(){
-
-                  var content = CKEDITOR.instances['content'].getData();
-
-                  if(content == '')
-                  {
-                      console.log('Yahhhhh marche');
-                  }
-                  else if (content) {
-                      console.log('Dont work');
-                  }
-
+                  });
 
               });
 
-            */
+          </script>
 
+      {% endif %}
 
-          });
-
-
-      </script>
 
   {% endblock %}
 

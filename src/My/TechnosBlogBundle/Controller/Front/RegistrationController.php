@@ -31,11 +31,6 @@ class RegistrationController extends Controller
             $password = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
 
-            // Set default token
-            $token = bin2hex(openssl_random_pseudo_bytes(16));
-            $user->setResetToken($token);
-            $user->setResetExpires(0);
-
             // Set default role user
             $user->setRoles(['ROLE_USER']);
 
@@ -43,6 +38,8 @@ class RegistrationController extends Controller
             $entMa = $this->getDoctrine()->getManager();
             $entMa->persist($user);
             $entMa->flush();
+
+            $flash = $this->addFlash("success", "Merci de vous être inscrit. Vous pouvez désormais vous connecter.");
 
             return $this->redirectToRoute('login');
         }

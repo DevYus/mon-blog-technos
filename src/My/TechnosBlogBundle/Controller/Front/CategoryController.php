@@ -21,6 +21,11 @@ class CategoryController extends Controller
             ['category' => $category],
             ['date' => 'desc']
         );
+
+        if(!$articlesCategory) {
+            throw $this->createNotFoundException('The article does not exist');
+        }
+
         $lastArticles = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getLastArticles();
 
         return $this->render('@MyTechnosBlog/Front/Category\category.html.twig', [

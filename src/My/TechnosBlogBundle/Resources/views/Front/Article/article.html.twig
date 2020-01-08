@@ -7,7 +7,7 @@
 <!-- Extension du layout au templates fils -->
 
   <main>
-      {{ dump() }}
+
     <section class="containerArticle">
 
       <h1>{{ article.title }}</h1>
@@ -39,7 +39,7 @@
       {% endif %}
 
         <div class="listComments">
-          <span class="listCommentsTitle">Espace commentaire</span>
+          <span class="listCommentsTitle">Espace commentaires</span>
           {% for comment in allComments %}
               <p><strong> {{ comment.pseudo }} </strong> le {{ comment.date|date('d/m/Y') }}</p>
               <span>{{ comment.content }}</span>

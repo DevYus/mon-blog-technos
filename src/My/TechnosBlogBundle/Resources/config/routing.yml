@@ -60,10 +60,6 @@ ajax_request:
     path:    /ajax-request
     defaults: {_controller: MyTechnosBlogBundle:Front\Index:ajaxRequest }
 
-contact:
-    path:    /contact
-    defaults: { _controller: MyTechnosBlogBundle:Front\Contact:contact }
-
 login:
     path:    /login
     defaults: { _controller: MyTechnosBlogBundle:Front\Security:login }

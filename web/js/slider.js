@@ -100,11 +100,15 @@ class Slider {
 
 }
 
-document.addEventListener('DOMContentLoaded', function(){
+if(window.location.href == 'http://localhost/mon-blog-technos/web/app_dev.php/') {
 
-    new Slider(document.querySelector("#sliderFix"), {
-        numberSlidesNext : 1,
-        numberSlidesVisible : 1,
+    document.addEventListener('DOMContentLoaded', function () {
+
+        new Slider(document.querySelector("#sliderFix"), {
+            numberSlidesNext: 1,
+            numberSlidesVisible: 1,
+        });
+
     });
 
-});
+}

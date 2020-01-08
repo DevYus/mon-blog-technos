@@ -41,7 +41,7 @@ class ForgotController extends Controller
                 $info = "Votre token de demande de changement de mot de passe est invalide";
             }
 
-            $info .= "Tapez votre addresse email et suivez les instructions pour renouveler votre mot de passe ";
+            $info .= "Tapez votre adresse email et suivez les instructions pour renouveler votre mot de passe ";
             $success = false;
         }
 
@@ -85,7 +85,7 @@ class ForgotController extends Controller
 
             $to = $dataBaseUser->getEmail();
             $toName = $dataBaseUser->getFullname();
-            $subject = "Demande de réitilisation de mot de passe";
+            $subject = "Demande de réinitialisation de mot de passe";
             $link = "http://localhost/mon-blog-technos/web/app_dev.php/reset?token=" . $token;
 
             /* Link for réinizalisation */
@@ -102,9 +102,9 @@ class ForgotController extends Controller
                                     <title></title>
                                 </head>
                                 <body>
-                                   <h1>Demande réinisialisation de mot de passe</h1>
+                                   <h1>Demande réinitialisation de mot de passe</h1>
                                       <p>Bonjour.$toName.<br><br>
-                                      Pour pouvoir rénisialiser votre mot de passe veuillez <a href='$link'>cliquez ici</a>
+                                      Pour pouvoir réinitialiser votre mot de passe veuillez <a href='$link'>cliquez ici</a>
                                      </p>
                                 </body>\"
                             </html>

@@ -4,7 +4,7 @@ security:
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         users_db:
-            entity: { class: My\TechnosBlogBundle\Entity\Users, property: username }
+            entity: { class: My\TechnosBlogBundle\Entity\Users, property: email }
 
     encoders:
         My\TechnosBlogBundle\Entity\Users: bcrypt

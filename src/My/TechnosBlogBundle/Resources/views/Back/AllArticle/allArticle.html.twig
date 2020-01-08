@@ -9,35 +9,68 @@
     <section class="sectionAll">
       <h1>Vos articles</h1>
 
-        {{ dump() }}
-
         {% for flash_message in app.session.flashBag.get('notice') %}
             <div class="flash-notice">
                 {{ flash_message }}
             </div>
         {% endfor %}
 
-
         <form action="{{ path('admin_all_article', { page : 1 }) }}" method="post" class="filterFormArticles">
             <select name="category" class="filterFormSelect">
                 <option value="">Sans filtre</option>
 
-                {% if cat is defined and cat == 'bibi'  %}
-                    <option value='bibi' selected>
-                        bibi
+                {% if cat is defined and cat == 'php'  %}
+                    <option value='php' selected>
+                        Php
                     </option>
                 {% else %}
-                    <option value='bibi'>
-                        bibi
+                    <option value='php'>
+                        Php
                     </option>
                 {% endif %}
-                {% if cat is defined and cat == 'jklmjklmjl' %}
-                    <option value='jklmjklmjl' selected>
-                        jklmjklmjl
+                {% if cat is defined and cat == 'javascript' %}
+                    <option value='javascript' selected>
+                        Javascript
                     </option>
                 {% else %}
-                    <option value='jklmjklmjl'>
-                        jklmjklmjl
+                    <option value='javascript'>
+                        Javascript
+                    </option>
+                {% endif %}
+                {% if cat is defined and cat == 'rubis' %}
+                    <option value='rubis' selected>
+                        Rubis
+                    </option>
+                {% else %}
+                    <option value='rubis'>
+                        Rubis
+                    </option>
+                {% endif %}
+                {% if cat is defined and cat == 'tutoriel' %}
+                    <option value='tutoriel' selected>
+                        Tutoriels
+                    </option>
+                {% else %}
+                    <option value='tutoriel'>
+                        Tutoriels
+                    </option>
+                {% endif %}
+                {% if cat is defined and cat == 'sondage' %}
+                    <option value='sondage' selected>
+                        Sondages
+                    </option>
+                {% else %}
+                    <option value='sondage'>
+                        Sondages
+                    </option>
+                {% endif %}
+                {% if cat is defined and cat == 'video' %}
+                    <option value='video' selected>
+                        Vidéo
+                    </option>
+                {% else %}
+                    <option value='video'>
+                        Vidéo
                     </option>
                 {% endif %}
 
@@ -46,47 +79,48 @@
             <input type="submit" id="filterCategoryBtn" class="filterFormSubmit">
         </form>
 
-
-
         <a href="{{ path('admin_add_article') }}" class="addBtn">Ajouter un article</a>
+        <a href="{{ path('admin') }}" class="adminBtn">Retourner à l'accueil</a>
 
+        <span class="clear"></span>
 
-        <table style="width:100%">
-            <thead>
-                <tr>
-                    <th class="colunmchild1">Titre</th>
-                    <th class="colunmchild2">Auteur</th>
-                    <th class="colunmchild3">Catégories</th>
-                    <th class="colunmchild4">Date</th>
-                    <th class="colunmchild5">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for article in articles %}
+        <div class="scrollTable">
+            <table>
+                <thead>
                     <tr>
-                        <td class="colunmchild1">{{ article.title }}</td>
-                        <td class="colunmchild2">{{ article.author }}</td>
-                        <td class="colunmchild3">{{ article.category }}</td>
-                        <td class="colunmchild4" >{{ article.date|date('d/m/Y') }}</td>
-                        <td class="colunmchild5">
-                            <ul>
-                                <li>
-                                    <a href="{{ path('admin_update_article', { 'id' : article.id }) }}">
-                                        <img src="{{ asset('img/update.png') }}" alt="update">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('admin_delete_article', { 'id' : article.id }) }}">
-                                        <img src="{{ asset('img/delete.png') }}" alt="delete">
-                                    </a>
-                                </li>
-                            </ul>
-                        </td>
+                        <th class="colunmchild1">Titre</th>
+                        <th class="colunmchild2">Auteur</th>
+                        <th class="colunmchild3">Catégories</th>
+                        <th class="colunmchild4">Date</th>
+                        <th class="colunmchild5">Actions</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-
+                </thead>
+                <tbody>
+                    {% for article in articles %}
+                        <tr>
+                            <td class="colunmchild1">{{ article.title }}</td>
+                            <td class="colunmchild2">{{ article.author }}</td>
+                            <td class="colunmchild3">{{ article.category }}</td>
+                            <td class="colunmchild4" >{{ article.date|date('d/m/Y') }}</td>
+                            <td class="colunmchild5">
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('admin_update_article', { 'id' : article.id }) }}">
+                                            <img src="{{ asset('img/update.png') }}" alt="update">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin_delete_article', { 'id' : article.id }) }}">
+                                            <img src="{{ asset('img/delete.png') }}" alt="delete">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
         {% include '@MyTechnosBlog/Back/Includes/pagination.html.twig' %}
 
 

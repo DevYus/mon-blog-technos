@@ -28,7 +28,7 @@ class HandleArticleController extends Controller
     {
         /******* Pagination and display all articles ******/
 
-        $nbArticlesByPage = 3;
+        $nbArticlesByPage = 10;
 
         if ($request->isMethod('POST')) {
             $cat = $request->request->get('category');
