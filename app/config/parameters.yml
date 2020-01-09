@@ -9,4 +9,4 @@ parameters:
     mailer_host: null
     mailer_user: null
     mailer_password: null
-    secret: ThisIsAChangedSecret
+    secret: null

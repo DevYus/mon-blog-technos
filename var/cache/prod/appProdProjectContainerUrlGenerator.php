@@ -1,0 +1,57 @@
+<?php
+
+use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
+use Psr\Log\LoggerInterface;
+
+/**
+ * This class has been auto-generated
+ * by the Symfony Routing Component.
+ */
+class appProdProjectContainerUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerator
+{
+    private static $declaredRoutes;
+
+    public function __construct(RequestContext $context, LoggerInterface $logger = null)
+    {
+        $this->context = $context;
+        $this->logger = $logger;
+        if (null === self::$declaredRoutes) {
+            self::$declaredRoutes = [
+        'homepage' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Front\\IndexController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'admin' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Back\\AdminController::adminAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/admin',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'admin_add_article' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Back\\HandleArticleController::addArticleAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/admin/add-article',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'admin_update_article' => array (  0 =>   array (    0 => 'id',  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Back\\HandleArticleController::updateArticleAction',  ),  2 =>   array (    'id' => '[0-9]+',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[0-9]+',      3 => 'id',    ),    1 =>     array (      0 => 'text',      1 => '/admin/update-article',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'admin_delete_article' => array (  0 =>   array (    0 => 'id',  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Back\\HandleArticleController::deleteArticleAction',  ),  2 =>   array (    'id' => '[0-9]+',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[0-9]+',      3 => 'id',    ),    1 =>     array (      0 => 'text',      1 => '/admin/delete-article',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'admin_all_article' => array (  0 =>   array (    0 => 'page',    1 => 'cat',  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Back\\HandleArticleController::allArticleAction',    'cat' => NULL,  ),  2 =>   array (    'page' => '[0-9]+',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'cat',    ),    1 =>     array (      0 => 'variable',      1 => '/',      2 => '[0-9]+',      3 => 'page',    ),    2 =>     array (      0 => 'text',      1 => '/admin/all-articles',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'admin_all_users' => array (  0 =>   array (    0 => 'page',    1 => 'cat',  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Back\\AllUsersController::allUsersAction',    'cat' => NULL,  ),  2 =>   array (    'page' => '[0-9]+',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'cat',    ),    1 =>     array (      0 => 'variable',      1 => '/',      2 => '[0-9]+',      3 => 'page',    ),    2 =>     array (      0 => 'text',      1 => '/admin/all-users',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'admin_delete_user' => array (  0 =>   array (    0 => 'id',  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Back\\AllUsersController::deleteUserAction',  ),  2 =>   array (    'id' => '[0-9]+',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[0-9]+',      3 => 'id',    ),    1 =>     array (      0 => 'text',      1 => '/admin/delete-user',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'admin_add_administrator' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Back\\AddAdministratorController::addAdministratorAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/admin/add-administrator',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'admin_all_comments' => array (  0 =>   array (    0 => 'page',  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Back\\AllCommentsController::allCommentsAction',  ),  2 =>   array (    'id' => '[0-9]+',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'page',    ),    1 =>     array (      0 => 'text',      1 => '/admin/all-comments',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'admin_delete_comment' => array (  0 =>   array (    0 => 'id',  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Back\\AllCommentsController::deleteCommentAction',  ),  2 =>   array (    'id' => '[0-9]+',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[0-9]+',      3 => 'id',    ),    1 =>     array (      0 => 'text',      1 => '/admin/delete-comment',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'ajax_request' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Front\\IndexController::ajaxRequestAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/ajax-request',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'login' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Front\\SecurityController::loginAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/login',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'login_check' => array (  0 =>   array (  ),  1 =>   array (  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/login_check',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'login_redirection' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Front\\RedirectAfterLoginController::redirectionAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/login/redirection',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'logout' => array (  0 =>   array (  ),  1 =>   array (  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/logout',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'forgot' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Front\\ForgotController::forgotAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/forgot',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'resetting' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Front\\ResettingController::resettingAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/resetting',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'registration' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Front\\RegistrationController::registrationAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/registration',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'search' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Front\\SearchController::searchAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/search',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'category' => array (  0 =>   array (    0 => 'category',  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Front\\CategoryController::categoryAction',  ),  2 =>   array (    'category' => '[a-zA-Z]+',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[a-zA-Z]+',      3 => 'category',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'article' => array (  0 =>   array (    0 => 'category',    1 => 'slug',    2 => 'id',  ),  1 =>   array (    '_controller' => 'My\\TechnosBlogBundle\\Controller\\Front\\ArticleController::articleAction',  ),  2 =>   array (    'category' => '[a-zA-Z-é]+',    'id' => '[0-9]+',  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[0-9]+',      3 => 'id',      4 => true,    ),    1 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'slug',      4 => true,    ),    2 =>     array (      0 => 'variable',      1 => '/',      2 => '[a-zA-Z-é]+',      3 => 'category',      4 => true,    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+    ];
+        }
+    }
+
+    public function generate($name, $parameters = [], $referenceType = self::ABSOLUTE_PATH)
+    {
+        if (!isset(self::$declaredRoutes[$name])) {
+            throw new RouteNotFoundException(sprintf('Unable to generate a URL for the named route "%s" as such route does not exist.', $name));
+        }
+
+        list($variables, $defaults, $requirements, $tokens, $hostTokens, $requiredSchemes) = self::$declaredRoutes[$name];
+
+        return $this->doGenerate($variables, $defaults, $requirements, $tokens, $parameters, $name, $referenceType, $hostTokens, $requiredSchemes);
+    }
+}
