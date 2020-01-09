@@ -128,13 +128,13 @@
     <parameter key="debug.file_link_format">null</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
-      <parameter key="cache_limiter">0</parameter>
+      <parameter key="cache_limiter" type="string">0</parameter>
       <parameter key="cookie_httponly">true</parameter>
       <parameter key="gc_probability">1</parameter>
       <parameter key="use_strict_mode">true</parameter>
     </parameter>
     <parameter key="session.save_path">C:\wamp64\www\mon-blog-technos/var/sessions/dev</parameter>
-    <parameter key="session.metadata.update_threshold">0</parameter>
+    <parameter key="session.metadata.update_threshold" type="string">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
     <parameter key="asset.request_context.base_path"></parameter>
@@ -660,16 +660,28 @@
     </service>
     <service id="services_resetter" class="Symfony\Component\HttpKernel\DependencyInjection\ServicesResetter" public="true">
       <argument type="iterator">
+        <argument key="cache.app" type="service" id="cache.app" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.system" type="service" id="cache.system" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.validator" type="service" id="cache.validator" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.serializer" type="service" id="cache.serializer" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
         <argument key="profiler" type="service" id="profiler" on-invalid="ignore_uninitialized"/>
         <argument key="debug.validator" type="service" id="debug.validator" on-invalid="ignore_uninitialized"/>
         <argument key="debug.stopwatch" type="service" id="debug.stopwatch" on-invalid="ignore_uninitialized"/>
+        <argument key="debug.event_dispatcher" type="service" id="debug.event_dispatcher" on-invalid="ignore_uninitialized"/>
         <argument key="security.token_storage" type="service" id="security.token_storage" on-invalid="ignore_uninitialized"/>
         <argument key="form.type.entity" type="service" id="form.type.entity" on-invalid="ignore_uninitialized"/>
       </argument>
       <argument type="collection">
+        <argument key="cache.app">reset</argument>
+        <argument key="cache.system">reset</argument>
+        <argument key="cache.validator">reset</argument>
+        <argument key="cache.serializer">reset</argument>
+        <argument key="cache.annotations">reset</argument>
         <argument key="profiler">reset</argument>
         <argument key="debug.validator">reset</argument>
         <argument key="debug.stopwatch">reset</argument>
+        <argument key="debug.event_dispatcher">reset</argument>
         <argument key="security.token_storage">setToken</argument>
         <argument key="form.type.entity">reset</argument>
       </argument>
@@ -856,26 +868,31 @@
     </service>
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="true">
       <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.app.recorder_inner"/>
     </service>
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="true">
       <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.system.recorder_inner"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="false">
       <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.validator.recorder_inner"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="false">
       <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.serializer.recorder_inner"/>
     </service>
     <service id="cache.annotations" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="false">
       <tag name="cache.pool"/>
+      <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.annotations.recorder_inner"/>
     </service>
     <service id="cache.adapter.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" abstract="true">
-      <tag name="cache.pool" clearer="cache.system_clearer"/>
+      <tag name="cache.pool" clearer="cache.system_clearer" reset="reset"/>
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
@@ -885,7 +902,7 @@
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.adapter.apcu" class="Symfony\Component\Cache\Adapter\ApcuAdapter" abstract="true">
-      <tag name="cache.pool" clearer="cache.default_clearer"/>
+      <tag name="cache.pool" clearer="cache.default_clearer" reset="reset"/>
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
@@ -895,7 +912,7 @@
       </call>
     </service>
     <service id="cache.adapter.doctrine" class="Symfony\Component\Cache\Adapter\DoctrineAdapter" abstract="true">
-      <tag name="cache.pool" provider="cache.default_doctrine_provider" clearer="cache.default_clearer"/>
+      <tag name="cache.pool" provider="cache.default_doctrine_provider" clearer="cache.default_clearer" reset="reset"/>
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument></argument>
@@ -905,7 +922,7 @@
       </call>
     </service>
     <service id="cache.adapter.filesystem" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" abstract="true">
-      <tag name="cache.pool" clearer="cache.default_clearer"/>
+      <tag name="cache.pool" clearer="cache.default_clearer" reset="reset"/>
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
@@ -915,13 +932,13 @@
       </call>
     </service>
     <service id="cache.adapter.psr6" class="Symfony\Component\Cache\Adapter\ProxyAdapter" abstract="true">
-      <tag name="cache.pool" provider="cache.default_psr6_provider" clearer="cache.default_clearer"/>
+      <tag name="cache.pool" provider="cache.default_psr6_provider" clearer="cache.default_clearer" reset="reset"/>
       <argument></argument>
       <argument></argument>
       <argument>0</argument>
     </service>
     <service id="cache.adapter.redis" class="Symfony\Component\Cache\Adapter\RedisAdapter" abstract="true">
-      <tag name="cache.pool" provider="cache.default_redis_provider" clearer="cache.default_clearer"/>
+      <tag name="cache.pool" provider="cache.default_redis_provider" clearer="cache.default_clearer" reset="reset"/>
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument></argument>
@@ -983,7 +1000,7 @@
     </service>
     <service id="session.storage.metadata_bag" class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag" public="false">
       <argument>_sf2_meta</argument>
-      <argument>0</argument>
+      <argument type="string">0</argument>
     </service>
     <service id="session.storage.native" class="Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage">
       <argument>%session.storage.options%</argument>
@@ -1269,7 +1286,7 @@
         <argument type="service" id="validator.validator_factory"/>
       </call>
       <call method="setTranslator">
-        <argument type="service" id="translator.data_collector"/>
+        <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
       </call>
       <call method="setTranslationDomain">
         <argument>validators</argument>
@@ -2086,6 +2103,7 @@
     <service id="debug.event_dispatcher" class="Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher">
       <tag name="container.hot_path"/>
       <tag name="monolog.logger" channel="event"/>
+      <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="debug.event_dispatcher.inner"/>
       <argument type="service" id="debug.stopwatch"/>
       <argument type="service" id="monolog.logger.event" on-invalid="null"/>
@@ -2259,6 +2277,14 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -2628,7 +2654,7 @@
       <argument type="service" id="annotations.reader"/>
       <argument>C:\wamp64\www\mon-blog-technos\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
-      <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!AbstractController$|Controller$))#</argument>
+      <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider" public="false">
@@ -2733,15 +2759,15 @@
       <argument></argument>
       <argument></argument>
       <argument></argument>
-      <argument></argument>
-      <argument></argument>
+      <argument>false</argument>
+      <argument>false</argument>
       <argument></argument>
       <argument></argument>
       <argument></argument>
       <argument></argument>
       <argument></argument>
       <argument type="collection"/>
-      <argument></argument>
+      <argument>null</argument>
     </service>
     <service id="security.logout_url_generator" class="Symfony\Component\Security\Http\Logout\LogoutUrlGenerator" public="false">
       <argument type="service" id="request_stack" on-invalid="null"/>
@@ -3126,14 +3152,14 @@
       <argument>security.user_checker</argument>
       <argument>security.request_matcher.zfhj2lw</argument>
       <argument>false</argument>
-      <argument></argument>
+      <argument>false</argument>
       <argument></argument>
       <argument></argument>
       <argument></argument>
       <argument></argument>
       <argument></argument>
       <argument type="collection"/>
-      <argument></argument>
+      <argument>null</argument>
     </service>
     <service id="security.request_matcher.zfhj2lw" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
@@ -3320,25 +3346,9 @@
       <argument type="collection">
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
-        <argument key="exception_controller">twig.controller.exception:showAction</argument>
-        <argument key="form_themes" type="collection">
-          <argument>form_div_layout.html.twig</argument>
-        </argument>
         <argument key="autoescape">name</argument>
         <argument key="cache">C:\wamp64\www\mon-blog-technos\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
-        <argument key="default_path">C:\wamp64\www\mon-blog-technos/templates</argument>
-        <argument key="paths" type="collection"/>
-        <argument key="date" type="collection">
-          <argument key="format">F j, Y H:i</argument>
-          <argument key="interval_format">%d days</argument>
-          <argument key="timezone">null</argument>
-        </argument>
-        <argument key="number_format" type="collection">
-          <argument key="decimals">0</argument>
-          <argument key="decimal_point">.</argument>
-          <argument key="thousands_separator">,</argument>
-        </argument>
       </argument>
       <call method="addExtension">
         <argument type="service" id="twig.extension.logout_url"/>
