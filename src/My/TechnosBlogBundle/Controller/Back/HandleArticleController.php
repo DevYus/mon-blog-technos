@@ -94,7 +94,9 @@ class HandleArticleController extends Controller
                     $fileName
                 );
             } catch (FileException $e) {
-                die();
+                $flash = $this->addFlash("Fail", "Une erreur est survenue");
+
+                return $this->redirectToRoute('admin_add_article');
             }
 
             $article->setPathImg($fileName);

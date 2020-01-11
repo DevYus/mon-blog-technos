@@ -9,6 +9,15 @@
     <section class="sectionArticle">
 
       <h1>Ajouter un article</h1>
+
+      {% for label, messages in app.flashes %}
+              {% for message in messages %}
+                  <div class="alert alert-{{ label }}">
+                      {{ message }}
+                  </div>
+              {% endfor %}
+      {% endfor %}
+
       <a href="{{ path('admin') }}" class="adminBtn">Retourner à l'accueil</a>
 
         {{ form_errors(form) }}
