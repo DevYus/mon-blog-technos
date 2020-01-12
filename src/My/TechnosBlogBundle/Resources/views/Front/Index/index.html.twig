@@ -21,7 +21,7 @@
                       <figcaption>
                         <span class="catFigCaption"><strong>A la une </strong>| {{ lastArticle.category }}</span>
                         <h1>{{ lastArticle.title }}</h1>
-                        <p>{{ lastArticle.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,150)|striptags('p')|raw }}...</p>
+                        <p>{{ lastArticle.content|slice(0,170)|striptags('p')|raw }}...</p>
                         <span class="dateFicaption">Le {{ lastArticle.date|date('d M Y') }}</span>
                       </figcaption>
                     </figure>
@@ -79,7 +79,7 @@
                                 </div>
                                 <figcaption>
                                     <h3>{{ popular.title }}</h3>
-                                    <p>{{ popular.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
+                                    <p>{{ popular.content|slice(0,200)|striptags('p')|raw }}...</p>
                                 </figcaption>
                             </figure>
                         </a>
@@ -113,7 +113,7 @@
                                 <figcaption class="figcaptionVideo">
                                     <span class="catFigCaption" ><strong>Ressources |</strong> {{ video.category }} </span>
                                     <h3>{{ video.title }}</h3>
-                                    <p>{{ video.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
+                                    <p>{{ video.content|slice(0,200)|striptags('p')|raw }}...</p>
                                 </figcaption>
                             </figure>
                         </a>
@@ -147,7 +147,7 @@
                             <figcaption>
                                 <div class="tutorialBlockContent">
                                     <h3>{{ tutorial.title }}</h3>
-                                    <p>{{ tutorial.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}...</p>
+                                    <p>{{ tutorial.content|slice(0,200)|striptags('p')|raw }}...</p>
                                 </div>
                             </figcaption>
                         </figure>
@@ -178,7 +178,7 @@
                                 <img src="{{ asset('uploads/' ~ survey.pathImg) }}" alt="popular-artilce-blog">
                                 <figcaption>
                                     <h3>{{ survey.title }}</h3>
-                                    <p>{{ survey.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,200)|striptags('p')|raw }}... </p>
+                                    <p>{{ survey.content|slice(0,200)|striptags('p')|raw }}... </p>
                                 </figcaption>
                             </figure>
                         </a>

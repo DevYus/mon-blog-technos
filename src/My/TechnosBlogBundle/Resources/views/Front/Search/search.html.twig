@@ -26,7 +26,7 @@
                                       <div class="contentContainer">
                                           <span class="categoryArticle">Catégorie - {{ search.category|capitalize }}</span>
                                           <h2>{{ search.title }}</h2>
-                                          <p>{{ search.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,150)|striptags('p')|raw }}...</p>
+                                          <p>{{ search.content|slice(0,150)|striptags('p')|raw }}...</p>
                                       </div>
                                </article>
                           </a>

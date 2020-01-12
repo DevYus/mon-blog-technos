@@ -16,7 +16,7 @@
         <img src="{{ asset('uploads/' ~ article.pathImg) }}" alt="title-img">
         <span class="asideInfosArticle">Le {{ article.date|date('d/m/Y') }} par {{ article.author }}</span>
         <div class="contentArticle">
-          {{ article.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|striptags('<p><strong><br>')|raw  }}
+          {{ article.content|striptags('<p><strong><br>')|raw  }}
         </div>
 
       {% if is_granted('IS_AUTHENTICATED_FULLY') %}

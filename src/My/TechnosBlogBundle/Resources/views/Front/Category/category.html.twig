@@ -25,7 +25,7 @@
                               <div class="contentContainer">
                                   <span class="categoryArticle">Catégorie - {{ category|capitalize }}</span>
                                   <h2>{{ articleCategory.title }}</h2>
-                                  <p>{{ articleCategory.content|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0,150)|striptags('p')|raw }}...</p>
+                                  <p>{{ articleCategory.content|slice(0,150)|striptags('p')|raw }}...</p>
                               </div>
                        </article>
                       </a>
