@@ -39,7 +39,7 @@ var widthWin = window.innerWidth;
 
 if (widthWin <= 1280) {
 
-    if(window.location.href == 'http://localhost/mon-blog-technos/web/app_dev.php/') {
+    if(window.location.href == 'https://monblogtechnos.fr/') {
 
         var originalText = document.querySelector('.tutorialBlockContent p').textContent;
         var minifyDesc = originalText.slice(0,80);
@@ -48,6 +48,24 @@ if (widthWin <= 1280) {
     }
 
 }
+
+/*********** IE EXCEPT ***********/
+
+var userAgent = window.navigator.userAgent;
+
+var msie = userAgent.indexOf('MSIE ');
+var trident = userAgent.indexOf('Trident/');
+
+
+ if (msie > 0) {
+   
+
+ } else if (trident > 0) {
+      
+
+ } else {
+    var script = 'js/slider.js';
+ }
 
 /************************************/
 
@@ -72,7 +90,7 @@ $(function(){
         source : function(request, response){
 
             $.ajax({
-                url:  'http://localhost/mon-blog-technos/web/app_dev.php/ajax-request',
+                url:  'https://monblogtechnos.fr/ajax-request',
                 dataType: 'json',
                 data: {
                     title : $('#search').val(),

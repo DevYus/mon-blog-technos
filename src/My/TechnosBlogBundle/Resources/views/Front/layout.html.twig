@@ -19,7 +19,7 @@
 
 <body>
     <div id="coverSearch">
-        <form action="http://localhost/mon-blog-technos/web/app_dev.php/search" method="get">
+        <form action="https://monblogtechnos.fr/search" method="get">
 
             <img src="{{ asset('./img/cancel.png') }}" class="jsBtnSearch handleResponsive" alt="crossBtn">
 
@@ -137,23 +137,27 @@
         </div>
       </div>
   </header>
-
+                          
   {% block main %}
 
 
   {% endblock %}
 
-
 <footer>
     <div class="footerWrapper">
         <aside>
-            <span>About me</span>
-            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
-            Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.
+            <span>À propos</span>
+           La programmation web est la programmation informatique qui permet d'éditer des sites web. Elle permet la mise en place d'applications constituées de pages pouvant prendre différentes formes, notamment :
+
+           Un ensemble de pages « statiques », c'est-à-dire dont le contenu n'est pas influencé par l'internaute qui la demande, et qui n'évolue pas sans une intervention manuelle sur le code.
+           Un ensemble de pages « dynamiques », c'est-à-dire dont le contenu évolue sans que le code du site web ne soit modifié, soit via l'interaction des utilisateurs, soit par du calcul. C'est le cas de la très large majorité des sites web depuis le début des années 2000.
+
         </aside>
         <ul>
-            <li>Browse</li>
-            <li>Home</li>
+            <li>Naviger</li>
+            <li>
+                <a href="{{ path('homepage') }}">Home</a>
+            </li>
             <li>
                 <a href="{{ path('category', { 'category' : 'php' }) }}">PHP</a>
             </li>
@@ -173,13 +177,20 @@
         </ul>
         <ul>
             <li>Connect</li>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Linkedin</li>
-            <li>Instagram</li>
+            <li>           
+                <a href="https://www.facebook.com/">Facebook</a>
+            </li>
+            <li>
+                <a href="https://twitter.com/login?lang=fr">Twitter</a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/?hl=fr">Instagram</a>
+            </li>
+            <li>
+                <a href="https://fr.linkedin.com/">Linkedin</a>
+            </li>
         </ul>
     </div>
-
 
   <details>
     <summary>Copyright O.Y</summary>
@@ -190,17 +201,18 @@
 
 </body>
 
-
   {% block javascripts %}
 
       <!-- jQuery library (served from Google) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
       <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-      <!-- bxSlider Javascript file -->
-      <script src="{{ asset('js/slider.js') }}" asyn></script>
-      <script src="{{ asset('js/main.js') }}" asyn></script>
-
+      <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+      
+      {% if app.request.requestUri == '/' %}
+        <script type="text/javascript" src="{{ asset(scriptPath) }}"></script>
+      {% endif %}
+      
   {% endblock %}
 
 

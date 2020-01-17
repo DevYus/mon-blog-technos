@@ -213,33 +213,11 @@ class __TwigTemplate_206089f603739080cd623e9197f8da30b40eba73925da2fedad6a46811c
                   </ul>
               </aside>
 
-              <aside class=\"asidebarSocialNetwork\">
-                  <h2>Suivez-nous</h2>
-                  <div>
-                      <a href=\"\">
-                        <img src=\"";
-        // line 87
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./img/facebook.png"), "html", null, true);
-        echo "\" alt=\"facebook\">
-                      </a>
-                  </div>
-                  <div>
-                      <a href=\"\">
-                        <img src=\"";
-        // line 92
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./img/twitter.png"), "html", null, true);
-        echo "\" alt=\"facebook\">
-                      </a>
-                  </div>
-                  <div>
-                      <a href=\"\">
-                        <img src=\"";
-        // line 97
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./img/google-plus.png"), "html", null, true);
-        echo "\" alt=\"facebook\">
-                      </a>
-                  </div>
-              </aside>
+             ";
+        // line 83
+        $this->loadTemplate("@MyTechnosBlog/Front/Includes/socialNetwork.html.twig", "@MyTechnosBlog/Front/Category\\category.html.twig", 83)->display($context);
+        // line 84
+        echo "
           </div>
       </section>
 
@@ -268,7 +246,7 @@ class __TwigTemplate_206089f603739080cd623e9197f8da30b40eba73925da2fedad6a46811c
 
     public function getDebugInfo()
     {
-        return array (  238 => 97,  230 => 92,  222 => 87,  210 => 78,  204 => 75,  198 => 72,  192 => 69,  186 => 66,  178 => 60,  174 => 58,  163 => 53,  159 => 52,  155 => 50,  151 => 49,  148 => 48,  146 => 47,  137 => 40,  131 => 36,  127 => 34,  115 => 28,  111 => 27,  107 => 26,  101 => 23,  95 => 20,  92 => 19,  88 => 18,  85 => 17,  83 => 16,  77 => 13,  68 => 6,  58 => 5,  35 => 2,);
+        return array (  220 => 84,  218 => 83,  210 => 78,  204 => 75,  198 => 72,  192 => 69,  186 => 66,  178 => 60,  174 => 58,  163 => 53,  159 => 52,  155 => 50,  151 => 49,  148 => 48,  146 => 47,  137 => 40,  131 => 36,  127 => 34,  115 => 28,  111 => 27,  107 => 26,  101 => 23,  95 => 20,  92 => 19,  88 => 18,  85 => 17,  83 => 16,  77 => 13,  68 => 6,  58 => 5,  35 => 2,);
     }
 
     public function getSourceContext()
@@ -355,24 +333,8 @@ class __TwigTemplate_206089f603739080cd623e9197f8da30b40eba73925da2fedad6a46811c
                   </ul>
               </aside>
 
-              <aside class=\"asidebarSocialNetwork\">
-                  <h2>Suivez-nous</h2>
-                  <div>
-                      <a href=\"\">
-                        <img src=\"{{ asset('./img/facebook.png') }}\" alt=\"facebook\">
-                      </a>
-                  </div>
-                  <div>
-                      <a href=\"\">
-                        <img src=\"{{ asset('./img/twitter.png') }}\" alt=\"facebook\">
-                      </a>
-                  </div>
-                  <div>
-                      <a href=\"\">
-                        <img src=\"{{ asset('./img/google-plus.png') }}\" alt=\"facebook\">
-                      </a>
-                  </div>
-              </aside>
+             {% include '@MyTechnosBlog/Front/Includes/socialNetwork.html.twig' %}
+
           </div>
       </section>
 

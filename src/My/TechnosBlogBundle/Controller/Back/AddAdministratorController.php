@@ -33,11 +33,6 @@ class AddAdministratorController extends Controller
             $password = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
 
-            // Set default token
-            $token = bin2hex(openssl_random_pseudo_bytes(16));
-            $user->setResetToken($token);
-            $user->setResetExpires(0);
-
             // Set default role user
             $user->setRoles(['ROLE_ADMIN']);
 
@@ -48,7 +43,7 @@ class AddAdministratorController extends Controller
 
             $request->getSession()->getFlashBag()->add('notice', 'Un nouvel administrateur à été crée');
 
-            return $this->redirectToRoute('admin_all_users');
+            return $this->redirectToRoute('admin_all_users',['page' => '1']);
         }
 
         return $this->render('@MyTechnosBlog/Back/AddAdministrator\addAdministrator.html.twig', [

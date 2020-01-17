@@ -68,7 +68,7 @@ class ArticlesRepository extends EntityRepository
      */
     public function getResultsForJsonReponse($title)
     {
-        $sql = "SELECT * FROM Articles WHERE title LIKE :title LIMIT 0,5";
+        $sql = "SELECT * FROM articles WHERE title LIKE :title LIMIT 0,5";
         $entMa = $this->getEntityManager();
         $sm = $entMa->getConnection()->prepare($sql);
         $sm->execute(['title' => '%' . $title . '%']);
@@ -89,7 +89,7 @@ class ArticlesRepository extends EntityRepository
      */
     public function getResultsSearch($title)
     {
-        $sql = "SELECT * FROM Articles WHERE title LIKE :title";
+        $sql = "SELECT * FROM articles WHERE title LIKE :title";
         $entMa = $this->getEntityManager();
         $sm = $entMa->getConnection()->prepare($sql);
         $sm->execute(['title' => '%' . $title . '%']);

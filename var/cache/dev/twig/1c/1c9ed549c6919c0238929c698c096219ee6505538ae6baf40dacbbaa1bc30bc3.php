@@ -64,7 +64,7 @@ class __TwigTemplate_6ab87900ffaa0bac637205c458a5579ae1c30f7f7ba9e1d1234f3e1101d
 
 <body>
     <div id=\"coverSearch\">
-        <form action=\"http://localhost/mon-blog-technos/web/app_dev.php/search\" method=\"get\">
+        <form action=\"https://monblogtechnos.fr/search\" method=\"get\">
 
             <img src=\"";
         // line 24
@@ -269,64 +269,78 @@ class __TwigTemplate_6ab87900ffaa0bac637205c458a5579ae1c30f7f7ba9e1d1234f3e1101d
         </div>
       </div>
   </header>
-
+                          
   ";
         // line 141
         $this->displayBlock('main', $context, $blocks);
         // line 145
         echo "
-
 <footer>
     <div class=\"footerWrapper\">
         <aside>
-            <span>About me</span>
-            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
-            Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.
+            <span>À propos</span>
+           La programmation web est la programmation informatique qui permet d'éditer des sites web. Elle permet la mise en place d'applications constituées de pages pouvant prendre différentes formes, notamment :
+
+           Un ensemble de pages « statiques », c'est-à-dire dont le contenu n'est pas influencé par l'internaute qui la demande, et qui n'évolue pas sans une intervention manuelle sur le code.
+           Un ensemble de pages « dynamiques », c'est-à-dire dont le contenu évolue sans que le code du site web ne soit modifié, soit via l'interaction des utilisateurs, soit par du calcul. C'est le cas de la très large majorité des sites web depuis le début des années 2000.
+
         </aside>
         <ul>
-            <li>Browse</li>
-            <li>Home</li>
+            <li>Naviger</li>
             <li>
                 <a href=\"";
-        // line 158
+        // line 159
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
+        echo "\">Home</a>
+            </li>
+            <li>
+                <a href=\"";
+        // line 162
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category", ["category" => "php"]);
         echo "\">PHP</a>
             </li>
             <li>
                 <a href=\"";
-        // line 161
+        // line 165
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category", ["category" => "javascript"]);
         echo "\">Javascript
                 </a>
             </li>
             <li>
                 <a href=\"";
-        // line 165
+        // line 169
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category", ["category" => "rubis"]);
         echo "\">Rubis</a>
             </li>
             <li>
                 <a href=\"";
-        // line 168
+        // line 172
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category", ["category" => "tutoriel"]);
         echo "\">Tutoriels</a>
             </li>
             <li>
                 <a href=\"";
-        // line 171
+        // line 175
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category", ["category" => "sondage"]);
         echo "\">Sondages</a>
             </li>
         </ul>
         <ul>
             <li>Connect</li>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Linkedin</li>
-            <li>Instagram</li>
+            <li>           
+                <a href=\"https://www.facebook.com/\">Facebook</a>
+            </li>
+            <li>
+                <a href=\"https://twitter.com/login?lang=fr\">Twitter</a>
+            </li>
+            <li>
+                <a href=\"https://www.instagram.com/?hl=fr\">Instagram</a>
+            </li>
+            <li>
+                <a href=\"https://fr.linkedin.com/\">Linkedin</a>
+            </li>
         </ul>
     </div>
-
 
   <details>
     <summary>Copyright O.Y</summary>
@@ -337,11 +351,10 @@ class __TwigTemplate_6ab87900ffaa0bac637205c458a5579ae1c30f7f7ba9e1d1234f3e1101d
 
 </body>
 
-
   ";
-        // line 194
+        // line 204
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 205
+        // line 217
         echo "
 
 </html>
@@ -406,7 +419,7 @@ class __TwigTemplate_6ab87900ffaa0bac637205c458a5579ae1c30f7f7ba9e1d1234f3e1101d
 
     }
 
-    // line 194
+    // line 204
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -416,22 +429,28 @@ class __TwigTemplate_6ab87900ffaa0bac637205c458a5579ae1c30f7f7ba9e1d1234f3e1101d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 195
+        // line 205
         echo "
       <!-- jQuery library (served from Google) -->
       <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js\"></script>
       <script src=\"https://code.jquery.com/ui/1.12.0/jquery-ui.min.js\" integrity=\"sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=\" crossorigin=\"anonymous\"></script>
       <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js\"></script>
-      <!-- bxSlider Javascript file -->
-      <script src=\"";
-        // line 201
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/slider.js"), "html", null, true);
-        echo "\" asyn></script>
-      <script src=\"";
-        // line 202
+      <script type=\"text/javascript\" src=\"";
+        // line 210
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
-        echo "\" asyn></script>
-
+        echo "\"></script>
+      
+      ";
+        // line 212
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 212, $this->source); })()), "request", [], "any", false, false, false, 212), "requestUri", [], "any", false, false, false, 212) == "/")) {
+            // line 213
+            echo "        <script type=\"text/javascript\" src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((isset($context["scriptPath"]) || array_key_exists("scriptPath", $context) ? $context["scriptPath"] : (function () { throw new RuntimeError('Variable "scriptPath" does not exist.', 213, $this->source); })())), "html", null, true);
+            echo "\"></script>
+      ";
+        }
+        // line 215
+        echo "      
   ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -453,7 +472,7 @@ class __TwigTemplate_6ab87900ffaa0bac637205c458a5579ae1c30f7f7ba9e1d1234f3e1101d
 
     public function getDebugInfo()
     {
-        return array (  432 => 202,  428 => 201,  420 => 195,  410 => 194,  398 => 142,  388 => 141,  374 => 13,  370 => 11,  360 => 10,  345 => 205,  343 => 194,  317 => 171,  311 => 168,  305 => 165,  298 => 161,  292 => 158,  277 => 145,  275 => 141,  264 => 133,  258 => 130,  252 => 127,  246 => 124,  240 => 121,  234 => 118,  228 => 115,  218 => 108,  211 => 104,  206 => 101,  196 => 94,  188 => 89,  183 => 86,  177 => 83,  173 => 82,  170 => 81,  164 => 78,  160 => 77,  157 => 76,  155 => 75,  137 => 60,  131 => 57,  125 => 54,  119 => 51,  113 => 48,  107 => 45,  101 => 42,  95 => 39,  89 => 36,  82 => 32,  71 => 24,  62 => 17,  60 => 10,  49 => 2,  46 => 1,);
+        return array (  453 => 215,  447 => 213,  445 => 212,  440 => 210,  433 => 205,  423 => 204,  411 => 142,  401 => 141,  387 => 13,  383 => 11,  373 => 10,  358 => 217,  356 => 204,  324 => 175,  318 => 172,  312 => 169,  305 => 165,  299 => 162,  293 => 159,  277 => 145,  275 => 141,  264 => 133,  258 => 130,  252 => 127,  246 => 124,  240 => 121,  234 => 118,  228 => 115,  218 => 108,  211 => 104,  206 => 101,  196 => 94,  188 => 89,  183 => 86,  177 => 83,  173 => 82,  170 => 81,  164 => 78,  160 => 77,  157 => 76,  155 => 75,  137 => 60,  131 => 57,  125 => 54,  119 => 51,  113 => 48,  107 => 45,  101 => 42,  95 => 39,  89 => 36,  82 => 32,  71 => 24,  62 => 17,  60 => 10,  49 => 2,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -479,7 +498,7 @@ class __TwigTemplate_6ab87900ffaa0bac637205c458a5579ae1c30f7f7ba9e1d1234f3e1101d
 
 <body>
     <div id=\"coverSearch\">
-        <form action=\"http://localhost/mon-blog-technos/web/app_dev.php/search\" method=\"get\">
+        <form action=\"https://monblogtechnos.fr/search\" method=\"get\">
 
             <img src=\"{{ asset('./img/cancel.png') }}\" class=\"jsBtnSearch handleResponsive\" alt=\"crossBtn\">
 
@@ -597,23 +616,27 @@ class __TwigTemplate_6ab87900ffaa0bac637205c458a5579ae1c30f7f7ba9e1d1234f3e1101d
         </div>
       </div>
   </header>
-
+                          
   {% block main %}
 
 
   {% endblock %}
 
-
 <footer>
     <div class=\"footerWrapper\">
         <aside>
-            <span>About me</span>
-            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
-            Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.
+            <span>À propos</span>
+           La programmation web est la programmation informatique qui permet d'éditer des sites web. Elle permet la mise en place d'applications constituées de pages pouvant prendre différentes formes, notamment :
+
+           Un ensemble de pages « statiques », c'est-à-dire dont le contenu n'est pas influencé par l'internaute qui la demande, et qui n'évolue pas sans une intervention manuelle sur le code.
+           Un ensemble de pages « dynamiques », c'est-à-dire dont le contenu évolue sans que le code du site web ne soit modifié, soit via l'interaction des utilisateurs, soit par du calcul. C'est le cas de la très large majorité des sites web depuis le début des années 2000.
+
         </aside>
         <ul>
-            <li>Browse</li>
-            <li>Home</li>
+            <li>Naviger</li>
+            <li>
+                <a href=\"{{ path('homepage') }}\">Home</a>
+            </li>
             <li>
                 <a href=\"{{ path('category', { 'category' : 'php' }) }}\">PHP</a>
             </li>
@@ -633,13 +656,20 @@ class __TwigTemplate_6ab87900ffaa0bac637205c458a5579ae1c30f7f7ba9e1d1234f3e1101d
         </ul>
         <ul>
             <li>Connect</li>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Linkedin</li>
-            <li>Instagram</li>
+            <li>           
+                <a href=\"https://www.facebook.com/\">Facebook</a>
+            </li>
+            <li>
+                <a href=\"https://twitter.com/login?lang=fr\">Twitter</a>
+            </li>
+            <li>
+                <a href=\"https://www.instagram.com/?hl=fr\">Instagram</a>
+            </li>
+            <li>
+                <a href=\"https://fr.linkedin.com/\">Linkedin</a>
+            </li>
         </ul>
     </div>
-
 
   <details>
     <summary>Copyright O.Y</summary>
@@ -650,17 +680,18 @@ class __TwigTemplate_6ab87900ffaa0bac637205c458a5579ae1c30f7f7ba9e1d1234f3e1101d
 
 </body>
 
-
   {% block javascripts %}
 
       <!-- jQuery library (served from Google) -->
       <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js\"></script>
       <script src=\"https://code.jquery.com/ui/1.12.0/jquery-ui.min.js\" integrity=\"sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=\" crossorigin=\"anonymous\"></script>
       <script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js\"></script>
-      <!-- bxSlider Javascript file -->
-      <script src=\"{{ asset('js/slider.js') }}\" asyn></script>
-      <script src=\"{{ asset('js/main.js') }}\" asyn></script>
-
+      <script type=\"text/javascript\" src=\"{{ asset('js/main.js') }}\"></script>
+      
+      {% if app.request.requestUri == '/' %}
+        <script type=\"text/javascript\" src=\"{{ asset(scriptPath) }}\"></script>
+      {% endif %}
+      
   {% endblock %}
 
 

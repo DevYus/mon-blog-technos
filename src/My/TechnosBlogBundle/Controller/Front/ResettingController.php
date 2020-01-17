@@ -42,11 +42,13 @@ class ResettingController extends Controller
                      $entMa->persist($userToken);
                      $entMa->flush();
 
-                     return $this->redirectToRoute('login', ['message' => 'reset_success']);
+                     $flash = $this->addFlash("success-reset", "Votre mot de passe a bien été modifié");
+
+                     return $this->redirectToRoute('login');
                 }
 
                  return $this->render(
-                     '@MyTechnosBlog/Front/Reset\reset.html.twig',
+                     '@MyTechnosBlog/Front/Resetting\resetting.html.twig',
                      [
                          'form' => $form->createView(),
 

@@ -100,7 +100,7 @@ class Slider {
 
 }
 
-if(window.location.href == 'http://localhost/mon-blog-technos/web/app_dev.php/') {
+if(window.location.href == 'https://monblogtechnos.fr/' || window.location.href == 'http://monblogtechnos.fr/') {
 
     document.addEventListener('DOMContentLoaded', function () {
 

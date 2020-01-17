@@ -127,59 +127,7 @@
     </section>
 
   </main>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script>
-        /*
-        $(function() {
-
-
-            $('#filterCategoryBtn').click(function(e){
-
-                e.preventDefault();
-
-                let category = $('#filtreCategory option:selected').val();
-
-
-                $.ajax({
-                    url:  'http://localhost/mon-blog-technos/web/app_dev.php/admin/ajax-request',
-                    type: 'POST',
-                    dataType: 'json',
-                    data:'category='+ category,
-                    success: function(data){
-
-                        var container = document.querySelector('.ajax-result');
-                        container.innerHTML = "";
-
-                        var data = JSON.parse(JSON.stringify(data));
-
-                        $.each(data,function(index, value){
-
-                            let p = document.createElement('p');
-                            let content = document.createTextNode(value.category);
-                            p.appendChild(content);
-                            container.appendChild(p);
-
-                        });
-
-
-                    },
-                    error : function(){
-                        alert('pas ok');
-                    }
-
-                });
-
-            });
-
-        });
-        */
-
-    </script>
-
-
-
-
+    
 {% endblock %}
 
 

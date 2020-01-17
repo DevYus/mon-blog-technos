@@ -17,7 +17,7 @@ class IndexController extends Controller
     /**
      * @return Response
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $lastArticle = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Articles')->findOneBy(
             [],
@@ -65,7 +65,17 @@ class IndexController extends Controller
             10,
             0
         );
-
+        
+        // Handle IE
+        
+        $userAgent = htmlentities($request->headers->get('User-Agent'), ENT_QUOTES, 'UTF-8');
+        
+        if (preg_match('~MSIE|Internet Explorer~i', $userAgent) || (strpos($userAgent, 'Trident/7.0') !== false && strpos($userAgent, 'rv:11.0') !== false)) {
+             $scriptForSlider = 'js/slider_es5.js';
+        } else {
+            $scriptForSlider = 'js/slider.js';
+        }
+                 
         return $this->render('@MyTechnosBlog/Front/Index\index.html.twig', [
             'lastArticle' => $lastArticle,
             'rightArticles' => $rightArticles,
@@ -74,6 +84,7 @@ class IndexController extends Controller
             'tutorials' => $tutorials,
             'surveys' => $surveys,
             'articlesCarrousel' => $articlesCarrousel,
+            'scriptPath' => $scriptForSlider,
         ]);
     }
 

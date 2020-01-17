@@ -523,7 +523,7 @@ summary {
 
 .truncateWrapperImg {
     width: 340px;
-    height: 190px;
+    height: 170px;
     overflow: hidden;
 }
 
@@ -532,6 +532,8 @@ summary {
     width: 340px;
     margin: auto;
 }
+
+.popularImg {height: 190px;}
 
 .rightBlocsWidth {width: 100%;}
 
@@ -1285,10 +1287,23 @@ figcaption {overflow: hidden; }
 
 
 .containerArticle {width: 100%;overflow: hidden;}
-.containerArticle h1 {margin: 34px 0 20px;font-size: 32px;width: 100%;}
-.containerArticle article {width: 71%;display: block;float: left;}
+.containerArticle h1 {
+    margin: 34px 0 20px;
+    font-size: 32px;
+    width: 71%;
+}
+.containerArticle article {
+    width: 71%;
+    display: block;
+    float: left;
+}
 .containerArticle article img {width: 100%;}
-.asideInfosArticle {display: block;font-size: 14px;color: #616161;margin: 34px 0px 0px;}
+.asideInfosArticle {
+    display: block;
+    font-size: 14px;
+    color: #616161;
+    margin: 34px 0px 0px;
+}
 .contentArticle, .listComments {
     margin-top: 32px;
     text-align: justify;
@@ -1355,7 +1370,7 @@ figcaption {overflow: hidden; }
 
 .truncateAsideWrapperImg {
     width: 100%;
-    height: 100%;
+    height: 146px;
     overflow: hidden;
 }
 
@@ -1403,7 +1418,6 @@ figcaption {overflow: hidden; }
         text-align: center;
     }
 
-
     .containerArticle article {
         width: 100%;
         float: none;
@@ -1413,6 +1427,8 @@ figcaption {overflow: hidden; }
         display: block;
         width: 100%;
     }
+    
+    .containerArticle h1 {width: 100%;}
 
     .othersArticle {
         width: 100%;
@@ -1431,6 +1447,8 @@ figcaption {overflow: hidden; }
         height: 340px;
         margin-right: 2px;
     }
+    
+    .othersArticle figure img {position:relative; top: -100px;}
 
     .asideContainer aside ul {height: 85%;}
     .truncateAsideWrapperImg {margin: 0 auto;}
@@ -1455,6 +1473,9 @@ figcaption {overflow: hidden; }
     .othersArticle figure figcaption h3 {
         font-size: 21px;
     }
+    
+    .truncateAsideWrapperImg {height: 100%;}
+    .othersArticle figure img {position: static; top: 0;}
 
 }
 
@@ -1626,12 +1647,13 @@ figcaption {overflow: hidden; }
 }
 
 
-.alert-success {
+.alert-success, .alert-success-reset {
     background: rgba(159, 197, 55, 0.5);
     text-align: center;
     padding: 12px;
     margin-bottom: 40px;
 }
+
 
 .lostPassword {display: block;font-size: 13px; color: #999999;}
 
@@ -1792,6 +1814,14 @@ figcaption {overflow: hidden; }
     margin-top: 40px;
 }
 
+.alert-forgot {
+    background: rgba(159, 197, 55, 0.5);
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 40px;
+}
+
+
 .clear { clear: left;}
 
 @media screen and (max-width: 1280px)
@@ -1874,7 +1904,6 @@ figcaption {overflow: hidden; }
     width: 100%;
     height: 100%;
     padding: 0px 0 150px 0;
-    float: left;
     overflow: hidden;
 }
 
@@ -2090,7 +2119,7 @@ figcaption {overflow: hidden; }
 
 .sectionArticle form textarea{
     height: 500px;
-    width: 80%;
+    width: 100%;
     border: 1px solid #bdbdbd;
 }
 
@@ -2134,15 +2163,18 @@ figcaption {overflow: hidden; }
 
 .returnBtn {
     width: 279px;
-    padding: 13px;
+    padding: 12px;
     border: none;
-    background: #9FC537;
-    color: #FFF;
+    background:#9FC537;
+    color:#FFF;
     font-size: 15px;
     text-decoration: none;
     text-transform: uppercase;
     box-sizing: border-box;
     display: block;
+    height: 43px;
+    text-align: center;
+    margin-top: 30px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -2209,6 +2241,30 @@ figcaption {overflow: hidden; }
     box-shadow: 0px 3px 5px 0px #BDBDBD;
 }
 
+.flash-notice {
+    background: rgba(159, 197, 55, 0.5);
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 40px;
+}
+
+.flash-notice-comment {
+    background: rgba(159, 197, 55, 0.5);
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 40px;
+    width: 72%;
+}
+
+.flash-notice-user {
+    background: 
+    rgba(159, 197, 55, 0.5);
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 40px;
+    width: 72%;
+}
+
 table{
     width: 100%;
 }
@@ -2248,12 +2304,18 @@ tr:nth-child(odd){background: #F1F8E9;}
     float: left;
     list-style: none;
 }
-.colunmchild5 ul li a img {display: block;width: 28px;}
+.colunmchild5 ul li a img {
+    display: block;
+    width: 28px; 
+    position: relative;
+    left: 6px;
+}
 
 .leftActionComment {
     position: relative;
-    left: 10px;
+    left: 0px;
 }
+
 
 .liChildUsers {float: none; margin-left: 13px;}
 
@@ -2332,7 +2394,12 @@ tr:nth-child(odd){background: #F1F8E9;}
 
 .containerAddAdministratorForm form { border-bottom: 1px solid #bdbdbd;}
 
-.lostPassword {display: block;font-size: 13px; color: #999999;}
+.lostPassword {
+    display: block;
+    font-size: 13px; 
+    color: #999999;
+    margin-top: 12px;
+}
 
 .star {
     color: #cc0000

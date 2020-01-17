@@ -143,7 +143,7 @@ class __TwigTemplate_7c46dcfb02f59549b821c2d1e49b79e876b379f770e2a099cc117bbe049
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
 
-              <a href=\"http://localhost/mon-blog-technos/web/app_dev.php/forgot\" class=\"lostPassword\">Vous avez perdu votre mot de passe ?</a>
+              <a href=\"https://monblogtechnos.fr/forgot\" class=\"lostPassword\">Vous avez perdu votre mot de passe ?</a>
 
               <input type=\"submit\" value=\"Connexion\">
 
@@ -227,7 +227,7 @@ class __TwigTemplate_7c46dcfb02f59549b821c2d1e49b79e876b379f770e2a099cc117bbe049
 
               <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
 
-              <a href=\"http://localhost/mon-blog-technos/web/app_dev.php/forgot\" class=\"lostPassword\">Vous avez perdu votre mot de passe ?</a>
+              <a href=\"https://monblogtechnos.fr/forgot\" class=\"lostPassword\">Vous avez perdu votre mot de passe ?</a>
 
               <input type=\"submit\" value=\"Connexion\">
 

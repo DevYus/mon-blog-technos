@@ -31,7 +31,8 @@ class ForgotController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->checkLogin($user);
-            $info = "Un Émail vous a été envoyé avec les instructions correspondantes";
+            $info = "Un Émail vous a été envoyé avec les instructions correspondantes. 
+                     Si vous ne reçevez rien dans les minutes qui suivent, veuillez vérifier vos mails.";
             $success = true;
         } else {
             $message = $request->query->get('message');
@@ -81,12 +82,12 @@ class ForgotController extends Controller
             /* Send email */
 
             $webSiteName = 'MBT - Mon blog technos';
-            $from = 'toto@gmail.com';
+            $from = 'youssef.ouldamri@monblogtechnos.fr';
 
             $to = $dataBaseUser->getEmail();
-            $toName = $dataBaseUser->getFullname();
+            $toName = $dataBaseUser->getUsername();
             $subject = "Demande de réinitialisation de mot de passe";
-            $link = "http://localhost/mon-blog-technos/web/app_dev.php/reset?token=" . $token;
+            $link = "https://monblogtechnos.fr/resetting?token=" . $token;
 
             /* Link for réinizalisation */
 
@@ -103,10 +104,12 @@ class ForgotController extends Controller
                                 </head>
                                 <body>
                                    <h1>Demande réinitialisation de mot de passe</h1>
-                                      <p>Bonjour.$toName.<br><br>
-                                      Pour pouvoir réinitialiser votre mot de passe veuillez <a href='$link'>cliquez ici</a>
+                                      <p>Bonjour " . $toName . "<br>
+                                      Pour pouvoir réinitialiser votre mot de passe veuillez <a href='$link'>cliquez ici</a><br>
+                                      <br>
+                                      L'équipe
                                      </p>
-                                </body>\"
+                                </body>
                             </html>
                 ");
 

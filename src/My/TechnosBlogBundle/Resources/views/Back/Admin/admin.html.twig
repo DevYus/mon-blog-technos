@@ -10,7 +10,7 @@
 
     <section class="sectionAdminFirst">
       <h1>Interface d'administration</h1>
-      <p><em>Bienvenue Admin</em></p>
+      <p><em>Bienvenue {{ app.user.username }}</em></p>
 
       <div class="optionsHomeContainer">
 
@@ -58,7 +58,7 @@
           </div>
         </a>
 
-        <a href="{{ path('admin_add_administrator', { 'page' : 1 }) }}">
+        <a href="{{ path('admin_add_administrator') }}">
           <div class="optionsHome">
               <figure>
                 <img src="{{ asset('./img/admin.png') }}" alt="">

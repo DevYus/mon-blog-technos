@@ -89,7 +89,7 @@ class __TwigTemplate_1d36cadc424b77fef17f163932f3caef0ab009a55735c65a53c4fb82e8f
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 17, $this->source); })()), "author", [], "any", false, false, false, 17), "html", null, true);
         echo "</span>
         <div class=\"contentArticle\">
-          ";
+            ";
         // line 19
         echo strip_tags(twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 19, $this->source); })()), "content", [], "any", false, false, false, 19), "<p><strong><br>");
         echo "
@@ -235,34 +235,12 @@ class __TwigTemplate_1d36cadc424b77fef17f163932f3caef0ab009a55735c65a53c4fb82e8f
             </li>
           </ul>
         </aside>
-        <aside class=\"asidebarSocialNetwork\">
-          <h2>Suivez-nous</h2>
-          <div>
-            <a href=\"\">
-              <img src=\"";
-        // line 89
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./img/facebook.png"), "html", null, true);
-        echo "\" alt=\"facebook\">
-            </a>
-          </div>
-          <div>
-            <a href=\"\">
-              <img src=\"";
-        // line 94
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./img/twitter.png"), "html", null, true);
-        echo "\" alt=\"facebook\">
-            </a>
-          </div>
-          <div>
-            <a href=\"\">
-              <img src=\"";
-        // line 99
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./img/google-plus.png"), "html", null, true);
-        echo "\" alt=\"facebook\">
-            </a>
-          </div>
-        </aside>
-
+        
+        ";
+        // line 86
+        $this->loadTemplate("@MyTechnosBlog/Front/Includes/socialNetwork.html.twig", "@MyTechnosBlog/Front/Article\\article.html.twig", 86)->display($context);
+        // line 87
+        echo "
       </div>
     </section>
 
@@ -271,35 +249,35 @@ class __TwigTemplate_1d36cadc424b77fef17f163932f3caef0ab009a55735c65a53c4fb82e8f
     <section class=\"othersArticlesContainer\">
 
         ";
-        // line 111
+        // line 95
         if ((isset($context["lastArticles"]) || array_key_exists("lastArticles", $context))) {
-            // line 112
+            // line 96
             echo "
             ";
-            // line 113
+            // line 97
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["othersArticles"]) || array_key_exists("othersArticles", $context) ? $context["othersArticles"] : (function () { throw new RuntimeError('Variable "othersArticles" does not exist.', 113, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["othersArticles"]) || array_key_exists("othersArticles", $context) ? $context["othersArticles"] : (function () { throw new RuntimeError('Variable "othersArticles" does not exist.', 97, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["otherArticle"]) {
-                // line 114
+                // line 98
                 echo "
               <div class=\"othersArticle\">
                 <a href=\"";
-                // line 116
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article", ["category" => twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["otherArticle"], "category", [], "any", false, false, false, 116), ["é" => "e"]), "id" => twig_get_attribute($this->env, $this->source, $context["otherArticle"], "id", [], "any", false, false, false, 116), "slug" => twig_get_attribute($this->env, $this->source, $context["otherArticle"], "slug", [], "any", false, false, false, 116)]), "html", null, true);
+                // line 100
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article", ["category" => twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["otherArticle"], "category", [], "any", false, false, false, 100), ["é" => "e"]), "id" => twig_get_attribute($this->env, $this->source, $context["otherArticle"], "id", [], "any", false, false, false, 100), "slug" => twig_get_attribute($this->env, $this->source, $context["otherArticle"], "slug", [], "any", false, false, false, 100)]), "html", null, true);
                 echo "\">
                   <figure>
                     <div class=\"truncateAsideWrapperImg\">
                       <img src=\"";
-                // line 119
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["otherArticle"], "pathImg", [], "any", false, false, false, 119))), "html", null, true);
+                // line 103
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["otherArticle"], "pathImg", [], "any", false, false, false, 103))), "html", null, true);
                 echo "\" alt=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["otherArticle"], "title", [], "any", false, false, false, 119), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["otherArticle"], "title", [], "any", false, false, false, 103), "html", null, true);
                 echo "\">
                     </div>
                     <figcaption>
                       <h3>";
-                // line 122
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["otherArticle"], "title", [], "any", false, false, false, 122), "html", null, true);
+                // line 106
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["otherArticle"], "title", [], "any", false, false, false, 106), "html", null, true);
                 echo "</h3>
                     </figcaption>
                   </figure>
@@ -311,11 +289,11 @@ class __TwigTemplate_1d36cadc424b77fef17f163932f3caef0ab009a55735c65a53c4fb82e8f
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['otherArticle'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 129
+            // line 113
             echo "
         ";
         }
-        // line 131
+        // line 115
         echo "
     </section>
 
@@ -344,7 +322,7 @@ class __TwigTemplate_1d36cadc424b77fef17f163932f3caef0ab009a55735c65a53c4fb82e8f
 
     public function getDebugInfo()
     {
-        return array (  319 => 131,  315 => 129,  302 => 122,  294 => 119,  288 => 116,  284 => 114,  280 => 113,  277 => 112,  275 => 111,  260 => 99,  252 => 94,  244 => 89,  233 => 81,  227 => 78,  221 => 75,  215 => 72,  209 => 69,  201 => 63,  198 => 62,  188 => 58,  184 => 57,  181 => 56,  176 => 55,  174 => 54,  165 => 47,  157 => 45,  150 => 44,  146 => 43,  141 => 40,  137 => 38,  130 => 34,  125 => 32,  120 => 30,  116 => 29,  111 => 27,  106 => 25,  102 => 23,  100 => 22,  94 => 19,  87 => 17,  83 => 16,  77 => 13,  68 => 6,  58 => 5,  35 => 2,);
+        return array (  297 => 115,  293 => 113,  280 => 106,  272 => 103,  266 => 100,  262 => 98,  258 => 97,  255 => 96,  253 => 95,  243 => 87,  241 => 86,  233 => 81,  227 => 78,  221 => 75,  215 => 72,  209 => 69,  201 => 63,  198 => 62,  188 => 58,  184 => 57,  181 => 56,  176 => 55,  174 => 54,  165 => 47,  157 => 45,  150 => 44,  146 => 43,  141 => 40,  137 => 38,  130 => 34,  125 => 32,  120 => 30,  116 => 29,  111 => 27,  106 => 25,  102 => 23,  100 => 22,  94 => 19,  87 => 17,  83 => 16,  77 => 13,  68 => 6,  58 => 5,  35 => 2,);
     }
 
     public function getSourceContext()
@@ -367,7 +345,7 @@ class __TwigTemplate_1d36cadc424b77fef17f163932f3caef0ab009a55735c65a53c4fb82e8f
         <img src=\"{{ asset('uploads/' ~ article.pathImg) }}\" alt=\"title-img\">
         <span class=\"asideInfosArticle\">Le {{ article.date|date('d/m/Y') }} par {{ article.author }}</span>
         <div class=\"contentArticle\">
-          {{ article.content|striptags('<p><strong><br>')|raw  }}
+            {{ article.content|striptags('<p><strong><br>')|raw }}
         </div>
 
       {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -433,24 +411,8 @@ class __TwigTemplate_1d36cadc424b77fef17f163932f3caef0ab009a55735c65a53c4fb82e8f
             </li>
           </ul>
         </aside>
-        <aside class=\"asidebarSocialNetwork\">
-          <h2>Suivez-nous</h2>
-          <div>
-            <a href=\"\">
-              <img src=\"{{ asset('./img/facebook.png') }}\" alt=\"facebook\">
-            </a>
-          </div>
-          <div>
-            <a href=\"\">
-              <img src=\"{{ asset('./img/twitter.png') }}\" alt=\"facebook\">
-            </a>
-          </div>
-          <div>
-            <a href=\"\">
-              <img src=\"{{ asset('./img/google-plus.png') }}\" alt=\"facebook\">
-            </a>
-          </div>
-        </aside>
+        
+        {% include '@MyTechnosBlog/Front/Includes/socialNetwork.html.twig' %}
 
       </div>
     </section>

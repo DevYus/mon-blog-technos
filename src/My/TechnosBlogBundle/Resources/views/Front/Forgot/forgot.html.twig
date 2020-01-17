@@ -3,14 +3,24 @@
 
 {% block main %}
 
-    <!-- Extension du layout au templates fils -->
+<!-- Extension du layout au templates fils -->
+
     <main class="forgotMainBlock">
 
         <h1>Demande de réinisialisation de mot de passe</h1>
 
         <section class="sectionForgotOne">
 
-            <div>{{ info }}</div>
+            {% if success == true %}
+
+                <div class="alert-forgot">{{ info }}</div>
+
+            {% else %}
+
+                <div>{{ info }}</div>
+
+            {% endif %}
+
             {{ form_start(form) }}
                 {{ form_widget(form) }}
             {{ form_end(form) }}

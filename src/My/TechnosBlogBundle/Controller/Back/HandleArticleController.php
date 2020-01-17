@@ -127,7 +127,7 @@ class HandleArticleController extends Controller
         if ($imgPath !== null) {
              $article->setPathImg(new File($this->getParameter('uploads') . $imgPath));
         }
-
+        
         $form = $this->get('form.factory')->create(UpdateArticleType::class, $article);
         $form->handleRequest($request);
 

@@ -16,7 +16,7 @@
         <img src="{{ asset('uploads/' ~ article.pathImg) }}" alt="title-img">
         <span class="asideInfosArticle">Le {{ article.date|date('d/m/Y') }} par {{ article.author }}</span>
         <div class="contentArticle">
-          {{ article.content|striptags('<p><strong><br>')|raw  }}
+            {{ article.content|striptags('<p><strong><br>')|raw }}
         </div>
 
       {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -82,24 +82,8 @@
             </li>
           </ul>
         </aside>
-        <aside class="asidebarSocialNetwork">
-          <h2>Suivez-nous</h2>
-          <div>
-            <a href="">
-              <img src="{{ asset('./img/facebook.png') }}" alt="facebook">
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <img src="{{ asset('./img/twitter.png') }}" alt="facebook">
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <img src="{{ asset('./img/google-plus.png') }}" alt="facebook">
-            </a>
-          </div>
-        </aside>
+        
+        {% include '@MyTechnosBlog/Front/Includes/socialNetwork.html.twig' %}
 
       </div>
     </section>

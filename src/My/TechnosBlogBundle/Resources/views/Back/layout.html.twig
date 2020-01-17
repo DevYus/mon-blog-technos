@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- ne pas oublier de mettre les links entre stylesheet -->
     {% block stylesheets %}
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -19,82 +18,101 @@
 </head>
 <body>
 
-  <header id="headerJs">
-      <div>
-          <div class="containerHeader">
+    <header id="headerJs">
+        <div>
+            <div class="containerHeader">
 
-              <div class="logoBlock">
-                  <a href="/">
-                      <img src="{{ asset('./img/Mon-blog-technos-white.png') }}" alt="MonBlogTechnos">
-                  </a>
-              </div>
+                <div class="logoBlock">
+                    <a href="/">
+                        <img src="{{ asset('./img/Mon-blog-technos-white.png') }}" alt="MonBlogTechnos">
+                    </a>
+                </div>
 
-              <nav class="navHeader">
-                  <ul>
-                      <li>
-                          <a href="{{ path('homepage') }}">Home</a>
-                      </li>
-                      <li>
-                          <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript</a>
-                      </li>
-                      <li>
-                          <a href="{{ path('category', { 'category' : 'php' }) }}">PHP</a>
-                      </li>
-                      <li>
-                          <a href="{{ path('category', { 'category' : 'rubis' }) }}">Rubis</a>
-                      </li>
-                      <li>
-                          <a href="{{ path('category', { 'category' : 'tutoriel' }) }}">Tutoriels</a>
-                      </li>
-                      <li>
-                          <a href="{{ path('category', { 'category' : 'sondage' }) }}">Sondages</a>
-                      </li>
-                      <li class="jsBtnSearch">
-                          <img src="{{ asset('./img/search.png') }}" alt="search">
-                      </li>
-                  </ul>
-              </nav>
-          </div>
-      </div>
-  </header>
+                <nav class="navHeader">
+                    <ul>
+                        <li>
+                            <a href="{{ path('homepage') }}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('category', { 'category' : 'php' }) }}">PHP</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('category', { 'category' : 'rubis' }) }}">Rubis</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('category', { 'category' : 'tutoriel' }) }}">Tutoriels</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('category', { 'category' : 'sondage' }) }}">Sondages</a>
+                        </li>                                                                         
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-
-  {% block main %}
+    {% block main %}
 
 
-  {% endblock %}
+    {% endblock %}
 
+    <footer>
+        <div class="footerWrapper">
+            <aside>
+                <span>À propos</span>
+               La programmation web est la programmation informatique qui permet d'éditer des sites web. Elle permet la mise en place d'applications constituées de pages pouvant prendre différentes formes, notamment :
 
+               Un ensemble de pages « statiques », c'est-à-dire dont le contenu n'est pas influencé par l'internaute qui la demande, et qui n'évolue pas sans une intervention manuelle sur le code.
+               Un ensemble de pages « dynamiques », c'est-à-dire dont le contenu évolue sans que le code du site web ne soit modifié, soit via l'interaction des utilisateurs, soit par du calcul. C'est le cas de la très large majorité des sites web depuis le début des années 2000.
 
-<footer>
-    <div class="footerWrapper">
-        <aside>
-            <span>About me</span>
-            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
-            Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.
-        </aside>
-        <ul>
-            <li>Browse</li>
-            <li>Home</li>
-            <li>Tout sur le php</li>
-            <li>News javascript</li>
-            <li>Html5-CSS3</li>
-            <li>Autres langages</li>
-        </ul>
-        <ul>
-            <li>Connect</li>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Linkedin</li>
-            <li>Instagram</li>
-        </ul>
-    </div>
+            </aside>
+            <ul>
+                <li>Naviger</li>
+                <li>
+                    <a href="{{ path('homepage') }}">Home</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'php' }) }}">PHP</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'javascript' }) }}">Javascript
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'rubis' }) }}">Rubis</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'tutoriel' }) }}">Tutoriels</a>
+                </li>
+                <li>
+                    <a href="{{ path('category', { 'category' : 'sondage' }) }}">Sondages</a>
+                </li>
+            </ul>
+            <ul>
+                <li>Connect</li>
+                <li>           
+                    <a href="https://www.facebook.com/">Facebook</a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/login?lang=fr">Twitter</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/?hl=fr">Instagram</a>
+                </li>
+                <li>
+                    <a href="https://fr.linkedin.com/">Linkedin</a>
+                </li>
+            </ul>
+        </div>
 
-  <details>
-    <summary>Copyright O.Y</summary>
-  </details>
+      <details>
+        <summary>Copyright O.Y</summary>
+      </details>
 
-</footer>
+    </footer>
 
 </body>
 
@@ -104,7 +122,11 @@
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-      {% if(app.request.pathInfo == '/admin/add-article' or app.request.pathInfo == '/admin/add-administrator?page=1') %}
+      {% 
+        if( app.request.pathInfo == '/admin/add-article' 
+        or app.request.pathInfo == '/admin/add-administrator?page=1')
+        or '/update-article' in app.request.pathInfo 
+      %}
 
           <script src="//cdn.ckeditor.com/4.10.1/full/ckeditor.js"></script>
           <script type="text/javascript">
@@ -119,6 +141,7 @@
               });
 
           </script>
+
 
       {% endif %}
 
