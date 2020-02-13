@@ -3,6 +3,7 @@
 Projet pour 3W Academy.
 
 Connexion admin : 
+ - url : /login
  - login : miroball98@gmail.com
  - mot de passe : test
  
