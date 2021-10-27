@@ -20,17 +20,25 @@ class ResettingController extends Controller
      */
     public function resettingAction(Request $request, UserPasswordEncoderInterface $encoder)
     {
+        // Get the token of the url
          $token = $request->query->get('token');
-         $userToken = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Users')->findOneByResetToken($token);
-
+        
+        // Get the user with if the token is not null 
+        if($token =! null) {
+            $userToken = $this->getDoctrine()->getRepository('MyTechnosBlogBundle:Users')->findOneByResetToken($token);
+        }
+        
+        // If the user is found
         if ($userToken) {
              $tokenExpireTime = $userToken->getResetExpires();
              $currentTime = time();
 
+             // If the timestamp token is greater that the current time, the link is expire
             if ($currentTime <= $tokenExpireTime) {
                  $form = $this->get('form.factory')->create(ResetPasswordType::class, $userToken);
                  $form->handleRequest($request);
-
+                
+                 // submit form to reset password if valid
                 if ($form->isSubmitted() && $form->isValid()) {
                      // Encode the new password of the user
                      $password = $encoder->encodePassword($userToken, $userToken->getPassword());
