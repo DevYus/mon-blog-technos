@@ -21,21 +21,26 @@ class ArticleController extends Controller
     public function articleAction(Request $request, $id)
     {
         $entMa = $this->getDoctrine()->getManager();
-
+        
+        // Recover the article with the id in argument
         $article = $entMa->getRepository('MyTechnosBlogBundle:Articles')->find($id);
-
+       
+        // Shows articles according to the connexion
         if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             $idUser = $this->getUser()->getId();
             $user = $entMa->getRepository('MyTechnosBlogBundle:Users')->find($idUser);
         }
-
+        
+        // Get articles of the side and the new articles
         $lastArticles = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getLastArticles();
         $othersArticles = $entMa->getRepository('MyTechnosBlogBundle:Articles')->getOthersArticles();
-
+        
+        // Get comment's article
         $allComments = $entMa->getRepository('MyTechnosBlogBundle:Comments')->getAllComments($article->getId());
 
         $comment = new Comments();
-
+        
+        // Get form if user want to comment
         $form = $this->get('form.factory')->create(CommentsType::class, $comment);
         $form->handleRequest($request);
 
